@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!-- ####################################################################
+
+This file was generates automatically via the 
+IconPacks.Browser (MIT-License). 
+
+Visit https://github.com/MahApps/MahApps.Metro.IconPacks and 
+https://github.com/MahApps/MahApps.Metro.IconPacks/blob/develop/LICENSE 
+for more information.
+ 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+Icon-Name: 			PlayArrowRound
+Iconpack:			MaterialDesign
+Iconpack-Homepage: 	https://github.com/google/material-design-icons
+Iconpack-License:	https://github.com/google/material-design-icons?tab=Apache-2.0-1-ov-file#readme
+
+#####################################################################-->
+
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="128"
+     height="128">
+    <path d="M 8.8574219 5.8300781 A 0.998 0.998 0 0 0 8 6.8203125 L 8 17.179688 C 8 17.969687 8.8690632 18.449531 9.5390625 18.019531 L 17.679688 12.839844 A 1 1 0 0 0 17.679688 11.150391 L 9.5390625 5.9804688 A 0.998 0.998 0 0 0 8.8574219 5.8300781 z "
+          class="Green"
+          transform="matrix(10.355428438415155,0,0,10.355428438415155,-71.36868159747416,-60.27164688239967)" />
+</svg>

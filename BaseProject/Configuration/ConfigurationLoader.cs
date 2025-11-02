@@ -1,0 +1,32 @@
+﻿using System.Reflection;
+using Microsoft.Extensions.Configuration;
+
+namespace BasaProject.Configuration;
+
+public static class ConfigurationLoader
+{
+    public static IConfiguration LoadConfiguration()
+    {
+        var assembly = Assembly.GetExecutingAssembly();
+        string resourceName = GetResourceName();
+
+        using var stream = assembly.GetManifestResourceStream(resourceName);
+        if (stream == null)
+            throw new FileNotFoundException($"Не удалось найти ресурс {resourceName}");
+
+        var configuration = new ConfigurationBuilder()
+            .AddJsonStream(stream)
+            .Build();
+
+        return configuration;
+    }
+
+    private static string GetResourceName()
+    {
+#if DEBUG
+        return "BaseProject.Configuration.appsettings.Development.json";
+#else
+    return "BaseProject.Configuration.appsettings.json";
+#endif
+    }
+}

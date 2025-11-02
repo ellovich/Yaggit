@@ -1,0 +1,30 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:c="using:CoreUI.Controls"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Design.PreviewWith>
+        <Border>
+            <StackPanel Width="400" Spacing="10">
+                <c:TitleBar />
+            </StackPanel>
+        </Border>
+    </Design.PreviewWith>
+
+    <ControlTheme x:Key="{x:Type Debugger}" TargetType="Debugger">
+        <Setter Property="Template">
+            <ControlTemplate>
+
+                <!--     ~1~ Content="debug" @1@ -->
+                <!-- <IconButton -->
+                <!--     Name="PART_Button" -->
+                <!--     CornerRadius="10" -->
+                <!--     Classes="bordered green small"  -->
+                <!--     Height="28" -->
+                <!--     Content="debug" -->
+                <!--     > -->
+                <!-- </IconButton> -->
+
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+</ResourceDictionary>

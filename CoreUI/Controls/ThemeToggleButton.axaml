@@ -1,0 +1,46 @@
+<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:assets="using:CoreUI.Assets"
+    xmlns:u="https://irihi.tech/ursa"
+    >
+
+    <Design.PreviewWith>
+        <Panel Width="100" Height="100">
+            <ThemeToggleButton />
+        </Panel>
+    </Design.PreviewWith>
+
+    <StreamGeometry x:Key="ThemeSelectorButtonDarkGlyph">M112.5 294.7875A14.4375 14.4375 0 0 0 114 278.7A135 135 0 0 1 97.5375 213.825C97.5375 138.43125 159 77.38125 234.75 77.38125Q249.6 77.4 263.49375 80.38125A14.8125 14.8125 0 0 0 278.68125 74.45625A13.6875 13.6875 0 0 0 278.1 57.7125A156.5625 156.5625 0 0 0 156.45 0C70.0125 0 0 69.6375 0 155.4375C0 220.0125 39.6375 275.4 96.075 298.875A14.0625 14.0625 0 0 0 112.5 294.7875M91.0875 275.41875A136.3125 136.3125 0 0 1 19.21875 155.4375C19.21875 80.0625 80.7 19.0125 156.45 19.0125A137.25 137.25 0 0 1 254.04375 59.55Q244.55625 58.36875 234.75 58.36875C148.3125 58.36875 78.31875 128.00625 78.31875 213.80625C78.31875 235.6875 82.85625 256.51875 91.0875 275.41875</StreamGeometry>
+    <StreamGeometry x:Key="ThemeSelectorButtonLightGlyph">m 18.360001,5.6399999 1.42,-1.4200001 M 4.2199998,19.780001 l 1.4200001,-1.42 M 21,12 h 2 M 1,12 h 2 m 15.360001,6.360001 1.42,1.42 M 4.2199998,4.2199998 5.6399999,5.6399999 M 12,21 v 2 M 12,1 v 2 m 5,9 a 5,5 0 0 1 -5,5 5,5 0 0 1 -5,-5 5,5 0 0 1 5,-5 5,5 0 0 1 5,5 z</StreamGeometry>
+
+    <ControlTheme x:Key="{x:Type ThemeToggleButton}" TargetType="ThemeToggleButton">
+        <Setter Property="Template">
+            <ControlTemplate TargetType="ThemeToggleButton">
+                <ToggleSwitch
+                    Margin="-52 -7 0 -7"
+                    Padding="4"
+                    Classes="transparent"
+                    Name="{x:Static ThemeToggleButton.PART_ThemeToggleButton}"
+                    Theme="{DynamicResource ButtonToggleSwitch}"
+                    >
+                    <ToggleSwitch.OnContent>
+                        <Svg Width="18" Height="18" Path="{x:Static assets:Icons.moon}" />
+                    </ToggleSwitch.OnContent>
+                    <ToggleSwitch.OffContent>
+                        <Svg Width="18" Height="18" Path="{x:Static assets:Icons.sun}" />
+                    </ToggleSwitch.OffContent>
+                </ToggleSwitch>
+            </ControlTemplate>
+        </Setter>
+
+        <!-- <Style Selector="^:pointerover /template/ ToggleSwitch"> -->
+        <!--     <Setter Property="RenderTransform" Value="scale(1.03)" /> -->
+        <!--     <Setter Property="Transitions"> -->
+        <!--         <Transitions> -->
+        <!--             <TransformOperationsTransition Easing="QuadraticEaseInOut" Property="RenderTransform" Duration="0:0:0.15" /> -->
+        <!--         </Transitions> -->
+        <!--     </Setter> -->
+        <!-- </Style> -->
+    </ControlTheme>
+</ResourceDictionary>

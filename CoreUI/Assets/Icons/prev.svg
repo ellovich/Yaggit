@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+
+<!-- ####################################################################
+
+This file was generates automatically via the
+IconPacks.Browser (MIT-License).
+
+Visit https://github.com/MahApps/MahApps.Metro.IconPacks and
+https://github.com/MahApps/MahApps.Metro.IconPacks/blob/develop/LICENSE
+for more information.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Icon-Name: 			ChevronLeft
+Iconpack:			Material
+Iconpack-Homepage: 	https://pictogrammers.com/library/mdi/
+Iconpack-License:	https://github.com/Templarian/MaterialDesign?tab=License-1-ov-file#readme
+
+#####################################################################-->
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="128"
+     height="128">
+    <path d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z"
+          class="Normal"
+          transform="matrix(10.666666666666666,0,0,10.666666666666666,-60.85333251953125,-64)" />
+</svg>

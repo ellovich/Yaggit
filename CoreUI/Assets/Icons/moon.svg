@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+
+<!-- ####################################################################
+
+This file was generates automatically via the
+IconPacks.Browser (MIT-License).
+
+Visit https://github.com/MahApps/MahApps.Metro.IconPacks and
+https://github.com/MahApps/MahApps.Metro.IconPacks/blob/develop/LICENSE
+for more information.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Icon-Name: 			MoonOutline
+Iconpack:			ForkAwesome
+Iconpack-Homepage: 	https://forkaweso.me/
+Iconpack-License:	https://github.com/ForkAwesome/Fork-Awesome/blob/master/LICENSES
+
+#####################################################################-->
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="128"
+     height="128">
+    <path d="M1262 233c-36 -6 -73 -9 -110 -9c-371 0 -672 301 -672 672c0 127 37 251 104 357c-266 -79 -456 -323 -456 -613c0 -353 287 -640 640 -640c193 0 374 88 494 233zM1465 318c-125 -271 -399 -446 -697 -446c-423 0 -768 345 -768 768c0 415 325 752 739 767 c28 1 51 -15 61 -39c11 -25 4 -54 -15 -72c-114 -104 -177 -246 -177 -400c0 -300 244 -544 544 -544c79 0 155 17 228 51c25 11 53 6 72 -13s24 -48 13 -72z"
+          class="Normal"
+          transform="matrix(0.0833852150319803,0,0,-0.0833852150319803,2.6803532032353186,117.32669247590653)" />
+</svg>

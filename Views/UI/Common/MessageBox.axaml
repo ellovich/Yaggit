@@ -1,0 +1,62 @@
+<AvroWindow
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:assets="using:CoreUI.Assets"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:ViewModels.Common"
+    mc:Ignorable="d"
+    x:Class="Views.UI.Common.MessageBox"
+    x:DataType="vm:VmMessageBox"
+    Title="{Binding Header}"
+    Width="{Binding Width}"
+    Height="{Binding Height}"
+    MinWidth="300"
+    MinHeight="200"
+    BorderBrush="{Binding BorderColor}"
+    BorderThickness="2"
+    IsThemeButtonVisible="False"
+    WindowStartupLocation="CenterOwner"
+    d:DesignWidth="300"
+    d:DesignHeight="200"
+    >
+
+    <Design.DataContext>
+        <vm:VmMessageBox />
+    </Design.DataContext>
+
+    <AvroWindow.LeftContent>
+        <StackPanel IsHitTestVisible="False"
+            Margin="10 2"
+            HorizontalAlignment="Center"
+            Orientation="Horizontal"
+            Spacing="5"
+            >
+            <Svg Width="20" Height="20" Path="{Binding Icon}" />
+            <TextBlock Classes="h3" Text="{Binding Header}" />
+        </StackPanel>
+    </AvroWindow.LeftContent>
+
+    <Grid Margin="5 28 5 5" RowDefinitions="*, Auto">
+
+        <TextBox
+            Grid.Row="0"
+            Margin="5"
+            Background="Transparent"
+            FontSize="14"
+            IsReadOnly="True"
+            Text="{Binding Text}"
+            TextWrapping="Wrap"
+            />
+        <IconButton
+            Grid.Row="1"
+            Margin="5"
+            HorizontalAlignment="Left"
+            Command="{Binding OkCommand}"
+            Content="OK"
+            IsDefault="True"
+            SvgPath="{x:Static assets:Icons.check}"
+            />
+
+    </Grid>
+</AvroWindow>

@@ -1,0 +1,70 @@
+﻿<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:assets="using:CoreUI.Assets"
+    xmlns:c="using:CoreUI.Controls"
+    >
+
+    <Design.PreviewWith>
+        <c:CaptionButtons />
+    </Design.PreviewWith>
+
+    <ControlTheme x:Key="{x:Type c:CaptionButtons}" TargetType="c:CaptionButtons">
+        <Setter Property="Template">
+            <ControlTemplate TargetType="c:CaptionButtons">
+
+                <StackPanel
+                    VerticalAlignment="Stretch"
+                    Orientation="Horizontal"
+                    Spacing="5"
+                    TextElement.FontSize="12"
+                    >
+
+                    <Debugger Margin="0 0 10 0" VerticalAlignment="Center" IsVisible="{TemplateBinding IsDebug}" />
+                    <ThemeToggleButton  x:Name="PART_ThemeButton" VerticalAlignment="Center" ToolTip.Tip="Сменить тему" />
+                    <IconButton x:Name="PART_FullScreenButton"
+                        Classes="transparent"
+								                        Width="30"
+
+                        SvgPath="{x:Static assets:Icons+TitleBar.fullscreen}"
+                        ToolTip.Tip="Полный экран"
+                        />
+                    <Separator Width="1" Height="20" />
+
+                    <IconButton x:Name="PART_MinimizeButton"
+                        Classes="transparent"
+								                        Width="30"
+
+                        SvgPath="{x:Static assets:Icons+TitleBar.minimize}"
+                        ToolTip.Tip="Свернуть вниз"
+                        />
+                    <IconButton x:Name="PART_RestoreButton"
+                        Classes="transparent"
+								                        Width="30"
+
+                        SvgPath="{x:Static assets:Icons+TitleBar.maximize}"
+                        ToolTip.Tip="Развернуть"
+                        />
+                    <IconButton x:Name="PART_CloseButton"
+                        Classes="close"
+                        Width="30"
+                        SvgPath="{x:Static assets:Icons+TitleBar.close}"
+                        ToolTip.Tip="Закрыть окно"
+                        />
+                </StackPanel>
+
+            </ControlTemplate>
+        </Setter>
+
+        <Style Selector="^:maximized /template/ IconButton#PART_RestoreButton">
+            <Setter Property="ToolTip.Tip" Value="Свернуть в окно" />
+            <Setter Property="SvgPath" Value="{x:Static assets:Icons+TitleBar.restore}" />
+        </Style>
+        <Style Selector="^:fullscreen /template/ IconButton#PART_FullScreenButton">
+            <Setter Property="ToolTip.Tip" Value="Покинуть полный экран" />
+            <Setter Property="SvgPath" Value="{x:Static assets:Icons+TitleBar.fullscreenOff}" />
+        </Style>
+
+    </ControlTheme>
+
+</ResourceDictionary>

@@ -1,0 +1,45 @@
+﻿<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ControlTheme x:Key="{x:Type ActiveLoadingsControl}" TargetType="{x:Type ActiveLoadingsControl}">
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ActiveLoadingsControl">
+                    <ListBox Margin="10"
+                             IsHitTestVisible="False"
+                             HorizontalAlignment="Right"
+                             VerticalAlignment="Bottom"
+                             Background="Transparent"
+                             ItemsSource="{TemplateBinding ItemsSource}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Border HorizontalAlignment="Right"
+                                        VerticalAlignment="Bottom"
+                                        MinWidth="300"
+                                        BorderThickness="3"
+                                        CornerRadius="{DynamicResource DefaultCornerRadius}"
+                                        BorderBrush="{DynamicResource AccentGradient}"
+                                        Padding="5"
+                                        Opacity="0.8">
+                                    <Border.Styles>
+                                        <Style Selector="Border">
+                                            <Setter Property="Effect">
+                                                <Setter.Value>
+                                                    <DropShadowEffect BlurRadius="10" Opacity="0.5" Color="Black" />
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </Border.Styles>
+                                    <ContentControl Content="{Binding .}"
+                                                    ContentTemplate="{TemplateBinding LoadingTemplate}" />
+                                </Border>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </ControlTheme>
+</ResourceDictionary>

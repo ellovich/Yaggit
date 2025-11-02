@@ -1,0 +1,56 @@
+﻿<AvroView
+xmlns="https://github.com/avaloniaui"
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+xmlns:assets="using:CoreUI.Assets"
+xmlns:b="using:Views.Behaviors"
+xmlns:lang="using:ViewModels.Lang"
+xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+xmlns:i="using:Avalonia.Xaml.Interactivity"
+xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+xmlns:vm="using:ViewModels.UI.Yaggit"
+mc:Ignorable="d"
+Background="{DynamicResource DefaultBackground}"
+x:Class="Views.UI.Yaggit.Console"
+x:DataType="vm:VmConsole"
+d:DesignWidth="400"
+d:DesignHeight="740"
+>
+
+	<Design.DataContext>
+		<vm:MockVmConsole />
+	</Design.DataContext>
+
+	<DockPanel Margin="8">
+
+		<StackPanel DockPanel.Dock="Top"
+					Orientation="Horizontal"
+					HorizontalAlignment="Right"
+					Spacing="8">
+			<Button Content="{Binding ToggleOutputButtonText}"
+					Command="{Binding ToggleOutputCommand}" />
+			<Button Content="{x:Static lang:UI.Button_Clear}"
+					Command="{Binding ClearCommand}" />
+		</StackPanel>
+
+		<Border BorderBrush="Gray" Background="Black" BorderThickness="1" Padding="4">
+			<ScrollViewer VerticalScrollBarVisibility="Auto">
+				<ItemsControl ItemsSource="{Binding CommandLog}">
+					<ItemsControl.ItemTemplate>
+						<DataTemplate>
+							<TextBlock Text="{Binding Text}"
+									   Foreground="{Binding Type, Converter={StaticResource ConsoleLineTypeToBrushConverter}}"
+									   FontFamily="Consolas"
+									   FontSize="12"
+									   Margin="0,0,0,2"/>
+						</DataTemplate>
+					</ItemsControl.ItemTemplate>
+
+					<i:Interaction.Behaviors>
+						<b:AutoScrollToEndBehavior />
+					</i:Interaction.Behaviors>
+				</ItemsControl>
+			</ScrollViewer>
+		</Border>
+	</DockPanel>
+
+</AvroView>

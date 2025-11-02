@@ -1,0 +1,98 @@
+﻿<AvroView
+xmlns="https://github.com/avaloniaui"
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+xmlns:assets="using:CoreUI.Assets"
+xmlns:b="using:Views.Behaviors"
+xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+xmlns:i="using:Avalonia.Xaml.Interactivity"
+xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+xmlns:vm="using:ViewModels.UI.Yaggit"
+mc:Ignorable="d"
+Background="{DynamicResource DefaultBackground}"
+x:Class="Views.UI.Yaggit.Branches"
+x:DataType="vm:VmBranches"
+d:DesignWidth="400"
+d:DesignHeight="740"
+>
+
+	<Design.DataContext>
+		<vm:MockVmBranches />
+	</Design.DataContext>
+
+	<StackPanel Spacing="16" Margin="10">
+
+		<IconButton
+		Content="Get branches"
+		Classes="bordered-accent"
+		Command="{Binding GetBranchesCommand}"
+		SvgPath="{x:Static assets:Icons.arrowDown}" />
+
+		<TextBlock Text="Current branch:" Classes="h3"/>
+		<TextBlock Text="{Binding CurrentBranch.Name}" Classes="h4"/>
+
+		<TextBlock Text="Branches:" Classes="h3"/>
+
+		<TextBlock Text="{Binding PinnedBranches.Count}"/>
+
+		<TreeView ItemsSource="{Binding BranchTree}"
+				  Background="{DynamicResource DefaultBackground}"
+				  SelectedItem="{Binding SelectedBranchNode, Mode=TwoWay}">
+			<TreeView.ItemTemplate>
+				<TreeDataTemplate ItemsSource="{Binding Children}">
+
+					<Grid Height="30" Background="{DynamicResource DefaultBackground}" ColumnDefinitions="*,Auto">
+						<StackPanel VerticalAlignment="Center" Grid.Column="0" Orientation="Horizontal" Spacing="8">
+							<TextBlock Text="{Binding Name}" />
+							<TextBlock Text="*"
+									   Foreground="Green"
+									   FontWeight="Bold"
+									   IsVisible="{Binding IsCurrent}" />
+
+						</StackPanel>
+
+						<!-- Кнопка Pin -->
+						<Button Grid.Column="1"
+								Classes="small"
+								Command="{Binding $parent[TreeView].((vm:VmBranches)DataContext).TogglePinCommand}"
+								CommandParameter="{Binding .}"
+								IsVisible="{Binding $parent[Control].IsPointerOver}"
+								>
+							<Grid>
+
+								<TextBlock Text="📌"
+										   Foreground="Yellow"
+										   IsVisible="{Binding !IsPinned}"
+										   />
+								<TextBlock Text="📌"
+										   Foreground="Red"
+										   IsVisible="{Binding IsPinned}"
+										   />
+							</Grid>
+
+						</Button>
+
+					</Grid>
+
+				</TreeDataTemplate >
+
+
+			</TreeView.ItemTemplate>
+
+		</TreeView>
+
+		<StackPanel Orientation="Horizontal">
+
+
+			<IconButton
+			Content="Checkout"
+			Command="{Binding CheckoutBranchCommand}"
+			IsEnabled="{Binding SelectedBranchNode.FullName, Converter={StaticResource NullToBoolConverter}}"
+			SvgPath="{x:Static assets:Icons.arrowUp}" />
+
+			<TextBlock Text="{Binding SelectedBranchNode.Name, StringFormat='Selected: {0}'}"
+					   FontStyle="Italic"/>
+		</StackPanel>
+
+	</StackPanel>
+
+</AvroView>

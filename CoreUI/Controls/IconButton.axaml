@@ -1,0 +1,153 @@
+﻿<ResourceDictionary 
+    xmlns="https://github.com/avaloniaui" 
+    xmlns:assets="using:CoreUI.Assets"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:c="using:CoreUI.Controls">
+
+    <Design.PreviewWith>
+        <StackPanel
+            Width="300"
+            Height="400"
+            HorizontalAlignment="Left"
+            Spacing="16">
+            <ToggleSwitch Content="Toggle Loading" Name="loading" />
+            <EnumSelector EnumType="{x:Type c:Position}" Name="placement" />
+            <IconButton
+                Content="IconButton"
+                IconPlacement="{Binding #placement.Value}"
+                IsLoading="{Binding #loading.IsChecked}"
+                SvgPath="{x:Static assets:Icons.cogs}" />
+            <IconButton
+                Width="300"
+                HorizontalContentAlignment="Left"
+                Content="Wide IconButton with left alignment"
+                IconPlacement="{Binding #placement.Value}"
+                IsLoading="{Binding #loading.IsChecked}"
+                SvgPath="{x:Static assets:Icons.cogs}" />
+            <IconButton
+                Classes="small"
+                Content="IconButton small"
+                IconPlacement="{Binding #placement.Value}"
+                IsLoading="{Binding #loading.IsChecked}"
+                SvgPath="{x:Static assets:Icons.cogs}" />
+            <IconButton
+                Classes="large"
+                Content="IconButton large"
+                IconPlacement="{Binding #placement.Value}"
+                IsLoading="{Binding #loading.IsChecked}"
+                SvgPath="{x:Static assets:Icons.cogs}" />
+            <IconButton
+                Content="IconButton with custom size"
+                SvgSize="50"
+                IconPlacement="{Binding #placement.Value}"
+                IsLoading="{Binding #loading.IsChecked}"
+                SvgPath="{x:Static assets:Icons.cogs}" />
+        </StackPanel>
+    </Design.PreviewWith>
+
+    <ControlTheme x:Key="{x:Type IconButton}" TargetType="IconButton">
+        <Setter Property="Background" Value="{DynamicResource ButtonBackground}" />
+        <Setter Property="Foreground" Value="{DynamicResource ButtonForeground}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ButtonBorderBrush}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource ButtonBorderThemeThickness}" />
+        <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
+        <Setter Property="Padding" Value="{DynamicResource ButtonPadding}" />
+        <Setter Property="RenderTransform" Value="none" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="MinHeight" Value="12" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Template">
+            <ControlTemplate TargetType="IconButton">
+                <Border
+                    Name="PART_Border"
+                    Padding="{TemplateBinding Padding}"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="{TemplateBinding CornerRadius}"
+                    TextElement.FontSize="{TemplateBinding FontSize}"
+                    TextElement.FontWeight="{TemplateBinding FontWeight}"
+                    UseLayoutRounding="False">
+                    <ReversibleStackPanel
+                        Name="{x:Static IconButton.PART_RootPanel}"
+                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                        Orientation="Horizontal"
+                        Spacing="8"
+                        >
+                        <Panel Name="PART_IconRoot">
+                            <Panel.IsVisible>
+                                <MultiBinding Converter="{x:Static BoolConverters.Or}">
+                                    <Binding Path="$parent[IconButton].IsLoading"/>
+                                    <Binding Path="$parent[IconButton].SvgPath" Converter="{x:Static StringConverters.IsNotNullOrEmpty}" />
+                                </MultiBinding>
+                            </Panel.IsVisible>
+                            <Svg
+                                Width="{Binding $parent[IconButton].SvgSize}"
+                                Height="{Binding $parent[IconButton].SvgSize}"
+                                Path="{Binding $parent[IconButton].SvgPath}"
+                                Opacity="{Binding !$parent[IconButton].IsLoading, 
+                                    Converter={StaticResource BoolToOpacityConverter}}" />
+                            <LoadingIcon 
+                                Classes="Small" 
+                                Foreground="{TemplateBinding Foreground}"
+                                IsVisible="{TemplateBinding IsLoading}" />
+                        </Panel>
+                        <ContentPresenter
+                            Name="PART_ContentPresenter"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            IsVisible="{TemplateBinding Content, Converter={x:Static ObjectConverters.IsNotNull}}"
+                            Content="{TemplateBinding Content}" />
+                    </ReversibleStackPanel>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+        
+        <Style Selector="^:pressed">
+            <Setter Property="RenderTransform" Value="scale(0.98)" />
+        </Style>
+
+        <Style Selector="^:empty[IsLoading=False] /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Margin" Value="0" />
+        </Style>
+
+        <Style Selector="^:right /template/ ReversibleStackPanel#PART_RootPanel">
+            <Setter Property="Orientation" Value="Horizontal" />
+            <Setter Property="ReverseOrder" Value="True" />
+        </Style>
+
+        <Style Selector="^:left /template/ ReversibleStackPanel#PART_RootPanel">
+            <Setter Property="Orientation" Value="Horizontal" />
+            <Setter Property="ReverseOrder" Value="False" />
+        </Style>
+
+        <Style Selector="^:top /template/ ReversibleStackPanel#PART_RootPanel">
+            <Setter Property="Orientation" Value="Vertical" />
+            <Setter Property="ReverseOrder" Value="False" />
+        </Style>
+
+        <Style Selector="^:bottom /template/ ReversibleStackPanel#PART_RootPanel">
+            <Setter Property="Orientation" Value="Vertical" />
+            <Setter Property="ReverseOrder" Value="True" />
+        </Style>
+
+        <Style Selector="^.large">
+            <Setter Property="Padding" Value="{DynamicResource ButtonLargePadding}" />
+            <Setter Property="SvgSize" Value="40" />
+        </Style>
+        
+        <Style Selector="^.small">
+            <Setter Property="Padding" Value="{DynamicResource ButtonSmallPadding}" />
+            <Setter Property="SvgSize" Value="14" />
+        </Style>
+        
+        <Style Selector="^:empty-content">
+            <Setter Property="MinWidth" Value="{Binding $self.MinHeight}" />
+            <Setter Property="Padding" Value="0" />
+        </Style>
+    </ControlTheme>
+
+</ResourceDictionary>

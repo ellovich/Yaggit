@@ -1,0 +1,29 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    x:Class="CoreUI.Assets.IconsViewer"
+    d:DesignWidth="641"
+    d:DesignHeight="600"
+    >
+    <!--
+        Иконки добавляются в проект загрузкой svg-файла из программы IconsPack.Browser.
+        Colorful
+        Normal
+        После сборки проекта они появятся для просмотра здесь.
+    -->
+    <TabControl Classes="av" Name="Tabs" />
+
+    <!--<TabControl>
+		<TabItem Header="Icons">
+		</TabItem>
+		<TabItem Header="Fonts">
+			<v:FontsViewer FontFolderPath=""/>
+		</TabItem>
+		
+	</TabControl>-->
+
+
+</UserControl>

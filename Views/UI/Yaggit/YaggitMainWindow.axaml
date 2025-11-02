@@ -1,0 +1,35 @@
+﻿<AvroWindow
+xmlns="https://github.com/avaloniaui"
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+xmlns:c="using:CoreUI.Controls"
+xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+xmlns:v="using:Views.UI.Yaggit"
+xmlns:vm="using:ViewModels.UI.Yaggit"
+mc:Ignorable="d"
+x:Class="Views.UI.Yaggit.YaggitMainWindow"
+x:DataType="vm:VmYaggitMain"
+Title="YaggitMainWindow"
+Width="300"
+Height="570"
+MinWidth="1000"
+MinHeight="770"
+BorderBrush="{DynamicResource Border}"
+BorderThickness="1"
+IsFullScreenButtonVisible="{OnPlatform True, macOS=False}"
+IsManagedResizerVisible="{OnPlatform False, Linux=True}"
+IsThemeButtonVisible="True"
+d:DesignWidth="300"
+d:DesignHeight="570"
+>
+
+	<Design.DataContext>
+		<vm:VmYaggitMain />
+	</Design.DataContext>
+
+	<AvroWindow.LeftContent>
+		<v:YaggitMenu CornerRadius="{DynamicResource DefaultCornerRadius}" />
+	</AvroWindow.LeftContent>
+
+	<v:YaggitMainView Margin="5 32 5 5" />
+</AvroWindow>

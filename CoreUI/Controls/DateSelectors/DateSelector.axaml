@@ -1,0 +1,143 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:assets="using:CoreUI.Assets">
+
+    <Design.PreviewWith>
+        <StackPanel
+            Width="300"
+            Height="400"
+            Margin="20"
+            HorizontalAlignment="Left"
+            >
+            <DateSelector Classes="ClearButton" />
+            <DateSelector />
+        </StackPanel>
+    </Design.PreviewWith>
+
+
+    <ControlTheme x:Key="{x:Type DateSelector}" TargetType="DateSelector">
+        <Setter Property="IsTodayHighlighted" Value="True" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Padding" Value="8 0" />
+        <Setter Property="MinWidth" Value="135" />
+        <Setter Property="MinHeight" Value="{DynamicResource CalendarDateSelectorDefaultHeight}" />
+        <Setter Property="Template">
+            <ControlTemplate TargetType="DateSelector">
+                <DataValidationErrors>
+                    <Panel x:Name="LayoutRoot" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <Border x:Name="Background"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="{TemplateBinding CornerRadius}"
+                            />
+                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ColumnDefinitions="Auto,*, Auto">
+                            <CheckBox
+                                Grid.Column="0"
+                                Margin="0 -2 -5 -2"
+                                Focusable="False"
+                                Name="PART_CheckBox"
+                                />
+                            <TextBox
+                                Grid.Column="1"
+                                Grid.ColumnSpan="2"
+                                MinHeight="{TemplateBinding MinHeight}"
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Stretch"
+                                FontSize="{TemplateBinding FontSize}"
+                                InnerLeftContent="{TemplateBinding InnerLeftContent}"
+                                InnerRightContent="{TemplateBinding InnerRightContent}"
+                                Name="PART_TextBox"
+                                Watermark="{TemplateBinding Watermark}"
+                                />
+                            <IconButton
+                                Grid.Column="2"
+                                Margin="8 0"
+                                Command="{Binding $parent[DateSelector].Clear}"
+                                Focusable="False"
+                                IsVisible="False"
+                                Name="ClearButton"
+                                SvgPath="{x:Static assets:Icons.backspace}"
+                                SvgSize="14"
+                                />
+                            <IconButton
+                                Grid.Column="2"
+                                Margin="8 0"
+                                Classes="transparent small"
+                                Command="{Binding $parent[DateSelector].Clear}"
+                                Focusable="False"
+                                IsVisible="{Binding !#ClearButton.IsVisible}"
+                                Name="PART_Button"
+                                SvgPath="{x:Static assets:Icons.calendar}"
+                                />
+                            <Popup
+                                Grid.Column="0"
+                                HorizontalOffset="-4"
+                                IsLightDismissEnabled="True"
+                                IsOpen="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IsDropdownOpen, Mode=TwoWay}"
+                                Name="PART_Popup"
+                                Placement="BottomEdgeAlignedLeft"
+                                PlacementTarget="{TemplateBinding}"
+                                >
+
+                                <Border
+                                    Margin="{DynamicResource PopupBorderMargin}"
+                                    Padding="8"
+                                    Background="{DynamicResource PopupBackground}"
+                                    BorderBrush="{DynamicResource PopupBorderBrush}"
+                                    BorderThickness="{DynamicResource PopupBorderThickness}"
+                                    BoxShadow="{DynamicResource PopupBoxShadow}"
+                                    CornerRadius="{DynamicResource CalendarCornerRadius}"
+                                    >
+                                    <CalendarView
+                                        BorderThickness="0"
+                                        CornerRadius="{Binding $parent[Border].CornerRadius}"
+                                        FirstDayOfWeek="{TemplateBinding FirstDayOfWeek}"
+                                        FontSize="{DynamicResource DefaultFontSize}"
+                                        IsTodayHighlighted="{TemplateBinding IsTodayHighlighted}"
+                                        Name="PART_Calendar"
+                                        />
+                                </Border>
+                            </Popup>
+                        </Grid>
+
+                    </Panel>
+                </DataValidationErrors>
+            </ControlTemplate>
+        </Setter>
+
+        <Style Selector="^.nullable, ^.Nullable">
+            <Style Selector="^ /template/ CheckBox#PART_CheckBox">
+                <Setter Property="IsVisible" Value="{Binding $parent[DateSelector].IsNullable}" />
+            </Style>
+        </Style>
+
+        <Style Selector="^.clearButton, ^.ClearButton">
+            <Style Selector="^:pointerover /template/ :is(Button)#ClearButton">
+                <Setter Property="IsVisible" Value="{Binding $parent[DateSelector].SelectedDate, Converter={x:Static ObjectConverters.IsNotNull}}" />
+            </Style>
+        </Style>
+
+        <Style Selector="^:pointerover">
+            <Style Selector="^ /template/ Border#Background">
+                <Setter Property="Background" Value="{DynamicResource CalendarDateSelectorPointeroverBackground}" />
+            </Style>
+        </Style>
+
+        <!--  Disabled State  -->
+        <Style Selector="^:disabled">
+            <Style Selector="^ /template/ Border#Background">
+                <Setter Property="Background" Value="{DynamicResource CalendarDateSelectorDisabledBackground}" />
+            </Style>
+
+            <Style Selector="^ /template/ Button#PART_Button">
+                <Setter Property="Foreground" Value="{DynamicResource CalendarDateSelectorDisabledIconForeground}" />
+            </Style>
+            <Style Selector="^ /template/ TextBox#PART_TextBox">
+                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="BorderBrush" Value="Transparent" />
+            </Style>
+        </Style>
+
+
+    </ControlTheme>
+</ResourceDictionary>

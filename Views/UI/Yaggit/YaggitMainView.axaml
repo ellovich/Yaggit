@@ -1,0 +1,40 @@
+<AvroView
+xmlns="https://github.com/avaloniaui"
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+xmlns:assets="using:CoreUI.Assets"
+xmlns:b="using:Views.Behaviors"
+xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+xmlns:i="using:Avalonia.Xaml.Interactivity"
+xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+xmlns:vm="using:ViewModels.UI.Yaggit"
+mc:Ignorable="d"
+x:Class="Views.UI.Yaggit.YaggitMainView"
+x:DataType="vm:VmYaggitMain"
+d:DesignWidth="300"
+d:DesignHeight="540"
+>
+
+	<Design.DataContext>
+		<vm:VmYaggitMain />
+	</Design.DataContext>
+
+	<Grid RowDefinitions="Auto,2*,*">
+
+		<ContentControl
+		Grid.Row="0"
+		Content="{Binding RepoSelector}"
+		/>
+
+		<ContentControl
+		Grid.Row="1"
+		Content="{Binding Branches}"
+		/>
+
+		<ContentControl
+		Grid.Row="2"
+		Content="{Binding Console}"
+		/>
+
+	</Grid>
+
+</AvroView>

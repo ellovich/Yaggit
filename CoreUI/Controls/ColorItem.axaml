@@ -1,0 +1,38 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Design.PreviewWith>
+        <StackPanel Width="400" Spacing="10">
+            <StackPanel Background="Black">
+                <ColorItem ResourceName="DefaultBackground" Color="{DynamicResource DefaultBackground}" />
+                <ColorItem />
+            </StackPanel>
+        </StackPanel>
+    </Design.PreviewWith>
+
+    <ControlTheme x:Key="{x:Type ColorItem}" TargetType="ColorItem">
+        <Setter Property="Template">
+            <ControlTemplate>
+
+                <Border
+                    Background="{TemplateBinding Color}"
+                    BorderBrush="{TemplateBinding Color}"
+                    BorderThickness="2"
+                    CornerRadius="5"
+                    Name="bbb"
+                    >
+                    <StackPanel>
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            FontSize="12"
+                            FontWeight="Medium"
+                            Text="{TemplateBinding ResourceName}"
+                            />
+                        <TextBlock HorizontalAlignment="Center" FontSize="12" Text="{Binding #bbb.Background}" />
+                    </StackPanel>
+
+                </Border>
+
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+</ResourceDictionary>

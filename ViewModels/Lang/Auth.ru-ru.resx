@@ -1,0 +1,134 @@
+﻿<root>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="Auth_Login" xml:space="preserve">
+        <value>Войти</value>
+    </data>
+    <data name="Auth_SignUp" xml:space="preserve">
+        <value>Зарегистрироваться</value>
+    </data>
+    <data name="Auth_Logout" xml:space="preserve">
+        <value>Выйти</value>
+    </data>
+    <data name="Auth_Username" xml:space="preserve">
+        <value>Имя пользователя</value>
+    </data>
+    <data name="Auth_Email" xml:space="preserve">
+        <value>Электронная почта</value>
+    </data>
+    <data name="Auth_Password" xml:space="preserve">
+        <value>Пароль</value>
+    </data>
+    <data name="Auth_PasswordRepeat" xml:space="preserve">
+        <value>Повторите пароль</value>
+    </data>
+    <data name="Auth_RememberMe" xml:space="preserve">
+        <value>Запомнить меня</value>
+    </data>
+    <data name="Auth_ForgotPassword" xml:space="preserve">
+        <value>Забыли пароль?</value>
+    </data>
+    <data name="Auth_ResetPassword" xml:space="preserve">
+        <value>Сбросить пароль</value>
+    </data>
+    <data name="Auth_CreateAccount" xml:space="preserve">
+        <value>Создать аккаунт</value>
+    </data>
+    <data name="Auth_Provider_GitHub" xml:space="preserve">
+        <value>Войти через GitHub</value>
+    </data>
+    <data name="Auth_Provider_GitLab" xml:space="preserve">
+        <value>Войти через GitLab</value>
+    </data>
+    <data name="Auth_Provider_Bitbucket" xml:space="preserve">
+        <value>Войти через Bitbucket</value>
+    </data>
+    <data name="Auth_Provider_AzureDevOps" xml:space="preserve">
+        <value>Войти через Azure DevOps</value>
+    </data>
+    <data name="Auth_Token" xml:space="preserve">
+        <value>Токен доступа</value>
+    </data>
+    <data name="Auth_TokenHint" xml:space="preserve">
+        <value>Вставьте сюда свой токен доступа</value>
+    </data>
+    <data name="Auth_AuthorizationRequired" xml:space="preserve">
+        <value>Требуется авторизация</value>
+    </data>
+    <data name="Auth_AuthorizationSuccess" xml:space="preserve">
+        <value>Авторизация успешно выполнена</value>
+    </data>
+    <data name="Auth_AuthorizationFailed" xml:space="preserve">
+        <value>Ошибка авторизации</value>
+    </data>
+    <data name="Auth_InvalidCredentials" xml:space="preserve">
+        <value>Неверное имя пользователя или пароль</value>
+    </data>
+    <data name="Auth_MissingToken" xml:space="preserve">
+        <value>Отсутствует токен доступа</value>
+    </data>
+    <data name="Auth_GenerateToken" xml:space="preserve">
+        <value>Сгенерировать токен</value>
+    </data>
+    <data name="Auth_OpenInBrowser" xml:space="preserve">
+        <value>Открыть в браузере</value>
+    </data>
+    <data name="Auth_LinkAccount" xml:space="preserve">
+        <value>Привязать аккаунт</value>
+    </data>
+    <data name="Auth_UnlinkAccount" xml:space="preserve">
+        <value>Отвязать аккаунт</value>
+    </data>
+    <data name="Auth_ConnectedAs" xml:space="preserve">
+        <value>Подключён как {0}</value>
+    </data>
+    <data name="Auth_Disconnected" xml:space="preserve">
+        <value>Отключено</value>
+    </data>
+    <data name="Auth_ServerUrl" xml:space="preserve">
+        <value>URL сервера</value>
+    </data>
+    <data name="Auth_Connect" xml:space="preserve">
+        <value>Подключиться</value>
+    </data>
+    <data name="Auth_Disconnect" xml:space="preserve">
+        <value>Отключиться</value>
+    </data>
+    <data name="Auth_AccountSettings" xml:space="preserve">
+        <value>Настройки аккаунта</value>
+    </data>
+    <data name="Auth_Profile" xml:space="preserve">
+        <value>Профиль</value>
+    </data>
+    <data name="Auth_Repositories" xml:space="preserve">
+        <value>Репозитории</value>
+    </data>
+    <data name="Auth_SelectProvider" xml:space="preserve">
+        <value>Выберите провайдера</value>
+    </data>
+    <data name="Auth_Connecting" xml:space="preserve">
+        <value>Подключение...</value>
+    </data>
+    <data name="Auth_SigningIn" xml:space="preserve">
+        <value>Вход...</value>
+    </data>
+    <data name="Auth_SigningOut" xml:space="preserve">
+        <value>Выход...</value>
+    </data>
+    <data name="Auth_Connected" xml:space="preserve">
+        <value>Подключено</value>
+    </data>
+    <data name="Auth_PasswordMissmatch" xml:space="preserve">
+        <value>Пароли не совпадают</value>
+    </data>
+</root>

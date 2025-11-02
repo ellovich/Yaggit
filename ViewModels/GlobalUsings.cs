@@ -1,0 +1,14 @@
+﻿global using System.Collections.ObjectModel;
+global using AsyncAwaitBestPractices;
+global using CommunityToolkit.Mvvm.ComponentModel;
+global using CommunityToolkit.Mvvm.Input;
+global using CoreUI.Assets;
+global using HanumanInstitute.MvvmDialogs;
+global using Microsoft.Extensions.Logging;
+global using Models.Extensions;
+global using ViewModels.Common;
+global using ViewModels.UI.Common;
+global using ViewModels.Extensions;
+global using ViewModels.Infrastructure;
+global using ViewModels.Lang;
+global using Models.Services.Yaggit.Contracts;

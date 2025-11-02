@@ -1,0 +1,253 @@
+﻿<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Design.PreviewWith>
+            <ScrollViewer HorizontalScrollBarVisibility="Auto">
+        <StackPanel
+            Margin="24"
+            HorizontalAlignment="Left"
+            ClipToBounds="False">
+
+            <StackPanel.Styles>
+                <Style Selector="Badge">
+                    <Setter Property="Margin" Value="14" />
+                    <Style Selector="^ Border">
+                        <Setter Property="Background" Value="{DynamicResource GreenNormal}" />
+                        <Setter Property="CornerRadius" Value="8" />
+                        <Style Selector="^ TextBlock">
+                            <Setter Property="HorizontalAlignment" Value="Center" />
+                            <Setter Property="VerticalAlignment" Value="Center" />
+                        </Style>
+                    </Style>
+                </Style>
+            </StackPanel.Styles>
+
+            <StackPanel Orientation="Horizontal">
+                <Badge
+                    HorizontalAlignment="Center"
+                    Header="500"
+                    OverflowCount="100">
+                    <Border Width="100" Height="50">
+                        <TextBlock Text="■■■"/>
+                    </Border>
+                </Badge>
+                <Badge Header="SUCCEED!">
+                    <Border Width="100" Height="50">
+                        <TextBlock Text="■■■"/>
+                    </Border>
+                </Badge>
+                <Badge Header="Hello" />
+                <Badge Header="Hello" Dot="True" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Badge Header="5" CornerPosition="TopLeft">
+                    <Border Width="100" Height="50">
+                        <TextBlock Text="■■■"/>
+                    </Border>
+                </Badge>
+                <Badge Header="5" CornerPosition="TopRight">
+                    <Border Width="100" Height="50">
+                        <TextBlock Text="■■■"/>
+                    </Border>
+                </Badge>
+                <Badge Header="5" CornerPosition="BottomLeft">
+                    <Border Width="100" Height="50">
+                        <TextBlock Text="■■■"/>
+                    </Border>
+                </Badge>
+                <Badge Header="5" CornerPosition="BottomRight">
+                    <Border Width="100" Height="50">
+                        <TextBlock Text="■■■"/>
+                    </Border>
+                </Badge>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Badge
+                    Header="VIP"
+                    CornerPosition="TopLeft"
+                    Dot="True">
+                    <Border Width="100" Height="50">
+                        <TextBlock Text="■■■"/>
+                    </Border>
+                </Badge>
+                <Badge
+                    Header="VIP"
+                    CornerPosition="TopRight"
+                    Dot="True">
+                    <Border Width="100" Height="50">
+                        <TextBlock Text="■■■"/>
+                    </Border>
+                </Badge>
+                <Badge
+                    Header="VIP"
+                    CornerPosition="BottomLeft"
+                    Dot="True">
+                    <Border Width="100" Height="50">
+                        <TextBlock Text="■■■"/>
+                    </Border>
+                </Badge>
+                <Badge
+                    Header="VIP"
+                    CornerPosition="BottomRight"
+                    Dot="True">
+                    <Border Width="100" Height="50">
+                        <TextBlock Text="■■■"/>
+                    </Border>
+                </Badge>
+            </StackPanel>
+            <Badge HorizontalAlignment="Stretch" Header="VIP">
+                <Border Height="50">
+                    <TextBlock Text="■■■"/>
+                </Border>
+            </Badge>
+            <StackPanel Orientation="Horizontal">
+                <Badge Header="URSA" Classes="Primary">
+                    <Border Width="100" Height="50">
+                        <TextBlock Text="Solid"/>
+                    </Border>
+                </Badge>
+                <Badge Header="URSA" Classes="Success">
+                    <Border Width="100" Height="50">
+                        <TextBlock Text="Solid"/>
+                    </Border>
+                </Badge>
+                <Badge Header="URSA" Classes="Warning">
+                    <Border Width="100" Height="50">
+                        <TextBlock Text="Solid"/>
+                    </Border>
+                </Badge>
+                <Badge Header="URSA" Classes="Danger">
+                    <Border Width="100" Height="50">
+                        <TextBlock Text="Solid"/>
+                    </Border>
+                </Badge>
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
+
+    </Design.PreviewWith>
+    
+    <!-- Common -->
+    <x:Double x:Key="BadgeMinWidth">18</x:Double>
+    <x:Double x:Key="BadgeMinHeight">18</x:Double>
+    <x:Double x:Key="BadgeDotWidth">12</x:Double>
+    <x:Double x:Key="BadgeDotHeight">12</x:Double>
+    <Thickness x:Key="BadgePadding">6,0</Thickness>
+    <Thickness x:Key="BadgeBorderThickness">1</Thickness>
+    <x:Double x:Key="BadgeFontSize">10</x:Double>
+    <CornerRadius x:Key="BadgeCornerRadius">100</CornerRadius>
+    <CornerPosition x:Key="BadgeCornerPosition">TopRight</CornerPosition>
+
+    <!-- Dark -->
+    <SolidColorBrush x:Key="BadgeBorderBrush" Color="#1C1F23" />
+    <SolidColorBrush x:Key="BadgeForeground" Color="#1C1F23" />
+    <SolidColorBrush x:Key="BadgeContentForeground" Color="White" />
+
+    
+    <ControlTheme x:Key="{x:Type Badge}" TargetType="{x:Type Badge}">
+        <!--  Set a very large corner radius to achieve pill look.  -->
+        <Setter Property="CornerRadius" Value="{DynamicResource BadgeCornerRadius}" />
+        <Setter Property="BadgeFontSize" Value="{DynamicResource BadgeFontSize}" />
+        <Setter Property="Foreground" Value="{DynamicResource BadgeForeground}" />
+        <Setter Property="Background" Value="{DynamicResource AccentColor}" />
+        <Setter Property="ClipToBounds" Value="False" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="BorderThickness" Value="{DynamicResource BadgeBorderThickness}" />
+        <Setter Property="UseLayoutRounding" Value="False" />
+        <Setter Property="BorderBrush" Value="{DynamicResource BadgeBorderBrush}" />
+        <Setter Property="CornerPosition" Value="{DynamicResource BadgeCornerPosition}" />
+        <Setter Property="Template">
+            <ControlTemplate TargetType="{x:Type Badge}">
+                <Panel
+                    HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                    VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                    ClipToBounds="False">
+                    <ContentPresenter
+                        Name="{x:Static Badge.PART_ContentPresenter}"
+                        Margin="{TemplateBinding Padding}"
+                        HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                        VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                        Content="{TemplateBinding Content}"
+                        ContentTemplate="{TemplateBinding ContentTemplate}"
+                        Foreground="{DynamicResource BadgeContentForeground}" />
+                    <Border
+                        Name="{x:Static Badge.PART_BadgeContainer}"
+                        MinWidth="{DynamicResource BadgeMinWidth}"
+                        MinHeight="{DynamicResource BadgeMinHeight}"
+                        Padding="{DynamicResource BadgePadding}"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="{TemplateBinding CornerRadius}"
+                        RenderTransformOrigin=".5,.5"
+                        Theme="{TemplateBinding BadgeTheme}"
+                        UseLayoutRounding="False">
+                        <Border.IsVisible>
+                            <MultiBinding Converter="{x:Static BoolConverters.Or}">
+                                <Binding Path="Header" RelativeSource="{RelativeSource TemplatedParent}" Converter="{x:Static ObjectConverters.IsNotNull}" />
+                                <Binding Path="Dot" RelativeSource="{RelativeSource TemplatedParent}" />
+                            </MultiBinding>
+                        </Border.IsVisible>
+                        <ContentPresenter
+                            Name="{x:Static Badge.PART_HeaderPresenter}"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Focusable="False"
+                            IsTabStop="False"
+                            TextElement.FontSize="{TemplateBinding BadgeFontSize}"
+                            TextElement.Foreground="{TemplateBinding Foreground}">
+                            <ContentPresenter.Content>
+                                <MultiBinding Converter="{StaticResource BadgeContentConverter}">
+                                    <Binding Path="Header" RelativeSource="{RelativeSource TemplatedParent}" />
+                                    <Binding Path="OverflowCount" RelativeSource="{RelativeSource TemplatedParent}" />
+                                </MultiBinding>
+                            </ContentPresenter.Content>
+                        </ContentPresenter>
+                    </Border>
+                </Panel>
+            </ControlTemplate>
+        </Setter>
+
+        <Style Selector="^[Dot=True] /template/ Border#PART_BadgeContainer">
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="MinWidth" Value="{DynamicResource BadgeDotWidth}" />
+            <Setter Property="MinHeight" Value="{DynamicResource BadgeDotHeight}" />
+        </Style>
+        <Style Selector="^[Dot=True] /template/ ContentPresenter#PART_HeaderPresenter">
+            <Setter Property="IsVisible" Value="False" />
+        </Style>
+        
+        <Style Selector="^[CornerPosition=TopLeft] /template/ Border#PART_BadgeContainer">
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="VerticalAlignment" Value="Top" />
+        </Style>
+        <Style Selector="^[CornerPosition=TopRight] /template/ Border#PART_BadgeContainer">
+            <Setter Property="HorizontalAlignment" Value="Right" />
+            <Setter Property="VerticalAlignment" Value="Top" />
+        </Style>
+        <Style Selector="^[CornerPosition=BottomLeft] /template/ Border#PART_BadgeContainer">
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="VerticalAlignment" Value="Bottom" />
+        </Style>
+        <Style Selector="^[CornerPosition=BottomRight] /template/ Border#PART_BadgeContainer">
+            <Setter Property="HorizontalAlignment" Value="Right" />
+            <Setter Property="VerticalAlignment" Value="Bottom" />
+        </Style>
+
+        <Style Selector="^.Primary /template/ Border#PART_BadgeContainer">
+            <Setter Property="Background" Value="{DynamicResource BlueNormal}" />
+        </Style>
+        <Style Selector="^.Success /template/ Border#PART_BadgeContainer">
+            <Setter Property="Background" Value="{DynamicResource GreenNormal}" />
+        </Style>
+        <Style Selector="^.Warning /template/ Border#PART_BadgeContainer">
+            <Setter Property="Background" Value="{DynamicResource OrangeNormal}" />
+        </Style>
+        <Style Selector="^.Danger /template/ Border#PART_BadgeContainer">
+            <Setter Property="Background" Value="{DynamicResource RedNormal}" />
+        </Style>
+     
+    </ControlTheme>
+</ResourceDictionary>

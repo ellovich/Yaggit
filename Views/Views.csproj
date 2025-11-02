@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Library</OutputType>
+        <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+    </PropertyGroup>
+
+	<ItemGroup Label="Other Projects">
+        <ProjectReference Include="..\Models\Models.csproj" />
+        <ProjectReference Include="..\ViewModels\ViewModels.csproj" />
+        <ProjectReference Include="..\CoreUI\CoreUI.csproj" />
+    </ItemGroup>
+
+</Project>

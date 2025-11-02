@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+
+<!-- ####################################################################
+
+This file was generates automatically via the
+IconPacks.Browser (MIT-License).
+
+Visit https://github.com/MahApps/MahApps.Metro.IconPacks and
+https://github.com/MahApps/MahApps.Metro.IconPacks/blob/develop/LICENSE
+for more information.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Icon-Name: 			Clock
+Iconpack:			VaadinIcons
+Iconpack-Homepage: 	https://vaadin.com/icons
+Iconpack-License:	https://github.com/vaadin/web-components/tree/main/packages/icons#license
+
+#####################################################################-->
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="128"
+     height="128">
+    <path d="M512 960c-281.6 0-512-230.4-512-512s230.4-512 512-512 512 230.4 512 512-230.4 512-512 512zM512 64c-211.2 0-384 172.8-384 384s172.8 384 384 384 384-172.8 384-384-172.8-384-384-384zM512 768h-64v-384h320v64h-256z"
+          class="Normal"
+          transform="matrix(0.125,0,0,-0.125,0,120)" />
+</svg>

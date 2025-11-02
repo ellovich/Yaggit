@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!-- ####################################################################
+
+This file was generates automatically via the 
+IconPacks.Browser (MIT-License). 
+
+Visit https://github.com/MahApps/MahApps.Metro.IconPacks and 
+https://github.com/MahApps/MahApps.Metro.IconPacks/blob/develop/LICENSE 
+for more information.
+ 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+Icon-Name: 			Windows
+Iconpack:			BootstrapIcons
+Iconpack-Homepage: 	https://icons.getbootstrap.com/
+Iconpack-License:	https://github.com/twbs/icons?tab=MIT-1-ov-file#readme
+
+#####################################################################-->
+
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="128"
+     height="128">
+    <path d="M122.90625 274.21875L0 258.05625V155.86875H122.90625zM0 41.34375L122.90625 23.85V144.13125H0zM136.4625 142.59375L136.95 23.00625L300 0V142.59375zM300 300L137.4375 276.675V156.4125H300z"
+          class="Normal"
+          transform="matrix(0.4266666666666667,0,0,-0.4266666666666667,0,128)" />
+</svg>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+
+<!-- ####################################################################
+
+This file was generates automatically via the
+IconPacks.Browser (MIT-License).
+
+Visit https://github.com/MahApps/MahApps.Metro.IconPacks and
+https://github.com/MahApps/MahApps.Metro.IconPacks/blob/develop/LICENSE
+for more information.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Icon-Name: 			Alphabetical
+Iconpack:			Material
+Iconpack-Homepage: 	https://materialdesignicons.com/
+Iconpack-License:	https://github.com/Templarian/MaterialDesign/blob/master/LICENSE
+
+#####################################################################-->
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="136"
+     height="136">
+    <path d="M6,11A2,2 0 0,1 8,13V17H4A2,2 0 0,1 2,15V13A2,2 0 0,1 4,11H6M4,13V15H6V13H4M20,13V15H22V17H20A2,2 0 0,1 18,15V13A2,2 0 0,1 20,11H22V13H20M12,7V11H14A2,2 0 0,1 16,13V15A2,2 0 0,1 14,17H12A2,2 0 0,1 10,15V7H12M12,15H14V13H12V15Z"
+          class="Normal"
+          transform="matrix(6.8,0,0,6.8,-13.6,-13.6)" />
+</svg>

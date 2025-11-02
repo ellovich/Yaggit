@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+
+<!-- ####################################################################
+
+This file was generates automatically via the
+IconPacks.Browser (MIT-License).
+
+Visit https://github.com/MahApps/MahApps.Metro.IconPacks and
+https://github.com/MahApps/MahApps.Metro.IconPacks/blob/develop/LICENSE
+for more information.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Icon-Name: 			CommaCircleOutline
+Iconpack:			Material
+Iconpack-Homepage: 	https://materialdesignicons.com/
+Iconpack-License:	https://github.com/Templarian/MaterialDesign/blob/master/LICENSE
+
+#####################################################################-->
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="136"
+     height="136">
+    <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M10,17H13L15,13V7H9V13H12L10,17Z"
+          class="Normal"
+          transform="matrix(6.8,0,0,6.8,-13.6,-13.6)" />
+</svg>

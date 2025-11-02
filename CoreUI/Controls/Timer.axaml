@@ -1,0 +1,36 @@
+﻿<ResourceDictionary     xmlns:assets="using:CoreUI.Assets"
+ xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Design.PreviewWith>
+        <StackPanel Width="400" Height="200" Spacing="10">
+            <StackPanel>
+                <Timer />
+            </StackPanel>
+        </StackPanel>
+    </Design.PreviewWith>
+
+    <ControlTheme x:Key="{x:Type Timer}" TargetType="Timer">
+        <Setter Property="Template">
+            <ControlTemplate TargetType="Timer">
+                <Grid ColumnDefinitions="auto,auto,auto">
+                    <Svg Grid.Column="0" 
+                         Height="14" 
+                         VerticalAlignment="Center" 
+                         Path="{x:Static assets:Icons.stopwatch}" />
+                    
+                    <TextBlock Margin="5 0 0 0" 
+                               Grid.Column="1" 
+                               FontSize="{DynamicResource SmallFontSize}"
+                               VerticalAlignment="Center"
+                               Text="{TemplateBinding Text}" />
+                    <TextBlock Margin="5 0 0 0" Grid.Column="2"
+                               VerticalAlignment="Center"
+                               FontFamily="Consolas"
+                               FontSize="{DynamicResource SmallFontSize}"
+                               Name="textblock"
+                               Text="{TemplateBinding Time}" />
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+</ResourceDictionary>

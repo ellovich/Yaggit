@@ -1,0 +1,590 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:assets="using:CoreUI.Assets">
+
+    <Design.PreviewWith>
+        <StackPanel Margin="5" Spacing="5">
+            <ThemeToggleButton />
+            <StackPanel Orientation="Horizontal">
+                <IconButton Classes="large" SvgPath="{x:Static assets:Icons.cogs}" />
+                <Svg
+                    Width="40"
+                    Height="40"
+                    Css="{DynamicResource SvgColor}"
+                    Path="{x:Static assets:Icons.cogs}"
+                    />
+                <Svg
+                    Width="40"
+                    Height="40"
+                    Css="{DynamicResource SvgColorHover}"
+                    Path="{x:Static assets:Icons.cogs}"
+                    />
+                <Svg
+                    Width="40"
+                    Height="40"
+                    Css="{DynamicResource SvgColorDisabled}"
+                    Path="{x:Static assets:Icons.cogs}"
+                    />
+            </StackPanel>
+            <Expander
+                HorizontalAlignment="Stretch"
+                Background="Transparent"
+                Header="Base Colors"
+                IsExpanded="True"
+                >
+                <AutoGrid
+                    ChildMargin="2"
+                    ColumnCount="3"
+                    ColumnDefinitions="180,180,180"
+                    RowCount="999"
+                    >
+
+                    <ColorItem ResourceName="DefaultBackground" Color="{DynamicResource DefaultBackground}" />
+                    <ColorItem ResourceName="DefaultForeground" Color="{DynamicResource DefaultForeground}" />
+                    <ColorItem ResourceName="Border" Color="{DynamicResource Border}" />
+                    <ColorItem ResourceName="DarkBorder" Color="{DynamicResource DarkBorder}" />
+                    <ColorItem ResourceName="SecondColor" Color="{DynamicResource SecondColor}" />
+                    <ColorItem ResourceName="ThirdColor" Color="{DynamicResource ThirdColor}" />
+                    <ColorItem ResourceName="FilterColor" Color="{DynamicResource FilterColor}" />
+                    <ColorItem ResourceName="" Color="{x:Null}" />
+                    <ColorItem ResourceName="" Color="{x:Null}" />
+
+                    <ColorItem ResourceName="AccentColor" Color="{DynamicResource AccentColor}" />
+                    <ColorItem ResourceName="AccentColorHover" Color="{DynamicResource AccentColorHover}" />
+                    <ColorItem ResourceName="AccentColorSelected" Color="{DynamicResource AccentColorHover}" />
+                    <ColorItem ResourceName="AccentColorDisabled" Color="{DynamicResource AccentColorDisabled}" />
+                    <ColorItem ResourceName="AccentGradient" Color="{DynamicResource AccentGradient}" />
+                    <ColorItem ResourceName="" Color="{x:Null}" />
+
+                    <ColorItem ResourceName="TransparentColorHover" Color="{DynamicResource TransparentColorHover}" />
+                    <ColorItem ResourceName="TransparentColorSelected" Color="{DynamicResource TransparentColorSelected}" />
+                    <ColorItem ResourceName="TransparentColor" Color="{DynamicResource TransparentColor}" />
+                    <ColorItem ResourceName="TransparentBorder" Color="{DynamicResource TransparentBorder}" />
+                    <ColorItem ResourceName="" Color="{x:Null}" />
+                    <ColorItem ResourceName="" Color="{x:Null}" />
+
+                    <!--  Typography  -->
+                    <ColorItem ResourceName="Header1Color" Color="{DynamicResource Header1Color}" />
+                    <ColorItem ResourceName="Header2Color" Color="{DynamicResource Header2Color}" />
+                    <ColorItem ResourceName="Header3Color" Color="{DynamicResource Header3Color}" />
+                    <ColorItem ResourceName="TextNormal" Color="{DynamicResource TextNormal}" />
+                    <ColorItem ResourceName="TextHover" Color="{DynamicResource TextHover}" />
+                    <ColorItem ResourceName="TextSelected" Color="{DynamicResource TextSelected}" />
+                    <ColorItem ResourceName="HelperTextColor" Color="{DynamicResource HelperTextColor}" />
+                    <ColorItem ResourceName="" Color="{x:Null}" />
+                    <ColorItem ResourceName="" Color="{x:Null}" />
+
+                    <ColorItem ResourceName="SidebarItem" Color="{DynamicResource SidebarItem}" />
+                    <ColorItem ResourceName="SidebarItemHover" Color="{DynamicResource SidebarItemHover}" />
+                    <ColorItem ResourceName="SidebarItemSelected" Color="{DynamicResource SidebarItemSelected}" />
+
+                    <ColorItem ResourceName="ConsoleBackground" Color="{DynamicResource ConsoleBackground}" />
+                    <ColorItem ResourceName="" Color="{x:Null}" />
+                    <ColorItem ResourceName="" Color="{x:Null}" />
+
+                    <ColorItem ResourceName="ButtonBgNormal" Color="{DynamicResource ButtonBgNormal}" />
+                    <ColorItem ResourceName="ButtonBgHover" Color="{DynamicResource ButtonBgHover}" />
+                    <ColorItem ResourceName="ButtonBgSelected" Color="{DynamicResource ButtonBgSelected}" />
+
+                    <!--  Gradient  -->
+                    <ColorItem ResourceName="RussiaGradient" Color="{DynamicResource RussiaGradient}" />
+                    <ColorItem ResourceName="" Color="{x:Null}" />
+                    <ColorItem ResourceName="" Color="{x:Null}" />
+
+                    <ColorItem ResourceName="DataGridRowSelectedBg" Color="{DynamicResource DataGridRowSelectedBg}" />
+                    <ColorItem ResourceName="DataGridBorderBg" Color="{DynamicResource DataGridBorderBg}" />
+                    <ColorItem ResourceName="DataGridColumnHeaderBorderBrush" Color="{DynamicResource DataGridColumnHeaderBorderBrush}" />
+                    <ColorItem ResourceName="DataGridBg" Color="{DynamicResource DataGridBg}" />
+                    <ColorItem ResourceName="DataGridRowEvenBg" Color="{DynamicResource DataGridRowEvenBg}" />
+                    <ColorItem ResourceName="DataGridRowOddBg" Color="{DynamicResource DataGridRowOddBg}" />
+                </AutoGrid>
+            </Expander>
+            <Expander
+                HorizontalAlignment="Stretch"
+                Background="Transparent"
+                Header="Colors"
+                IsExpanded="True"
+                >
+                <!--  Colors  -->
+                <AutoGrid
+                    ChildMargin="2"
+                    ColumnCount="3"
+                    ColumnDefinitions="180,180,180"
+                    RowCount="999"
+                    >
+                    <!--  Gray  -->
+                    <ColorItem ResourceName="GrayNormal" Color="{DynamicResource GrayNormal}" />
+                    <ColorItem ResourceName="GrayHover" Color="{DynamicResource GrayHover}" />
+                    <ColorItem ResourceName="GraySelected" Color="{DynamicResource GraySelected}" />
+                    <!--  GrayLight  -->
+                    <ColorItem ResourceName="GrayLightNormal" Color="{DynamicResource GrayLightNormal}" />
+                    <ColorItem ResourceName="GrayLightHover" Color="{DynamicResource GrayLightHover}" />
+                    <ColorItem ResourceName="GrayLightSelected" Color="{DynamicResource GrayLightSelected}" />
+                    <!--  BlueDark  -->
+                    <ColorItem ResourceName="BlueDarkNormal" Color="{DynamicResource BlueDarkNormal}" />
+                    <ColorItem ResourceName="BlueDarkHover" Color="{DynamicResource BlueDarkHover}" />
+                    <ColorItem ResourceName="BlueDarkSelected" Color="{DynamicResource BlueDarkSelected}" />
+                    <!--  Blue  -->
+                    <ColorItem ResourceName="BlueNormal" Color="{DynamicResource BlueNormal}" />
+                    <ColorItem ResourceName="BlueHover" Color="{DynamicResource BlueHover}" />
+                    <ColorItem ResourceName="BlueSelected" Color="{DynamicResource BlueSelected}" />
+                    <!--  BlueLight  -->
+                    <ColorItem ResourceName="BlueLightNormal" Color="{DynamicResource BlueLightNormal}" />
+                    <ColorItem ResourceName="BlueLightHover" Color="{DynamicResource BlueLightHover}" />
+                    <ColorItem ResourceName="BlueLightSelected" Color="{DynamicResource BlueLightSelected}" />
+                    <!--  Red  -->
+                    <ColorItem ResourceName="RedNormal" Color="{DynamicResource RedNormal}" />
+                    <ColorItem ResourceName="RedHover" Color="{DynamicResource RedHover}" />
+                    <ColorItem ResourceName="RedSelected" Color="{DynamicResource RedSelected}" />
+                    <!--  RedLight  -->
+                    <ColorItem ResourceName="RedLightNormal" Color="{DynamicResource RedLightNormal}" />
+                    <ColorItem ResourceName="RedLightHover" Color="{DynamicResource RedLightHover}" />
+                    <ColorItem ResourceName="RedLightSelected" Color="{DynamicResource RedLightSelected}" />
+                    <!--  Yellow  -->
+                    <ColorItem ResourceName="YellowNormal" Color="{DynamicResource YellowNormal}" />
+                    <ColorItem ResourceName="YellowHover" Color="{DynamicResource YellowHover}" />
+                    <ColorItem ResourceName="YellowSelected" Color="{DynamicResource YellowSelected}" />
+                    <!--  YellowLight  -->
+                    <ColorItem ResourceName="YellowLightNormal" Color="{DynamicResource YellowLightNormal}" />
+                    <ColorItem ResourceName="YellowLightHover" Color="{DynamicResource YellowLightHover}" />
+                    <ColorItem ResourceName="YellowLightSelected" Color="{DynamicResource YellowLightSelected}" />
+                    <!--  Green  -->
+                    <ColorItem ResourceName="GreenNormal" Color="{DynamicResource GreenNormal}" />
+                    <ColorItem ResourceName="GreenHover" Color="{DynamicResource GreenHover}" />
+                    <ColorItem ResourceName="GreenSelected" Color="{DynamicResource GreenSelected}" />
+                    <!--  GreenLight  -->
+                    <ColorItem ResourceName="GreenLightNormal" Color="{DynamicResource GreenLightNormal}" />
+                    <ColorItem ResourceName="GreenLightHover" Color="{DynamicResource GreenLightHover}" />
+                    <ColorItem ResourceName="GreenLightSelected" Color="{DynamicResource GreenLightSelected}" />
+                    <!--  Purple  -->
+                    <ColorItem ResourceName="PurpleNormal" Color="{DynamicResource PurpleNormal}" />
+                    <ColorItem ResourceName="PurpleHover" Color="{DynamicResource PurpleHover}" />
+                    <ColorItem ResourceName="PurpleSelected" Color="{DynamicResource PurpleSelected}" />
+                    <!--  PurpleLight  -->
+                    <ColorItem ResourceName="PurpleLightNormal" Color="{DynamicResource PurpleLightNormal}" />
+                    <ColorItem ResourceName="PurpleLightHover" Color="{DynamicResource PurpleLightHover}" />
+                    <ColorItem ResourceName="PurpleLightSelected" Color="{DynamicResource PurpleLightSelected}" />
+                    <!--  Lime  -->
+                    <ColorItem ResourceName="LimeNormal" Color="{DynamicResource LimeNormal}" />
+                    <ColorItem ResourceName="LimeHover" Color="{DynamicResource LimeHover}" />
+                    <ColorItem ResourceName="LimeSelected" Color="{DynamicResource LimeSelected}" />
+                    <!--  LimeLight  -->
+                    <ColorItem ResourceName="LimeLightNormal" Color="{DynamicResource LimeLightNormal}" />
+                    <ColorItem ResourceName="LimeLightHover" Color="{DynamicResource LimeLightHover}" />
+                    <ColorItem ResourceName="LimeLightSelected" Color="{DynamicResource LimeLightSelected}" />
+                    <!--  Turquoise  -->
+                    <ColorItem ResourceName="TurquoiseNormal" Color="{DynamicResource TurquoiseNormal}" />
+                    <ColorItem ResourceName="TurquoiseHover" Color="{DynamicResource TurquoiseHover}" />
+                    <ColorItem ResourceName="TurquoiseSelected" Color="{DynamicResource TurquoiseSelected}" />
+                    <!--  TurquoiseLight  -->
+                    <ColorItem ResourceName="TurquoiseLightNormal" Color="{DynamicResource TurquoiseLightNormal}" />
+                    <ColorItem ResourceName="TurquoiseLightHover" Color="{DynamicResource TurquoiseLightHover}" />
+                    <ColorItem ResourceName="TurquoiseLightSelected" Color="{DynamicResource TurquoiseLightSelected}" />
+                    <!--  Orange  -->
+                    <ColorItem ResourceName="OrangeNormal" Color="{DynamicResource OrangeNormal}" />
+                    <ColorItem ResourceName="OrangeHover" Color="{DynamicResource OrangeHover}" />
+                    <ColorItem ResourceName="OrangeSelected" Color="{DynamicResource OrangeSelected}" />
+                    <!--  OrangeLight  -->
+                    <ColorItem ResourceName="OrangeLightNormal" Color="{DynamicResource OrangeLightNormal}" />
+                    <ColorItem ResourceName="OrangeLightHover" Color="{DynamicResource OrangeLightHover}" />
+                    <ColorItem ResourceName="OrangeLightSelected" Color="{DynamicResource OrangeLightSelected}" />
+                    <!--  Brown  -->
+                    <ColorItem ResourceName="BrownNormal" Color="{DynamicResource BrownNormal}" />
+                    <ColorItem ResourceName="BrownHover" Color="{DynamicResource BrownHover}" />
+                    <ColorItem ResourceName="BrownSelected" Color="{DynamicResource BrownSelected}" />
+                    <!--  BrownLight  -->
+                    <ColorItem ResourceName="BrownLightNormal" Color="{DynamicResource BrownLightNormal}" />
+                    <ColorItem ResourceName="BrownLightHover" Color="{DynamicResource BrownLightHover}" />
+                    <ColorItem ResourceName="BrownLightSelected" Color="{DynamicResource BrownLightSelected}" />
+                    <!--  Lavender  -->
+                    <ColorItem ResourceName="LavenderNormal" Color="{DynamicResource LavenderNormal}" />
+                    <ColorItem ResourceName="LavenderHover" Color="{DynamicResource LavenderHover}" />
+                    <ColorItem ResourceName="LavenderSelected" Color="{DynamicResource LavenderSelected}" />
+                    <!--  LavenderLight  -->
+                    <ColorItem ResourceName="LavenderLightNormal" Color="{DynamicResource LavenderLightNormal}" />
+                    <ColorItem ResourceName="LavenderLightHover" Color="{DynamicResource LavenderLightHover}" />
+                    <ColorItem ResourceName="LavenderLightSelected" Color="{DynamicResource LavenderLightSelected}" />
+                    <!--  Pink  -->
+                    <ColorItem ResourceName="PinkNormal" Color="{DynamicResource PinkNormal}" />
+                    <ColorItem ResourceName="PinkHover" Color="{DynamicResource PinkHover}" />
+                    <ColorItem ResourceName="PinkSelected" Color="{DynamicResource PinkSelected}" />
+                    <!--  PinkLight  -->
+                    <ColorItem ResourceName="PinkLightNormal" Color="{DynamicResource PinkLightNormal}" />
+                    <ColorItem ResourceName="PinkLightHover" Color="{DynamicResource PinkLightHover}" />
+                    <ColorItem ResourceName="PinkLightSelected" Color="{DynamicResource PinkLightSelected}" />
+                    <!--  Grass  -->
+                    <ColorItem ResourceName="GrassNormal" Color="{DynamicResource GrassNormal}" />
+                    <ColorItem ResourceName="GrassHover" Color="{DynamicResource GrassHover}" />
+                    <ColorItem ResourceName="GrassSelected" Color="{DynamicResource GrassSelected}" />
+                    <!--  GrassLight  -->
+                    <ColorItem ResourceName="GrassLightNormal" Color="{DynamicResource GrassLightNormal}" />
+                    <ColorItem ResourceName="GrassLightHover" Color="{DynamicResource GrassLightHover}" />
+                    <ColorItem ResourceName="GrassLightSelected" Color="{DynamicResource GrassLightSelected}" />
+                </AutoGrid>
+            </Expander>
+        </StackPanel>
+    </Design.PreviewWith>
+
+    <ResourceDictionary.ThemeDictionaries>
+        <ResourceDictionary x:Key="Light">
+
+            <SolidColorBrush x:Key="Outline/Accent/Focus" Color="#4C62C9" />
+
+            <x:String x:Key="SvgColor">.Accent { fill: #4C62C9; } .Normal { fill: #3b3e42; } .Blue { fill: #70bbff; } .Green { fill: #61cb6d; } .Orange { fill: #f99b0d; } .Red { fill: #ff625b; }</x:String>
+            <x:String x:Key="SvgColorDisabled">.Accent { fill: #5d6bae; } .Normal { fill: #484c51; } .Blue { fill: #70bbff; } .Green { fill: #61cb6d; } .Orange { fill: #f99b0d; } .Red { fill: #ff625b; }</x:String>
+            <x:String x:Key="SvgColorHover">.Accent { fill: #4255ae; } .Normal { fill: #2b2d30; } .Blue { fill: #70bbff; } .Green { fill: #61cb6d; } .Orange { fill: #f99b0d; } .Red { fill: #ff625b; }</x:String>
+
+            <Color x:Key="DefaultBackground">#ebf1f9</Color>
+            <Color x:Key="DefaultForeground">#2b2b2b</Color>
+            <Color x:Key="Border">#afb5be</Color>
+            <Color x:Key="DarkBorder">#484a4e</Color>
+            <Color x:Key="SecondColor">#b2c6e7</Color>
+            <Color x:Key="ThirdColor">#d0ddf1</Color>
+            <Color x:Key="FilterColor">#eef3fd</Color>
+
+            <Color x:Key="AccentColor">#4C62C9</Color>
+            <Color x:Key="AccentColorHover">#4255ae</Color>
+            <Color x:Key="AccentColorSelected">#4c63d3</Color>
+			<Color x:Key="AccentColor20">#554C62C9</Color>
+			<Color x:Key="AccentColorHover20">#554255ae</Color>
+			<Color x:Key="AccentColorSelected20">#554c63d3</Color>
+            <Color x:Key="AccentColorDisabled">#5d6bae</Color>
+            <Color x:Key="AccentGr1">#cc4c62c9</Color>
+            <Color x:Key="AccentGr2">#cc2a83d1</Color>
+            <Color x:Key="AccentGr3">#cc4c62c9</Color>
+            <Color x:Key="AccentGr4">#cc2a83d1</Color>
+
+            <Color x:Key="TransparentColor">#A0FAFCFD</Color>
+            <Color x:Key="TransparentColorHover">#18CCCCCC</Color>
+            <Color x:Key="TransparentColorSelected">#18eeeeee</Color>
+            <Color x:Key="TransparentBorder">#A0FAFCFD</Color>
+
+            <Color x:Key="Header1Color">#2b2b2b</Color>
+            <Color x:Key="Header2Color">#2b2b2b</Color>
+            <Color x:Key="Header3Color">#2b2b2b</Color>
+            <Color x:Key="TextNormal">#001729</Color>
+            <Color x:Key="TextHover">#4d5d69</Color>
+            <Color x:Key="TextSelected">#99a2a9</Color>
+            <Color x:Key="HelperTextColor">#5f5f60</Color>
+
+            <Color x:Key="SidebarItem">#becde7</Color>
+            <Color x:Key="SidebarItemHover">#9fbae6</Color>
+            <Color x:Key="SidebarItemSelected">#80a7e7</Color>
+
+            <Color x:Key="ConsoleBackground">#dadada</Color>
+
+            <Color x:Key="ButtonBgNormal">#EEF3FD</Color>
+            <Color x:Key="ButtonBgHover">#CBD7EF</Color>
+            <Color x:Key="ButtonBgSelected">#C2CCE1</Color>
+
+            <Color x:Key="DataGridRowSelectedBg">#E14C62C9</Color>
+            <Color x:Key="DataGridBorderBg">#B2C6E7</Color>
+            <Color x:Key="DataGridColumnHeaderBorderBrush">DarkGray</Color>
+            <Color x:Key="DataGridBg">#ffffff</Color>
+            <Color x:Key="DataGridRowEvenBg">White</Color>
+            <Color x:Key="DataGridRowOddBg">#EEF3FD</Color>
+
+            <Color x:Key="Key">#FDFFA3</Color>
+
+            <!--  Gray  -->
+            <Color x:Key="GrayNormal">#ced4dd</Color>
+            <Color x:Key="GrayHover">#afb7c2</Color>
+            <Color x:Key="GraySelected">#e4e8ef</Color>
+            <!--  GrayLight  -->
+            <Color x:Key="GrayLightNormal">#ced4dd</Color>
+            <Color x:Key="GrayLightHover">#afb7c2</Color>
+            <Color x:Key="GrayLightSelected">#e4e8ef</Color>
+            <!--  DarkBlue  -->
+            <Color x:Key="BlueDarkNormal">#1451ae</Color>
+            <Color x:Key="BlueDarkHover">#0e51b7</Color>
+            <Color x:Key="BlueDarkSelected">#2374f0</Color>
+            <!--  Blue  -->
+            <Color x:Key="BlueNormal">#70bbff</Color>
+            <Color x:Key="BlueNormal20">#8870bbff</Color>
+            <Color x:Key="BlueHover">#4ba5f4</Color>
+            <Color x:Key="BlueSelected">#86c5ff</Color>
+            <!--  BlueLight  -->
+            <Color x:Key="BlueLightNormal">#d0e3f5</Color>
+            <Color x:Key="BlueLightHover">#b5d5f3</Color>
+            <Color x:Key="BlueLightSelected">#deefff</Color>
+            <!--  Red  -->
+            <Color x:Key="RedNormal">#ff625b</Color>
+            <Color x:Key="RedNormal20">#88ff625b</Color>
+            <Color x:Key="RedHover">#ee4035</Color>
+            <Color x:Key="RedSelected">#ff7c76</Color>
+            <!--  RedLight  -->
+            <Color x:Key="RedLightNormal">#ffa6a6</Color>
+            <Color x:Key="RedLightHover">#ee9c9c</Color>
+            <Color x:Key="RedLightSelected">#ffc5c5</Color>
+            <!--  Yellow  -->
+            <Color x:Key="YellowNormal">#ffbb1e</Color>
+            <Color x:Key="YellowHover">#f99b0d</Color>
+            <Color x:Key="YellowSelected">#ffc848</Color>
+            <!--  YellowLight  -->
+            <Color x:Key="YellowLightNormal">#fae784</Color>
+            <Color x:Key="YellowLightHover">#eedc7c</Color>
+            <Color x:Key="YellowLightSelected">#fcefae</Color>
+            <!--  Green  -->
+            <Color x:Key="GreenNormal">#61cb6d</Color>
+            <Color x:Key="GreenNormal20">#8861cb6d</Color>
+            <Color x:Key="GreenHover">#41b259</Color>
+            <Color x:Key="GreenSelected">#65d97e</Color>
+            <!--  GreenLight  -->
+            <Color x:Key="GreenLightNormal">#9edf9d</Color>
+            <Color x:Key="GreenLightHover">#8dd38c</Color>
+            <Color x:Key="GreenLightSelected">#bdf6bc</Color>
+            <!--  Purple  -->
+            <Color x:Key="PurpleNormal">#aa98ef</Color>
+            <Color x:Key="PurpleHover">#9481e0</Color>
+            <Color x:Key="PurpleSelected">#cbc0f8</Color>
+            <!--  PurpleLight  -->
+            <Color x:Key="PurpleLightNormal">#e2cdfd</Color>
+            <Color x:Key="PurpleLightHover">#d3b9f4</Color>
+            <Color x:Key="PurpleLightSelected">#ecddff</Color>
+            <!--  Lime  -->
+            <Color x:Key="LimeNormal">#bacb53</Color>
+            <Color x:Key="LimeHover">#a5b642</Color>
+            <Color x:Key="LimeSelected">#d2e174</Color>
+            <!--  LimeLight  -->
+            <Color x:Key="LimeLightNormal">#d5e37b</Color>
+            <Color x:Key="LimeLightHover">#c2cf6e</Color>
+            <Color x:Key="LimeLightSelected">#e8f2ae</Color>
+            <!--  Turquoise  -->
+            <Color x:Key="TurquoiseNormal">#44cad2</Color>
+            <Color x:Key="TurquoiseHover">#3fb7be</Color>
+            <Color x:Key="TurquoiseSelected">#6fe2e9</Color>
+            <!--  TurquoiseLight  -->
+            <Color x:Key="TurquoiseLightNormal">#9eefe1</Color>
+            <Color x:Key="TurquoiseLightHover">#85dccd</Color>
+            <Color x:Key="TurquoiseLightSelected">#c9f9f0</Color>
+            <!--  Orange  -->
+            <Color x:Key="OrangeNormal">#fa7f16</Color>
+            <Color x:Key="OrangeNormal20">#88fa7f16</Color>
+            <Color x:Key="OrangeHover">#e67311</Color>
+            <Color x:Key="OrangeSelected">#ee9852</Color>
+            <!--  OrangeLight  -->
+            <Color x:Key="OrangeLightNormal">#fcba7e</Color>
+            <Color x:Key="OrangeLightHover">#f9a85e</Color>
+            <Color x:Key="OrangeLightSelected">#ffcda0</Color>
+            <!--  Brown  -->
+            <Color x:Key="BrownNormal">#b78d81</Color>
+            <Color x:Key="BrownHover">#a5847a</Color>
+            <Color x:Key="BrownSelected">#cba89e</Color>
+            <!--  BrownLight  -->
+            <Color x:Key="BrownLightNormal">#dfc5be</Color>
+            <Color x:Key="BrownLightHover">#cfb7b0</Color>
+            <Color x:Key="BrownLightSelected">#f1e0db</Color>
+            <!--  Lavender  -->
+            <Color x:Key="LavenderNormal">#849af2</Color>
+            <Color x:Key="LavenderHover">#7086e1</Color>
+            <Color x:Key="LavenderSelected">#92a6f9</Color>
+            <!--  LavenderLight  -->
+            <Color x:Key="LavenderLightNormal">#aebdfa</Color>
+            <Color x:Key="LavenderLightHover">#9babee</Color>
+            <Color x:Key="LavenderLightSelected">#d3dbfa</Color>
+            <!--  Pink  -->
+            <Color x:Key="PinkNormal">#eb90cb</Color>
+            <Color x:Key="PinkHover">#d282b6</Color>
+            <Color x:Key="PinkSelected">#f3b9df</Color>
+            <!--  PinkLight  -->
+            <Color x:Key="PinkLightNormal">#ebbbdb</Color>
+            <Color x:Key="PinkLightHover">#d79fc4</Color>
+            <Color x:Key="PinkLightSelected">#f4d5ea</Color>
+            <!--  Grass  -->
+            <Color x:Key="GrassNormal">#98c2a2</Color>
+            <Color x:Key="GrassHover">#6aa978</Color>
+            <Color x:Key="GrassSelected">#b7d1be</Color>
+            <!--  GrassLight  -->
+            <Color x:Key="GrassLightNormal">#cddfd2</Color>
+            <Color x:Key="GrassLightHover">#b1c8b6</Color>
+            <Color x:Key="GrassLightSelected">#deeee2</Color>
+        </ResourceDictionary>
+
+        <ResourceDictionary x:Key="Dark">
+            <SolidColorBrush x:Key="Outline/Accent/Focus" Color="#4C62C9" />
+
+            <x:String x:Key="SvgColor">.Accent { fill: #4C62C9; } .Normal { fill: #D4D5D6; } .Blue { fill: #539bdb; } .Green { fill: #33944b; } .Orange { fill: #d27e35; } .Red { fill: #bd4343; }</x:String>
+            <x:String x:Key="SvgColorHover">.Accent { fill: #4255ae; } .Normal { fill: #eaebec; } .Blue { fill: #539bdb; } .Green { fill: #33944b; } .Orange { fill: #d27e35; } .Red { fill: #bd4343; }</x:String>
+            <x:String x:Key="SvgColorDisabled">.Accent { fill: #5d6bae; } .Normal { fill: #a1a2a3; } .Blue { fill: #539bdb; } .Green { fill: #33944b; } .Orange { fill: #d27e35; } .Red { fill: #bd4343; }</x:String>
+
+            <Color x:Key="DefaultBackground">#2B333C</Color>
+            <Color x:Key="DefaultForeground">#D4D5D6</Color>
+            <Color x:Key="Border">#555c63</Color>
+            <Color x:Key="DarkBorder">#6e7781</Color>
+            <Color x:Key="SecondColor">#424a58</Color>
+            <Color x:Key="ThirdColor">#353d45</Color>
+            <Color x:Key="FilterColor">#2e353c</Color>
+            <!-- <Color x:Key="SecondColor">#1f2833</Color> -->
+
+            <Color x:Key="AccentColor">#4C62C9</Color>
+            <Color x:Key="AccentColorHover">#4255ae</Color>
+            <Color x:Key="AccentColorSelected">#4c63d3</Color>
+            <Color x:Key="AccentColor20">#554C62C9</Color>
+            <Color x:Key="AccentColorHover20">#554255ae</Color>
+            <Color x:Key="AccentColorSelected20">#554c63d3</Color>
+
+            <Color x:Key="AccentColorDisabled">#5d6bae</Color>
+            <Color x:Key="AccentGr1">#cc4c62c9</Color>
+            <Color x:Key="AccentGr2">#cc2a83d1</Color>
+            <Color x:Key="AccentGr3">#cc4c62c9</Color>
+            <Color x:Key="AccentGr4">#cc2a83d1</Color>
+
+            <Color x:Key="TransparentBorder">#3b3b3b</Color>
+            <Color x:Key="TransparentColor">#0CFFFFFF</Color>
+            <Color x:Key="TransparentColorHover">#18FFFFFF</Color>
+            <Color x:Key="TransparentColorSelected">#18eeeeee</Color>
+
+            <Color x:Key="Header1Color">#D4D5D6</Color>
+            <Color x:Key="Header2Color">#D4D5D6</Color>
+            <Color x:Key="Header3Color">#D4D5D6</Color>
+            <Color x:Key="TextNormal">#f2f3f4</Color>
+            <Color x:Key="TextHover">#ccd1d4</Color>
+            <Color x:Key="TextSelected">#788996</Color>
+            <Color x:Key="HelperTextColor">#aaada9</Color>
+
+            <Color x:Key="SidebarItem">#313943</Color>
+            <Color x:Key="SidebarItemHover">#4c6187</Color>
+            <Color x:Key="SidebarItemSelected">#435677</Color>
+
+            <Color x:Key="ConsoleBackground">#212121</Color>
+
+            <Color x:Key="ButtonBgNormal">#212931</Color>
+            <Color x:Key="ButtonBgHover">#1d232a</Color>
+            <Color x:Key="ButtonBgSelected">#262f39</Color>
+
+            <Color x:Key="DataGridRowSelectedBg">#7E8BC9</Color>
+            <Color x:Key="DataGridBorderBg">#424a58</Color>
+            <Color x:Key="DataGridColumnHeaderBorderBrush">#d3d3d3</Color>
+            <Color x:Key="DataGridBg">#262a31</Color>
+            <Color x:Key="DataGridRowEvenBg">#262a31</Color>
+            <Color x:Key="DataGridRowOddBg">#2f3339</Color>
+
+            <Color x:Key="Key">#3E3E2A</Color>
+
+            <!--  Gray  -->
+            <Color x:Key="GrayNormal">#778497</Color>
+            <Color x:Key="GrayHover">#636f81</Color>
+            <Color x:Key="GraySelected">#8290a5</Color>
+            <!--  GrayLight  -->
+            <Color x:Key="GrayLightNormal">#778497</Color>
+            <Color x:Key="GrayLightHover">#636f81</Color>
+            <Color x:Key="GrayLightSelected">#8290a5</Color>
+            <!--  DarkBlue  -->
+            <Color x:Key="BlueDarkNormal">#1d67d8</Color>
+            <Color x:Key="BlueDarkHover">#1a5bbf</Color>
+            <Color x:Key="BlueDarkSelected">#1f6fe9</Color>
+            <!--  Blue  -->
+            <Color x:Key="BlueNormal">#539bdb</Color>
+            <Color x:Key="BlueNormal20">#55539bdb</Color>
+            <Color x:Key="BlueHover">#3b83c3</Color>
+            <Color x:Key="BlueSelected">#61a8e9</Color>
+            <!--  BlueLight  -->
+            <Color x:Key="BlueLightNormal">#486178</Color>
+            <Color x:Key="BlueLightHover">#3c5871</Color>
+            <Color x:Key="BlueLightSelected">#506b85</Color>
+            <!--  Red  -->
+            <Color x:Key="RedNormal">#bd4343</Color>
+            <Color x:Key="RedNormal20">#55bd4343</Color>
+            <Color x:Key="RedHover">#b63a3a</Color>
+            <Color x:Key="RedSelected">#cd4e4e</Color>
+            <!--  RedLight  -->
+            <Color x:Key="RedLightNormal">#924046</Color>
+            <Color x:Key="RedLightHover">#793a3e</Color>
+            <Color x:Key="RedLightSelected">#98484d</Color>
+            <!--  Yellow  -->
+            <Color x:Key="YellowNormal">#cc9c20</Color>
+            <Color x:Key="YellowHover">#ae861e</Color>
+            <Color x:Key="YellowSelected">#c59f3e</Color>
+            <!--  YellowLight  -->
+            <Color x:Key="YellowLightNormal">#9f8236</Color>
+            <Color x:Key="YellowLightHover">#8f742d</Color>
+            <Color x:Key="YellowLightSelected">#a88c44</Color>
+            <!--  Green  -->
+            <Color x:Key="GreenNormal">#33944b</Color>
+            <Color x:Key="GreenNormal20">#5533944b</Color>
+            <Color x:Key="GreenHover">#397748</Color>
+            <Color x:Key="GreenSelected">#4aa060</Color>
+            <!--  GreenLight  -->
+            <Color x:Key="GreenLightNormal">#507c53</Color>
+            <Color x:Key="GreenLightHover">#436545</Color>
+            <Color x:Key="GreenLightSelected">#558659</Color>
+            <!--  Purple  -->
+            <Color x:Key="PurpleNormal">#8070c1</Color>
+            <Color x:Key="PurpleHover">#6e5bbb</Color>
+            <Color x:Key="PurpleSelected">#8e7ecf</Color>
+            <!--  PurpleLight  -->
+            <Color x:Key="PurpleLightNormal">#6e5d82</Color>
+            <Color x:Key="PurpleLightHover">#5c4b71</Color>
+            <Color x:Key="PurpleLightSelected">#7b6a8f</Color>
+            <!--  Lime  -->
+            <Color x:Key="LimeNormal">#909a54</Color>
+            <Color x:Key="LimeHover">#878f4b</Color>
+            <Color x:Key="LimeSelected">#9ea865</Color>
+            <!--  LimeLight  -->
+            <Color x:Key="LimeLightNormal">#777d51</Color>
+            <Color x:Key="LimeLightHover">#5f6440</Color>
+            <Color x:Key="LimeLightSelected">#83895f</Color>
+            <!--  Turquoise  -->
+            <Color x:Key="TurquoiseNormal">#23a1b1</Color>
+            <Color x:Key="TurquoiseHover">#2b909d</Color>
+            <Color x:Key="TurquoiseSelected">#5aaeb9</Color>
+            <!--  TurquoiseLight  -->
+            <Color x:Key="TurquoiseLightNormal">#3f828b</Color>
+            <Color x:Key="TurquoiseLightHover">#336870</Color>
+            <Color x:Key="TurquoiseLightSelected">#4f848b</Color>
+            <!--  Orange  -->
+            <Color x:Key="OrangeNormal">#d27e35</Color>
+            <Color x:Key="OrangeNormal20">#55d27e35</Color>
+            <Color x:Key="OrangeHover">#b97337</Color>
+            <Color x:Key="OrangeSelected">#d78b49</Color>
+            <!--  OrangeLight  -->
+            <Color x:Key="OrangeLightNormal">#9f6236</Color>
+            <Color x:Key="OrangeLightHover">#8c562f</Color>
+            <Color x:Key="OrangeLightSelected">#a67652</Color>
+            <!--  Brown  -->
+            <Color x:Key="BrownNormal">#90766f</Color>
+            <Color x:Key="BrownHover">#7c655f</Color>
+            <Color x:Key="BrownSelected">#ab9089</Color>
+            <!--  BrownLight  -->
+            <Color x:Key="BrownLightNormal">#74605b</Color>
+            <Color x:Key="BrownLightHover">#63524e</Color>
+            <Color x:Key="BrownLightSelected">#85706b</Color>
+            <!--  Lavender  -->
+            <Color x:Key="LavenderNormal">#5871d6</Color>
+            <Color x:Key="LavenderHover">#4e65bf</Color>
+            <Color x:Key="LavenderSelected">#6d84e4</Color>
+            <!--  LavenderLight  -->
+            <Color x:Key="LavenderLightNormal">#55639d</Color>
+            <Color x:Key="LavenderLightHover">#4a578b</Color>
+            <Color x:Key="LavenderLightSelected">#6672a4</Color>
+            <!--  Pink  -->
+            <Color x:Key="PinkNormal">#b2759d</Color>
+            <Color x:Key="PinkHover">#985a83</Color>
+            <Color x:Key="PinkSelected">#c088ad</Color>
+            <!--  PinkLight  -->
+            <Color x:Key="PinkLightNormal">#7e526f</Color>
+            <Color x:Key="PinkLightHover">#54495a</Color>
+            <Color x:Key="PinkLightSelected">#8e6480</Color>
+            <!--  Grass  -->
+            <Color x:Key="GrassNormal">#788f7e</Color>
+            <Color x:Key="GrassHover">#60876a</Color>
+            <Color x:Key="GrassSelected">#809f88</Color>
+            <!--  GrassLight  -->
+            <Color x:Key="GrassLightNormal">#4c5e51</Color>
+            <Color x:Key="GrassLightHover">#435347</Color>
+            <Color x:Key="GrassLightSelected">#57675b</Color>
+        </ResourceDictionary>
+    </ResourceDictionary.ThemeDictionaries>
+
+    <LinearGradientBrush x:Key="AccentGradient" StartPoint="0%,0%" EndPoint="100%,0%">
+        <GradientStop Offset="0.0" Color="{DynamicResource AccentGr1}" />
+        <GradientStop Offset="0.33" Color="{DynamicResource AccentGr2}" />
+        <GradientStop Offset="0.66" Color="{DynamicResource AccentGr3}" />
+        <GradientStop Offset="1.0" Color="{DynamicResource AccentGr4}" />
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="RussiaGradient" StartPoint="0%,0%" EndPoint="0%,100%">
+        <GradientStop Offset="0.0" Color="White" />
+        <GradientStop Offset="0.5" Color="{DynamicResource BlueDarkNormal}" />
+        <GradientStop Offset="1.0" Color="{DynamicResource RedNormal}" />
+    </LinearGradientBrush>
+
+</ResourceDictionary>

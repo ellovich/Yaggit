@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!-- ####################################################################
+
+This file was generates automatically via the 
+IconPacks.Browser (MIT-License). 
+
+Visit https://github.com/MahApps/MahApps.Metro.IconPacks and 
+https://github.com/MahApps/MahApps.Metro.IconPacks/blob/develop/LICENSE 
+for more information.
+ 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+Icon-Name: 			Folder
+Iconpack:			Typicons
+Iconpack-Homepage: 	https://www.s-ings.com/typicons/
+Iconpack-License:	https://github.com/stephenhutchings/typicons.font/blob/master/LICENCE.md
+
+#####################################################################-->
+
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="48"
+     height="48">
+    <path d=" M750 550H500C500 596 462.7 633.3 416.7 633.3H250C181.1 633.3 125 577.3 125 508.3V91.7C125 22.8 181.1 -33.3 250 -33.3H750C818.9 -33.3 875 22.8 875 91.7V425C875 493.9 818.9 550 750 550zM250 550H416.7C416.7 504 454 466.7 500 466.7H750C773 466.7 791.7 448 791.7 425H208.3V508.3C208.3 531.3 227 550 250 550zM750 50H250C227 50 208.3 68.7 208.3 91.7V383.3H791.7V91.7C791.7 68.7 773 50 750 50z"
+          class="Normal"
+          transform="matrix(0.064,0,0,-0.064,-8,43.19999963378906)" />
+</svg>

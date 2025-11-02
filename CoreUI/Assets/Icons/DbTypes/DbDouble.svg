@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+
+<!-- ####################################################################
+
+This file was generates automatically via the
+IconPacks.Browser (MIT-License).
+
+Visit https://github.com/MahApps/MahApps.Metro.IconPacks and
+https://github.com/MahApps/MahApps.Metro.IconPacks/blob/develop/LICENSE
+for more information.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Icon-Name: 			Comma
+Iconpack:			Material
+Iconpack-Homepage: 	https://materialdesignicons.com/
+Iconpack-License:	https://github.com/Templarian/MaterialDesign/blob/master/LICENSE
+
+#####################################################################-->
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="136"
+     height="136">
+    <path d="M7,3H16.95V12.96L12.96,20.94H8L11.97,12.96H7V3Z"
+          class="Normal"
+          transform="matrix(7.580824746455005,0,0,7.580824746455005,-22.780379230653832,-22.742474239365016)" />
+</svg>

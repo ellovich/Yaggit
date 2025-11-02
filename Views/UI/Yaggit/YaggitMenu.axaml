@@ -1,0 +1,50 @@
+<UserControl
+xmlns="https://github.com/avaloniaui"
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+xmlns:assets="using:CoreUI.Assets"
+xmlns:lang="using:ViewModels.Lang"
+xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+xmlns:vm="using:ViewModels.UI.Yaggit"
+mc:Ignorable="d"
+x:Class="Views.UI.Yaggit.YaggitMenu"
+x:DataType="vm:VmYaggitMain"
+d:DesignWidth="800"
+d:DesignHeight="450"
+>
+
+	<Design.DataContext>
+		<vm:VmYaggitMain />
+	</Design.DataContext>
+
+	<Menu>
+		<MenuItem Header="{x:Static lang:UI.Menu_Menu}" ZIndex="1">
+
+			<MenuItem Command="{Binding ReportBugCommand}" Header="{x:Static lang:UI.Menu_BugReport}">
+				<MenuItem.Icon>
+					<Svg Path="{x:Static assets:Icons.mail}" />
+				</MenuItem.Icon>
+			</MenuItem>
+			<MenuItem IsEnabled="False">
+				<MenuItem.Header>
+					<MultiBinding StringFormat="{}{0}: {1}">
+						<Binding Source="{x:Static lang:UI.Label_Version}" />
+						<Binding Path="Version" />
+					</MultiBinding>
+				</MenuItem.Header>
+				<MenuItem.Icon>
+					<Svg Path="{x:Static assets:Icons.version}" />
+				</MenuItem.Icon>
+			</MenuItem>
+			<Separator />
+
+			<MenuItem Command="{Binding ExitCommand}" Header="{x:Static lang:UI.Label_Exit}">
+				<MenuItem.Icon>
+					<Svg Path="{x:Static assets:Icons.exit}" />
+				</MenuItem.Icon>
+			</MenuItem>
+		</MenuItem>
+	</Menu>
+
+
+</UserControl>

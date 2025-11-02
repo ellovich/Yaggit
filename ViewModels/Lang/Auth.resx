@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+            
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="Auth_Login" xml:space="preserve">
+        <value>Sign In</value>
+        <comment>Button label</comment>
+    </data>
+    <data name="Auth_SignUp" xml:space="preserve">
+        <value>Sign Up</value>
+        <comment>Button label</comment>
+    </data>
+    <data name="Auth_Logout" xml:space="preserve">
+        <value>Log Out</value>
+        <comment>Button label</comment>
+    </data>
+    <data name="Auth_Username" xml:space="preserve">
+        <value>Username</value>
+        <comment>Field label</comment>
+    </data>
+    <data name="Auth_Email" xml:space="preserve">
+        <value>Email</value>
+        <comment>Field label</comment>
+    </data>
+    <data name="Auth_Password" xml:space="preserve">
+        <value>Password</value>
+        <comment>Field label</comment>
+    </data>
+    <data name="Auth_PasswordRepeat" xml:space="preserve">
+        <value>Repeat Password</value>
+        <comment>Field label</comment>
+    </data>
+    <data name="Auth_RememberMe" xml:space="preserve">
+        <value>Remember Me</value>
+        <comment>Checkbox</comment>
+    </data>
+    <data name="Auth_ForgotPassword" xml:space="preserve">
+        <value>Forgot Password?</value>
+        <comment>Link</comment>
+    </data>
+    <data name="Auth_ResetPassword" xml:space="preserve">
+        <value>Reset Password</value>
+        <comment>Action</comment>
+    </data>
+    <data name="Auth_CreateAccount" xml:space="preserve">
+        <value>Create Account</value>
+        <comment>Action</comment>
+    </data>
+    <data name="Auth_Provider_GitHub" xml:space="preserve">
+        <value>Login with GitHub</value>
+        <comment>OAuth provider button</comment>
+    </data>
+    <data name="Auth_Provider_GitLab" xml:space="preserve">
+        <value>Login with GitLab</value>
+        <comment>OAuth provider button</comment>
+    </data>
+    <data name="Auth_Provider_Bitbucket" xml:space="preserve">
+        <value>Login with Bitbucket</value>
+        <comment>OAuth provider button</comment>
+    </data>
+    <data name="Auth_Provider_AzureDevOps" xml:space="preserve">
+        <value>Login with Azure DevOps</value>
+        <comment>OAuth provider button</comment>
+    </data>
+    <data name="Auth_Token" xml:space="preserve">
+        <value>Access Token</value>
+        <comment>OAuth token label</comment>
+    </data>
+    <data name="Auth_TokenHint" xml:space="preserve">
+        <value>Paste your personal access token here</value>
+        <comment>OAuth token hint</comment>
+    </data>
+    <data name="Auth_AuthorizationRequired" xml:space="preserve">
+        <value>Authorization Required</value>
+        <comment>Dialog title</comment>
+    </data>
+    <data name="Auth_AuthorizationSuccess" xml:space="preserve">
+        <value>Authorization Successful</value>
+        <comment>Status message</comment>
+    </data>
+    <data name="Auth_AuthorizationFailed" xml:space="preserve">
+        <value>Authorization Failed</value>
+        <comment>Error message</comment>
+    </data>
+    <data name="Auth_InvalidCredentials" xml:space="preserve">
+        <value>Invalid credentials</value>
+    </data>
+    <data name="Auth_MissingToken" xml:space="preserve">
+        <value>Access token is missing</value>
+    </data>
+    <data name="Auth_GenerateToken" xml:space="preserve">
+        <value>Generate Token</value>
+        <comment>Link/button</comment>
+    </data>
+    <data name="Auth_OpenInBrowser" xml:space="preserve">
+        <value>Open in Browser</value>
+        <comment>Link/button</comment>
+    </data>
+    <data name="Auth_LinkAccount" xml:space="preserve">
+        <value>Link Account</value>
+        <comment>Action</comment>
+    </data>
+    <data name="Auth_UnlinkAccount" xml:space="preserve">
+        <value>Unlink Account</value>
+        <comment>Action</comment>
+    </data>
+    <data name="Auth_ConnectedAs" xml:space="preserve">
+        <value>Connected as {0}</value>
+        <comment>Status message</comment>
+    </data>
+    <data name="Auth_Disconnected" xml:space="preserve">
+        <value>Disconnected</value>
+        <comment>Status message</comment>
+    </data>
+    <data name="Auth_ServerUrl" xml:space="preserve">
+        <value>Server URL</value>
+        <comment>Custom Git provider</comment>
+    </data>
+    <data name="Auth_Connect" xml:space="preserve">
+        <value>Connect</value>
+        <comment>Button label</comment>
+    </data>
+    <data name="Auth_Disconnect" xml:space="preserve">
+        <value>Disconnect</value>
+        <comment>Button label</comment>
+    </data>
+    <data name="Auth_AccountSettings" xml:space="preserve">
+        <value>Account Settings</value>
+        <comment>Link</comment>
+    </data>
+    <data name="Auth_Profile" xml:space="preserve">
+        <value>Profile</value>
+        <comment>Menu item</comment>
+    </data>
+    <data name="Auth_Repositories" xml:space="preserve">
+        <value>Repositories</value>
+        <comment>Menu item</comment>
+    </data>
+    <data name="Auth_SelectProvider" xml:space="preserve">
+        <value>Select Provider</value>
+        <comment>Dialog title</comment>
+    </data>
+    <data name="Auth_Connecting" xml:space="preserve">
+        <value>Connecting...</value>
+        <comment>Status message</comment>
+    </data>
+    <data name="Auth_SigningIn" xml:space="preserve">
+        <value>Signing in...</value>
+        <comment>Status message</comment>
+    </data>
+    <data name="Auth_SigningOut" xml:space="preserve">
+        <value>Signing out...</value>
+        <comment>Status message</comment>
+    </data>
+    <data name="Auth_Connected" xml:space="preserve">
+        <value>Connected</value>
+        <comment>Status message</comment>
+    </data>
+    <data name="Auth_PasswordMissmatch" xml:space="preserve">
+        <value>Password missmatch</value>
+    </data>
+    <data name="df" xml:space="preserve">
+        <value />
+    </data>
+</root>

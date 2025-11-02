@@ -1,0 +1,30 @@
+<Application
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:theme="using:Eremex.AvaloniaUI.Themes.DeltaDesign"
+    xmlns:v="using:Views.UI"
+    x:Class="BaseProject.App"
+    RequestedThemeVariant="Dark"
+    >
+
+    <Application.DataTemplates>
+        <v:ViewLocator />
+    </Application.DataTemplates>
+
+    <Application.Styles>
+        <theme:DeltaDesignTheme />
+        <StyleInclude Source="avares://CoreUI/Styles/_index.axaml" />
+        <!-- <StyleInclude Source="avares://Views/Common/_index.axaml" /> -->
+    </Application.Styles>
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceInclude Source="avares://CoreUI/Controls/_index.axaml" />
+                <ResourceInclude Source="avares://CoreUI/Styles/Colors.axaml" />
+                <ResourceInclude Source="avares://CoreUI/Converters/_index.axaml" />
+                <ResourceInclude Source="avares://Views/Converters/_index.axaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

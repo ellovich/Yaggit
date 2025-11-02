@@ -1,0 +1,83 @@
+﻿<#@ template language="C#" hostspecific="true" debug="true" #>
+<#@ output extension=".cs" #>
+<#@ import namespace="System.IO" #>
+// File generated: <#= DateTime.Now.ToString("dd.MM.yyyy HH:mm") #>
+
+namespace CoreUI.Assets;
+
+public static class Icons 
+{
+<#
+// Определяем путь к папке с svg‑файлами.
+string templateDir = Path.GetDirectoryName(Host.TemplateFile);
+string svgFolder = Path.Combine(templateDir, "Icons");
+
+if (Directory.Exists(svgFolder))
+{
+    // Начинаем рекурсивную генерацию с отступом в 1 уровень (4 пробела для класса)
+    WriteDirectory(svgFolder, svgFolder, 1);
+}
+else
+{
+    WriteLine("    // Папка SVG не найдена: " + svgFolder);
+}
+#>
+}
+<#+
+    // Рекурсивно обрабатываем текущую папку: сначала SQL-файлы, затем вложенные каталоги
+    void WriteDirectory(string baseFolder, string currentFolder, int indent)
+    {
+        // Обработка SQL‑файлов в текущей папке
+        var files = Directory.GetFiles(currentFolder, "*.svg");
+
+        WriteLine($"{Indent(indent)}public const string Base = @\"avares://CoreUI/Assets{GetBasePathFromIcons(currentFolder)}/\";");
+
+        foreach (var file in files)
+        {
+            string relativePath = "avares://CoreUI/Assets/Icons/" + file.Substring(baseFolder.Length + 1).Replace(Path.DirectorySeparatorChar, '/');
+            // Имя файла без расширения – будет именем константы
+            string fileName = Path.GetFileNameWithoutExtension(file);
+            WriteLine($"{Indent(indent)}public const string {SanitizeIdentifier(fileName)} = @\"{relativePath}\";");
+        }
+        // Обработка вложенных каталогов
+        var directories = Directory.GetDirectories(currentFolder);
+        foreach (var dir in directories)
+        {
+            string folderName = Path.GetFileName(dir);
+            WriteLine($"{Indent(indent)}public static class {SanitizeIdentifier(folderName)} {{");
+            WriteDirectory(baseFolder, dir, indent + 1);
+            WriteLine($"{Indent(indent)}}}");
+        }
+    }
+
+    string GetBasePathFromIcons(string currentFolderPath)
+    {
+        string keyWord = "Assets";
+        int index = currentFolderPath.IndexOf(keyWord, StringComparison.OrdinalIgnoreCase);
+        string res = index >= 0 ? currentFolderPath.Substring(index + keyWord.Length) : currentFolderPath;
+        return res.Replace("\\", "/");
+    }
+
+    // Метод для формирования отступов
+    string Indent(int level)
+    {
+        return new string(' ', level * 4);
+    }
+
+    // Приведение имени к корректному идентификатору (удаляем пробелы, дефисы и т.д.)
+    string SanitizeIdentifier(string identifier)
+    {
+        string sanitized = identifier.Replace(" ", "_").Replace("-", "_").Replace(".", "_");
+        if (string.IsNullOrEmpty(sanitized))
+            sanitized = "Unnamed";
+        if (!char.IsLetter(sanitized, 0) && sanitized[0] != '_')
+            sanitized = "_" + sanitized;
+        return sanitized;
+    }
+
+    // Удобный метод для вывода строки в сгенерированный файл
+    void WriteLine(string line)
+    {
+        GenerationEnvironment.AppendLine(line);
+    }
+#>

@@ -1,0 +1,86 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:lang="using:ViewModels.Lang"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:ViewModels.UI.Yaggit.Integrations"
+    mc:Ignorable="d"
+    x:Class="Views.UI.Yaggit.Integrations.Register"
+    x:DataType="vm:VmRegister"
+    d:DesignWidth="800"
+    d:DesignHeight="450"
+    >
+
+    <Design.DataContext>
+        <vm:VmRegister />
+    </Design.DataContext>
+
+    <Border>
+        <!--<Border.Background>
+			<ImageBrush Opacity="0.3" Source="/Assets/Images/tundra_blurry.png" Stretch="UniformToFill" />
+		</Border.Background>-->
+        <StackPanel
+            MaxWidth="400"
+            Margin="20 0 20 0"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Center"
+            Orientation="Vertical"
+            Spacing="20"
+            >
+
+            <StackPanel Margin="-40 0 0 0" HorizontalAlignment="Center" Orientation="Horizontal">
+                <IconButton
+                    Width="40"
+                    Height="40"
+                    Classes="transparent"
+                    Command="{Binding NavigateBackCommand}"
+                    Content=""
+                    SvgPath="avares://Views/Assets/Icons/back.svg"
+                    />
+                <TextBlock
+                    Classes="h1"
+                    FontSize="36"
+                    FontWeight="ExtraBold"
+                    Foreground="{DynamicResource AccentGradient}"
+                    Text="{x:Static lang:Auth.Auth_CreateAccount}"
+                    />
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Spacing="10">
+                <TextBox Text="{Binding Email}" Watermark="{x:Static lang:Auth.Auth_Email}" />
+                <TextBox Text="{Binding Username}" Watermark="{x:Static lang:Auth.Auth_Username}" />
+                <TextBox
+                    Classes="revealPasswordButton"
+                    PasswordChar="●"
+                    RevealPassword="{Binding IsPasswordVisible}"
+                    Text="{Binding Password}"
+                    Watermark="{x:Static lang:Auth.Auth_Password}"
+                    />
+                <TextBox
+                    Classes="revealPasswordButton"
+                    PasswordChar="●"
+                    RevealPassword="{Binding IsPasswordVisible}"
+                    Text="{Binding PasswordRepeated}"
+                    Watermark="{x:Static lang:Auth.Auth_PasswordRepeat}"
+                    />
+            </StackPanel>
+
+            <IconButton
+                HorizontalAlignment="Stretch"
+                Classes="bordered-accent"
+                Command="{Binding RegisterCommand}"
+                Content="{x:Static lang:Auth.Auth_SignUp}"
+                IsDefault="True"
+                />
+
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Spacing="15">
+                <Rectangle Width="50" Height="2" Fill="{DynamicResource TextNormal}" />
+                <TextBlock FontSize="14" FontWeight="SemiBold" Text="{x:Static lang:UI.Label_Or}" />
+                <Rectangle Width="50" Height="2" Fill="{DynamicResource TextNormal}" />
+            </StackPanel>
+
+            <Button HorizontalAlignment="Stretch" Classes="google" />
+        </StackPanel>
+    </Border>
+
+</UserControl>

@@ -1,0 +1,343 @@
+<Styles
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ae="using:AvaloniaEdit"
+    xmlns:assets="using:CoreUI.Assets"
+    xmlns:eremexEditors="using:Eremex.AvaloniaUI.Controls.Editors"
+    xmlns:trialwatermark="using:Eremex.AvaloniaUI.Controls.TrialWatermark"
+    >
+
+    <Design.PreviewWith>
+        <Border Width="600" Margin="10">
+            <StackPanel>
+
+                <Form Classes="Filter">
+                    <IconButton VerticalAlignment="Center" Classes="refresh" FormItem.NoLabel="True" />
+                    <TextBox FormItem.IsRequired="True" FormItem.Label="Name" />
+                    <TextBox FormItem.Label="Email" />
+                    <TextBox FormItem.Label="Message" />
+                    <ComboBox FormItem.Label="Message" />
+                    <CheckBox VerticalAlignment="Center" FormItem.Label="Message" />
+                </Form>
+                <CheckBox Content="Value" />
+                <Expander Header="ddd" IsExpanded="True" />
+
+            </StackPanel>
+
+        </Border>
+    </Design.PreviewWith>
+
+    <FluentTheme DensityStyle="Compact">
+        <FluentTheme.Palettes>
+            <ColorPaletteResources x:Key="Light" Accent="#4c62c9" RegionColor="#FFFFFF" />
+            <ColorPaletteResources x:Key="Dark" Accent="#4c62c9" RegionColor="#2a323b" />
+        </FluentTheme.Palettes>
+    </FluentTheme>
+
+    <Styles.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceInclude Source="avares://CoreUI/Styles/MainSettings.axaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <SolidColorBrush x:Key="NavigationMenuItemExpandIconForeground" Opacity="0.62" Color="#1C1F23" />
+            <SolidColorBrush x:Key="NavigationMenuItemSeparatorBorderForeground" Opacity="0.08" Color="#1C1F23" />
+
+            <Geometry x:Key="NavigationMenuItemExpandIconGlyph">M19.64 16.44a1.5 1.5 0 0 1-2.12 0l-5.66-5.66-5.66 5.66a1.5 1.5 0 1 1-2.12-2.12L10.8 7.6a1.5 1.5 0 0 1 2.12 0l6.72 6.72a1.5 1.5 0 0 1 0 2.12Z</Geometry>
+            <Geometry x:Key="NavigationMenuCollapseIconGlyph">M5,13L9,17L7.6,18.42L1.18,12L7.6,5.58L9,7L5,11H21V13H5M21,6V8H11V6H21M21,16V18H11V16H21Z</Geometry>
+
+            <Thickness x:Key="PopupBorderMargin">5</Thickness>
+            <Thickness x:Key="PopupBorderThickness">0</Thickness>
+            <SolidColorBrush x:Key="PopupBackground" Color="{DynamicResource SecondColor}" />
+            <SolidColorBrush x:Key="PopupBorderBrush" Color="{DynamicResource SecondColor}" />
+            <BoxShadows x:Key="PopupBoxShadow">1 2 10 0 #2b2b2b</BoxShadows>
+
+            <StreamGeometry x:Key="CalendarIcon">M128 -128h288v288h-288v-288zM480 -128h320v288h-320v-288zM128 224h288v320h-288v-320zM480 224h320v320h-320v-320zM128 608h288v288h-288v-288zM864 -128h320v288h-320v-288zM480 608h320v288h-320v-288zM1248 -128h288v288h-288v-288zM864 224h320v320h-320v-320z M512 1088v288c0 17 -15 32 -32 32h-64c-17 0 -32 -15 -32 -32v-288c0 -17 15 -32 32 -32h64c17 0 32 15 32 32zM1248 224h288v320h-288v-320zM864 608h320v288h-320v-288zM1248 608h288v288h-288v-288zM1280 1088v288c0 17 -15 32 -32 32h-64c-17 0 -32 -15 -32 -32v-288 c0 -17 15 -32 32 -32h64c17 0 32 15 32 32zM1664 1152v-1280c0 -70 -58 -128 -128 -128h-1408c-70 0 -128 58 -128 128v1280c0 70 58 128 128 128h128v96c0 88 72 160 160 160h64c88 0 160 -72 160 -160v-96h384v96c0 88 72 160 160 160h64c88 0 160 -72 160 -160v-96h128 c70 0 128 -58 128 -128z</StreamGeometry>
+
+            <!--  CalenderDayButton  -->
+            <CornerRadius x:Key="CalendarCornerRadius">5</CornerRadius>
+            <SolidColorBrush x:Key="CalenderDayBackground" Color="Transparent" />
+            <SolidColorBrush x:Key="CalenderDayBorderBrush" Color="Transparent" />
+            <SolidColorBrush x:Key="CalenderDayInRangeBackground" Opacity="0.2" Color="#54A9FF" />
+            <SolidColorBrush x:Key="CalenderDayTodayBackground" Opacity="0.12" Color="White" />
+            <SolidColorBrush x:Key="CalenderDayTodayForeground" Color="#54A9FF" />
+            <SolidColorBrush x:Key="CalenderDayNotCurrentMonthForeground" Opacity="0.6" Color="#8d8d8d" />
+            <SolidColorBrush x:Key="CalenderDayPointeroverBackground" Opacity="0.12" Color="White" />
+            <SolidColorBrush x:Key="CalenderDayPressedBackground" Opacity="0.16" Color="White" />
+
+            <SolidColorBrush x:Key="CalenderDaySelectedBackground" Color="#54A9FF" />
+            <SolidColorBrush x:Key="CalenderDaySelectedForeground" Color="White" />
+            <SolidColorBrush x:Key="CalenderDaySelectedPointeroverBackground" Color="#7FC1FF" />
+            <SolidColorBrush x:Key="CalenderDaySelectedPressedBackground" Color="#A9D7FF" />
+            <SolidColorBrush x:Key="CalendarDayInRangeForeground" Color="#F9F9F9" />
+
+            <SolidColorBrush x:Key="CalenderDayStartEndDateBackground" Color="#54A9FF" />
+            <SolidColorBrush x:Key="CalenderDayStartEndDateBorderBrush" Color="#54A9FF" />
+            <SolidColorBrush x:Key="CalenderDayStartEndDatePointeroverBackground" Color="#7FC1FF" />
+            <SolidColorBrush x:Key="CalenderDayStartEndDatePressedBackground" Color="#A9D7FF" />
+            <SolidColorBrush x:Key="CalenderDayStartEndDateInRangeBackground" Color="#A9D7FF" />
+
+            <SolidColorBrush x:Key="CalenderDayPreviewStartEndDateBackground" Opacity="0.3" Color="#54A9FF" />
+            <SolidColorBrush x:Key="CalenderDayPreviewStartEndDatePressedBackground" Opacity="0.4" Color="#54A9FF" />
+
+            <SolidColorBrush x:Key="CalenderDayBlackoutForeground" Opacity="0.35" Color="#F9F9F9" />
+            <SolidColorBrush x:Key="CalenderDayBlackoutBackground" Opacity="0.04" Color="#E6E8EA" />
+            <SolidColorBrush x:Key="CalenderDayBlackoutTodayBackground" Color="#135CB8" />
+
+
+            <!--  CalenderYearButton  -->
+            <SolidColorBrush x:Key="CalenderYearBackground" Color="Transparent" />
+            <SolidColorBrush x:Key="CalenderYearBorderBrush" Color="Transparent" />
+            <SolidColorBrush x:Key="CalenderYearPointeroverBackground" Opacity="0.12" Color="White" />
+            <SolidColorBrush x:Key="CalenderYearPressedBackground" Opacity="0.16" Color="White" />
+            <SolidColorBrush x:Key="CalenderYearSelectedBackground" Color="#54A9FF" />
+            <SolidColorBrush x:Key="CalenderYearSelectedForeground" Color="White" />
+            <SolidColorBrush x:Key="CalenderYearSelectedPointeroverBackground" Color="#7FC1FF" />
+
+            <!--  CalenderView  -->
+            <SolidColorBrush x:Key="CalenderViewBackground" Color="Transparent" />
+
+
+            <!--  CalenderDayButton  -->
+            <x:Double x:Key="CalenderDayMinWidth">32</x:Double>
+            <x:Double x:Key="CalenderDayMinHeight">32</x:Double>
+            <Thickness x:Key="CalenderDayMargin">0 2</Thickness>
+            <Thickness x:Key="CalenderDayBorderThickness">1</Thickness>
+            <CornerRadius x:Key="CalenderDayCornerRadius">3</CornerRadius>
+
+            <CornerRadius x:Key="CalenderDayInRangeCornerRadius">0</CornerRadius>
+            <Thickness x:Key="CalenderDayNoBorderThickness">0</Thickness>
+
+            <CornerRadius x:Key="CalenderDayStartDateCornerRadius">3 0 0 3</CornerRadius>
+            <CornerRadius x:Key="CalenderDayEndDateCornerRadius">0 3 3 0</CornerRadius>
+
+            <!--  CalenderYearButton  -->
+            <x:Double x:Key="CalenderYearMinWidth">32</x:Double>
+            <x:Double x:Key="CalenderYearMinHeight">32</x:Double>
+            <Thickness x:Key="CalenderYearMargin">0 2</Thickness>
+            <Thickness x:Key="CalenderYearBorderThickness">1</Thickness>
+            <CornerRadius x:Key="CalenderYearCornerRadius">3</CornerRadius>
+            <Thickness x:Key="CalenderYearSelectedBorderThickness">0</Thickness>
+
+            <!--  CalenderView  -->
+            <x:Double x:Key="CalenderViewMinWidth">260</x:Double>
+            <x:Double x:Key="CalenderViewMinHeight">260</x:Double>
+            <x:Double x:Key="CalenderCornerRadius">5</x:Double>
+            <x:Double x:Key="CalenderViewPathIconWidth">12</x:Double>
+            <x:Double x:Key="CalenderViewPathIconHeight">12</x:Double>
+
+            <StreamGeometry x:Key="SemiIconCalendarClock">
+                M2 5v14a3 3 0 0 0 3 3h7.1a7.02 7.02 0 0 1-1.43-2H6a2 2 0 0 1-2-2V8a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v2.67c.75.36 1.43.85 2 1.43V5a3 3 0 0 0-3-3H5a3 3 0 0 0-3 3Z,
+                M16 10h1c-.54 0-1.06.06-1.57.18A1 1 0 0 1 16 10Z,
+                M13.5 10.94a1 1 0 0 0-1-.94h-1a1 1 0 0 0-1 1v1a1 1 0 0 0 .77.97 7.03 7.03 0 0 1 2.23-2.03Z,
+                M7 10a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1a1 1 0 0 0-1-1H7Z,
+                M6 16a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-1Z,
+                M22 17a5 5 0 1 1-10 0 5 5 0 0 1 10 0Zm-4-2a1 1 0 1 0-2 0v2c0 .27.1.52.3.7l1.5 1.5a1 1 0 0 0 1.4-1.4L18 16.58V15Z
+            </StreamGeometry>
+            <StaticResource x:Key="DateTimePickerGlyph" ResourceKey="SemiIconCalendarClock" />
+
+
+            <x:Double x:Key="DataGridSortIconMinWidth">18</x:Double>
+
+
+        </ResourceDictionary>
+    </Styles.Resources>
+
+
+    <!--<Style Selector="Expander /template/ ToggleButton">
+        <Setter Property="Background" Value="Red" />
+        <Style Selector="^ /template/ Border#ExpanderContent">
+            <Setter Property="Background" Value="Green" />
+        </Style>
+    </Style>-->
+
+    <Style Selector="Expander:down">
+        <Setter Property="Background" Value="{DynamicResource TransparentColor}" />
+        <Setter Property="Padding" Value="4" />
+        <Setter Property="MinHeight" Value="28" />
+        <Style Selector="^ /template/ ToggleButton#ExpanderHeader">
+            <Setter Property="Background" Value="{DynamicResource SecondColor}" />
+        </Style>
+        <Style Selector="^ /template/ ToggleButton:pointerover /template/ Border">
+            <Setter Property="Background" Value="{DynamicResource SecondColor}" />
+        </Style>
+    </Style>
+
+
+    <Style Selector="ae|TextEditor">
+        <Setter Property="FontFamily" Value="{StaticResource CodingFontFamily}" />
+        <Setter Property="ShowLineNumbers" Value="True" />
+    </Style>
+
+    <Style Selector="Svg">
+        <Setter Property="Width" Value="26" />
+        <Setter Property="Height" Value="26" />
+        <Setter Property="Css" Value="{DynamicResource SvgColor}" />
+        <Style Selector="^:disabled">
+            <Setter Property="Css" Value="{DynamicResource SvgColorDisabled}" />
+        </Style>
+        <Style Selector="^:pointerover">
+            <Setter Property="Css" Value="{DynamicResource SvgColorHover}" />
+        </Style>
+    </Style>
+
+    <Style Selector="AvroWindow[WindowState=Maximized]">
+        <Setter Property="Padding" Value="5" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="CornerRadius" Value="0" />
+    </Style>
+
+    <!-- <Style Selector="AvroWindow[WindowState=FullScreen]"> -->
+    <!--     <Setter Property="Padding" Value="0" /> -->
+    <!--     <Setter Property="BorderThickness" Value="0" /> -->
+    <!--     <Setter Property="CornerRadius" Value="0" /> -->
+    <!-- </Style> -->
+
+
+    <!--  Borders  -->
+    <Style Selector="Border.card">
+        <Setter Property="CornerRadius" Value="7" />
+        <Setter Property="Margin" Value="10" />
+        <Setter Property="Padding" Value="15" />
+        <Setter Property="Background" Value="{DynamicResource SecondColor}" />
+        <Setter Property="BoxShadow" Value="0 0 15 -2 #111512" />
+    </Style>
+    <Style Selector="Border.transparent">
+        <Setter Property="Padding" Value="20" />
+        <Setter Property="Margin" Value="10" />
+        <Setter Property="Background" Value="{DynamicResource TransparentColor}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource TransparentBorder}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CornerRadius" Value="7" />
+        <Setter Property="Height" Value="80" />
+    </Style>
+
+
+    <Style Selector="Form.Filter">
+        <Style Selector="^ /template/ Border#PART_Border">
+            <Setter Property="Background" Value="{DynamicResource ThirdColor}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource Border}" />
+            <Setter Property="Padding" Value="4 1" />
+            <Setter Property="CornerRadius" Value="{DynamicResource DefaultCornerRadius}" />
+            <Setter Property="BorderThickness" Value="{DynamicResource DefaultBorderThickness}" />
+        </Style>
+
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <WrapPanel VerticalAlignment="Center" Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <Style Selector="^> :is(Button)">
+            <Setter Property="Background" Value="{DynamicResource FilterColor}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource Border}" />
+            <Setter Property="Margin" Value="0 2 5 2" />
+
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Style Selector="^:pointerover">
+                <Setter Property="Background" Value="{DynamicResource FilterColor}" />
+            </Style>
+            <Style Selector="^:pressed">
+                <Setter Property="Background" Value="{DynamicResource FilterColor}" />
+            </Style>
+        </Style>
+
+        <Style Selector="^> CheckBox">
+            <Setter Property="MinHeight" Value="16" />
+            <Setter Property="Height" Value="26" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="0 -4 5 0" />
+            <Setter Property="Padding" Value="-7 0 5 0" />
+            <Setter Property="Background" Value="Transparent" />
+        </Style>
+
+        <Style Selector="^ FormItem:not(:no-label) /template/ Border#ItemBorder">
+            <Setter Property="BorderBrush" Value="{DynamicResource Border}" />
+            <!--<Setter Property="BorderThickness" Value="{DynamicResource DefaultBorderThickness}" />-->
+            <Setter Property="BorderThickness" Value="0 0 1 0" />
+            <Setter Property="Margin" Value="-2 0 5 0" />
+            <Setter Property="Padding" Value="5 0 5 0" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <!--<Setter Property="CornerRadius" Value="{DynamicResource DefaultCornerRadius}" />-->
+            <Style Selector="^ ContentPresenter" />
+        </Style>
+        <!--    -->
+        <Style Selector="^ FormItem:no-label">
+            <Setter Property="Margin" Value="0 0 2 0" />
+        </Style>
+    </Style>
+
+
+    <!--  Чтение  -->
+    <Style Selector="NumericUpDown[IsReadOnly=True]">
+        <Setter Property="Background" Value="{DynamicResource TransparentColor}" />
+        <Style Selector="^:pointerover /template/ Border#PART_BorderElement">
+            <Setter Property="Background" Value="{DynamicResource TransparentColor}" />
+        </Style>
+        <Style Selector="^:focus /template/ Border#PART_BorderElement">
+            <Setter Property="Background" Value="{DynamicResource TransparentColor}" />
+        </Style>
+    </Style>
+
+
+    <Style Selector="GridSplitter">
+        <Setter Property="Background" Value="{DynamicResource Border}" />
+        <Setter Property="Foreground" Value="{DynamicResource Border}" />
+        <Setter Property="Margin" Value="5" />
+    </Style>
+
+    <!-- <Style Selector="Expander"> -->
+    <!--     <Setter Property="Padding" Value="5" /> -->
+    <!--     <Setter Property="BorderBrush" Value="{DynamicResource Border}" /> -->
+    <!--     <Setter Property="Background" Value="{DynamicResource TransparentColor}" /> -->
+    <!--     <Style Selector="^ /template/ ToggleButton"> -->
+    <!--         <Setter Property="Background" Value="{DynamicResource TransparentColor}" /> -->
+    <!--         <Setter Property="BorderBrush" Value="{DynamicResource Border}" /> -->
+    <!--     </Style> -->
+    <!--     <Style Selector="^ /template/ ToggleButton /template/ Border"> -->
+    <!--         <Setter Property="Background" Value="{DynamicResource TransparentColor}" /> -->
+    <!--     </Style> -->
+    <!--     <Style Selector="^ /template/ ToggleButton:focus /template/ Border"> -->
+    <!--         <Setter Property="Background" Value="{DynamicResource TransparentColor}" /> -->
+    <!--     </Style> -->
+    <!-- </Style> -->
+
+
+    <Style Selector="IconButton.refresh">
+        <Setter Property="HotKey" Value="F5" />
+        <Setter Property="Padding" Value="5" />
+        <Setter Property="SvgPath" Value="{x:Static assets:Icons.refresh}" />
+    </Style>
+
+    <Style Selector="CheckBox">
+        <Setter Property="BorderBrush" Value="{DynamicResource Border}" />
+    </Style>
+
+    <!--  Avalonia  -->
+    <StyleInclude Source="avares://Avalonia.Controls.DataGrid/Themes/Fluent.xaml" />
+    <StyleInclude Source="avares://AvaloniaEdit/Themes/Fluent/AvaloniaEdit.xaml" />
+
+    <!--  Temp (реализовать самомоу)  -->
+    <!--
+    <StyleInclude Source="avares://NP.Ava.Visuals/Themes/ThemeStyles.axaml" />
+    <StyleInclude Source="avares://NP.Ava.Visuals.DG/Themes/DataGridStyles.axaml" />
+    <StyleInclude Source="avares://NP.Ava.Visuals/Themes/ButtonStyles.axaml" />-->
+
+
+    <!--  Custom  -->
+    <StyleInclude Source="avares://CoreUI/Styles/Buttons.axaml" />
+    <StyleInclude Source="avares://CoreUI/Styles/Charts.axaml" />
+    <StyleInclude Source="avares://CoreUI/Styles/ComboBox.axaml" />
+    <StyleInclude Source="avares://CoreUI/Styles/Texts.axaml" />
+    <StyleInclude Source="avares://CoreUI/Styles/DataGrid.axaml" />
+    <StyleInclude Source="avares://CoreUI/Styles/EremexDataGridControl.axaml" />
+    <StyleInclude Source="avares://CoreUI/Styles/ScrollBar.axaml" />
+    <StyleInclude Source="avares://CoreUI/Styles/EremexDocking.axaml" />
+
+    <Style Selector="trialwatermark|TrialWatermarkControl">
+        <Setter Property="IsVisible" Value="False" />
+    </Style>
+
+</Styles>

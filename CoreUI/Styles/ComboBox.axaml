@@ -1,0 +1,27 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:a="using:Avalonia.Layout"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <Design.PreviewWith>
+        <Border Padding="20" Width="300" Height="300">
+            <StackPanel>
+            <EnumSelector
+                FormItem.Label="Статус позиции разузловки"
+                EnumType="{x:Type a:HorizontalAlignment}" 
+                Width="175"
+            />
+            </StackPanel>
+        </Border>
+    </Design.PreviewWith>
+    
+    <Style Selector="ComboBox">
+        <Setter Property="BorderBrush" Value="{DynamicResource Border}"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Padding" Value="2 1 1 1"/>
+        
+        <Style Selector="^:dropdownopen /template/ Border#PopupBorder">
+            <Setter Property="Background" Value="{DynamicResource SecondColor}"/>
+        </Style>
+    </Style>
+    
+</Styles>

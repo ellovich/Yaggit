@@ -1,0 +1,29 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:controls="using:CoreUI">
+
+    <Design.PreviewWith>
+        <StackPanel Width="400" Spacing="10">
+            <StackPanel Background="{DynamicResource SystemRegionBrush}">
+                <GridLinesDecorator BorderBrush="{DynamicResource RedNormal}" LinesThickness="3">
+                    <Grid
+                        Height="30"
+                        Background="{DynamicResource GreenNormal}"
+                        Classes="TpRow"
+                        ColumnDefinitions="Auto,Auto,50,80*,80*,80*,60*,50*,610*,200*"
+                        >
+                        <TextBlock Grid.Column="0" Classes="Order" Text="№" />
+                        <TextBlock Grid.Column="1" Classes="Id" Text="Id" />
+                        <TextBlock Grid.Column="2" Classes="Letter" Text="А" />
+                        <TextBlock Grid.Column="3" Text="Цех" />
+                        <TextBlock Grid.Column="4" Text="Уч." />
+                        <TextBlock Grid.Column="5" Text="РМ" />
+                        <TextBlock Grid.Column="6" Text="Номер оп." />
+                        <TextBlock Grid.Column="7" Text="Код оп." />
+                        <TextBlock Grid.Column="8" Text="Наименование оп." />
+                        <TextBlock Grid.Column="9" Text="Обозначение документа" />
+                    </Grid>
+                </GridLinesDecorator>
+            </StackPanel>
+        </StackPanel>
+    </Design.PreviewWith>
+
+</ResourceDictionary>

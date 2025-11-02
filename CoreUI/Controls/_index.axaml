@@ -1,0 +1,42 @@
+<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceInclude Source="Containers/AutoGrid.axaml" />
+        <ResourceInclude Source="Containers/Form.axaml" />
+        <ResourceInclude Source="Containers/NavMenu.axaml" />
+        
+        <ResourceInclude Source="DateSelectors/CalendarView.axaml" />
+        <ResourceInclude Source="DateSelectors/DateRangeSelector.axaml" />
+        <ResourceInclude Source="DateSelectors/DateSelector.axaml" />
+        <ResourceInclude Source="DateSelectors/DateTimeSelector.axaml" />
+
+        <ResourceInclude Source="Notification/Notification.axaml" />
+        <ResourceInclude Source="Timeline/Timeline.axaml" />
+
+        <ResourceInclude Source="WindowAndChrome/AvroWindow.axaml" />
+        <ResourceInclude Source="WindowAndChrome/AvroView.axaml" />
+        <ResourceInclude Source="WindowAndChrome/CaptionButtons.axaml" />
+        <ResourceInclude Source="WindowAndChrome/Debugger.axaml" />
+        <ResourceInclude Source="WindowAndChrome/TitleBar.axaml" />
+        <ResourceInclude Source="WindowAndChrome/SplashWindow.axaml" />
+
+        <ResourceInclude Source="ActiveLoadingsControl.axaml" />
+        <ResourceInclude Source="Avatar.axaml" />
+        <ResourceInclude Source="Badge.axaml" />
+        <ResourceInclude Source="Banner.axaml" />
+        <ResourceInclude Source="Clock.axaml" />
+        <ResourceInclude Source="ColorItem.axaml" />
+        <ResourceInclude Source="DataValidationErrors.axaml" />
+        <ResourceInclude Source="EnumSelector.axaml" />
+        <ResourceInclude Source="IconButton.axaml" />
+        <ResourceInclude Source="ItemsSelector.axaml" />
+        <ResourceInclude Source="Loading.axaml" />
+        <ResourceInclude Source="MultiComboBox.axaml" />
+        <ResourceInclude Source="RangeSlider.axaml" />
+        <ResourceInclude Source="Tabs.axaml" />
+        <ResourceInclude Source="ThemeToggleButton.axaml" />
+        <ResourceInclude Source="Timer.axaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

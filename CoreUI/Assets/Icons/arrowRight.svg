@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!-- ####################################################################
+
+This file was generates automatically via the 
+IconPacks.Browser (MIT-License). 
+
+Visit https://github.com/MahApps/MahApps.Metro.IconPacks and 
+https://github.com/MahApps/MahApps.Metro.IconPacks/blob/develop/LICENSE 
+for more information.
+ 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+Icon-Name: 			ArrowBarRight
+Iconpack:			BootstrapIcons
+Iconpack-Homepage: 	https://icons.getbootstrap.com/
+Iconpack-License:	https://github.com/twbs/icons?tab=MIT-1-ov-file#readme
+
+#####################################################################-->
+
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="176"
+     height="176">
+    <path d="M112.5 150A9.375 9.375 0 0 1 121.875 140.625H230.49375L190.2375 100.3875A9.375 9.375 0 0 1 203.5125 87.1125L259.7625 143.3625A9.375 9.375 0 0 1 259.7625 156.6375L203.5125 212.8875A9.375 9.375 0 0 1 190.2375 199.6125L230.49375 159.375H121.875A9.375 9.375 0 0 1 112.5 150M65.625 18.75A9.375 9.375 0 0 0 56.25 28.125V271.875A9.375 9.375 0 0 0 75 271.875V28.125A9.375 9.375 0 0 0 65.625 18.75"
+          class="Normal"
+          transform="matrix(0.6704761904761904,0,0,-0.6704761904761904,-18.862769717261905,188.57142857142856)" />
+</svg>

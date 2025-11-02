@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+
+<!-- ####################################################################
+
+This file was generates automatically via the
+IconPacks.Browser (MIT-License).
+
+Visit https://github.com/MahApps/MahApps.Metro.IconPacks and
+https://github.com/MahApps/MahApps.Metro.IconPacks/blob/develop/LICENSE
+for more information.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Icon-Name: 			SymbolArray
+Iconpack:			Codicons
+Iconpack-Homepage: 	https://github.com/microsoft/vscode-codicons
+Iconpack-License:	https://github.com/microsoft/vscode-codicons/blob/main/LICENSE
+
+#####################################################################-->
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="136"
+     height="136">
+    <path d="M18.75 175L12.5 168.75V31.25L18.75 25H50V37.5H25V162.5H50V175H18.75zM181.25 25L187.5 31.25V168.75L181.25 175H150V162.5H175V37.5H150V25H181.25z"
+          class="Normal"
+          transform="matrix(0.7771428571428571,0,0,-0.7771428571428571,-9.714285714285714,145.71428571428572)" />
+</svg>

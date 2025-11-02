@@ -1,0 +1,29 @@
+<Styles xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+
+    <Style Selector="ScrollBar">
+        <Setter Property="Background" Value="{DynamicResource ThirdColor}" />
+        <Setter Property="Template">
+            <ControlTemplate TargetType="ScrollBar">
+                <Track
+                    Maximum="{TemplateBinding Maximum}"
+                    Minimum="{TemplateBinding Minimum}"
+                    Name="PART_Track"
+                    Orientation="{TemplateBinding Orientation}"
+                    Value="{TemplateBinding Value}"
+                    >
+                    <Track.DecreaseButton>
+                        <RepeatButton Background="LightBlue" Name="PART_DecreaseButton" />
+                    </Track.DecreaseButton>
+                    <Track.Thumb>
+                        <Thumb Background="Red" BorderBrush="Gray" Name="PART_Thumb" />
+                    </Track.Thumb>
+                    <Track.IncreaseButton>
+                        <RepeatButton Background="LightBlue" Name="PART_IncreaseButton" />
+                    </Track.IncreaseButton>
+                </Track>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+</Styles>

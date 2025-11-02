@@ -1,0 +1,43 @@
+﻿<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ControlTheme x:Key="{x:Type AvroView}" TargetType="{x:Type AvroView}">
+        <Setter Property="Background" Value="{DynamicResource DefaultBackground}" />
+        <Setter Property="Foreground" Value="{DynamicResource DefaultForeground}" />
+        <Setter Property="FontSize" Value="{DynamicResource DefaultFontSize}" />
+        <Setter Property="Template">
+            <ControlTemplate TargetType="AvroView">
+                <Panel>
+                    <Border Background="{TemplateBinding Background}" IsHitTestVisible="False" />
+                    <Panel>
+                        <ContentPresenter
+                            Name="PART_ContentPresenter"
+                            Margin="{TemplateBinding Padding}"
+                            HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                            Content="{TemplateBinding Content}"
+                            ContentTemplate="{TemplateBinding ContentTemplate}" />
+                        <Grid
+                            Margin="{Binding $parent[AvroWindow].TitleBarMargin}"
+                            VerticalAlignment="Top"
+                            ColumnDefinitions="Auto, *, Auto">
+                            <ContentPresenter
+                                Grid.Column="0"
+                                IsVisible="{TemplateBinding IsTitleBarVisible}"
+                                Content="{TemplateBinding LeftContent}" />
+                            <ContentPresenter
+                                Grid.Column="1"
+                                IsVisible="{TemplateBinding IsTitleBarVisible}"
+                                Content="{TemplateBinding TitleBarContent}" />
+                            <ContentPresenter
+                                Grid.Column="2"
+                                IsVisible="{TemplateBinding IsTitleBarVisible}"
+                                Content="{TemplateBinding RightContent}" />
+                        </Grid>
+                    </Panel>
+                </Panel>
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+</ResourceDictionary>

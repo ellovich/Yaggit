@@ -1,0 +1,14 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:lvc="using:LiveChartsCore.SkiaSharpView.Avalonia"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:skiaSharpView="clr-namespace:LiveChartsCore.SkiaSharpView;assembly=LiveChartsCore.SkiaSharpView">
+    <Design.PreviewWith>
+        <Border Padding="20">
+
+        </Border>
+    </Design.PreviewWith>
+    
+    <Style Selector="lvc|CartesianChart">
+    </Style>
+        
+</Styles>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!-- ####################################################################
+
+This file was generates automatically via the 
+IconPacks.Browser (MIT-License). 
+
+Visit https://github.com/MahApps/MahApps.Metro.IconPacks and 
+https://github.com/MahApps/MahApps.Metro.IconPacks/blob/develop/LICENSE 
+for more information.
+ 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+Icon-Name: 			BadgePlus
+Iconpack:			PicolIcons
+Iconpack-Homepage: 	https://github.com/PicolSigns/Icons
+Iconpack-License:	https://github.com/PicolSigns/Icons/blob/master/LICENSE
+
+#####################################################################-->
+
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="48"
+     height="48">
+    <path d="M687.5 687.5L562.5 687.5L562.5 750L687.5 750L687.5 875L750 875L750 750L875 750L875 687.5L750 687.5L750 562.5L687.5 562.5ZM437.5 718.8C437.5 563.3 563.3 437.5 718.8 437.5L718.8 437.5C874.1 437.5 999.9 563.3 1000 718.8L1000 718.8C999.9 874.1 874.1 999.9 718.8 1000L718.8 1000C563.3 999.9 437.5 874.1 437.5 718.8L437.5 718.8ZM503.6 718.8C503.9 837.5 600 933.6 718.8 933.8L718.8 933.8C837.5 933.6 933.6 837.5 933.8 718.8L933.8 718.8C933.6 600 837.5 503.9 718.8 503.6L718.8 503.6C600 503.9 503.9 600 503.6 718.8L503.6 718.8Z"
+          class="Green"
+          transform="matrix(0.08533333333333333,0,0,0.08533333333333333,-37.33333333333333,-37.33333333333333)" />
+</svg>

@@ -1,0 +1,97 @@
+﻿<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:c="using:CoreUI.Controls"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Design.PreviewWith>
+        <AvroWindow Width="300" Height="240" />
+    </Design.PreviewWith>
+
+    <ControlTheme x:Key="{x:Type AvroWindow}" TargetType="AvroWindow">
+        <Setter Property="Background" Value="{DynamicResource DefaultBackground}" />
+        <Setter Property="TransparencyBackgroundFallback" Value="{DynamicResource DefaultBackground}" />
+        <Setter Property="Foreground" Value="{DynamicResource DefaultForeground}" />
+        <Setter Property="FontSize" Value="{DynamicResource DefaultFontSize}" />
+        <Setter Property="FontFamily" Value="{DynamicResource DefaultFontFamily}" />
+        <Setter Property="ExtendClientAreaTitleBarHeightHint" Value="-1" />
+        <Setter Property="ExtendClientAreaToDecorationsHint" Value="True" />
+        <Setter Property="IsMinimizeButtonVisible">
+            <OnPlatform>
+                <On Options="Default, Windows, Linux">
+                    <x:Boolean>True</x:Boolean>
+                </On>
+                <On Options="macOS">
+                    <x:Boolean>False</x:Boolean>
+                </On>
+            </OnPlatform>
+        </Setter>
+        <Setter Property="IsRestoreButtonVisible">
+            <OnPlatform>
+                <On Options="Default, Windows, Linux">
+                    <x:Boolean>True</x:Boolean>
+                </On>
+                <On Options="macOS">
+                    <x:Boolean>False</x:Boolean>
+                </On>
+            </OnPlatform>
+        </Setter>
+        <Setter Property="IsCloseButtonVisible">
+            <OnPlatform>
+                <On Options="Default, Windows, Linux">
+                    <x:Boolean>True</x:Boolean>
+                </On>
+                <On Options="macOS">
+                    <x:Boolean>False</x:Boolean>
+                </On>
+            </OnPlatform>
+        </Setter>
+        <Setter Property="SystemDecorations">
+            <OnPlatform>
+                <On Options="Default, Windows, macOS">
+                    <SystemDecorations>Full</SystemDecorations>
+                </On>
+                <On Options="Linux">
+                    <SystemDecorations>None</SystemDecorations>
+                </On>
+            </OnPlatform>
+        </Setter>
+        <Setter Property="Template">
+            <ControlTemplate TargetType="AvroWindow">
+                <Panel>
+                    <Border Name="PART_TransparencyFallback" IsHitTestVisible="False" />
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BackgroundSizing="InnerBorderEdge"
+                        CornerRadius="7"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        IsHitTestVisible="False" />
+                    <Panel Margin="{TemplateBinding WindowDecorationMargin}" Background="Transparent" />
+                    <VisualLayerManager Padding="{TemplateBinding OffScreenMargin, Mode=OneWay}">
+                        <VisualLayerManager.ChromeOverlayLayer>
+                            <Panel Margin="{Binding $parent[AvroWindow].OffScreenMargin}">
+                                <c:TitleBar
+                                    Margin="{Binding $parent[AvroWindow].TitleBarMargin}"
+                                    Content="{Binding $parent[AvroWindow].TitleBarContent}"
+                                    IsTitleVisible="{Binding $parent[AvroWindow].IsTitleBarVisible}"
+                                    LeftContent="{Binding $parent[AvroWindow].LeftContent}"
+                                    RightContent="{Binding $parent[AvroWindow].RightContent}" />
+                            </Panel>
+                        </VisualLayerManager.ChromeOverlayLayer>
+                        <Panel>
+                            <ContentPresenter
+                                Name="PART_ContentPresenter"
+                                Margin="{TemplateBinding Padding}"
+                                HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                Content="{TemplateBinding Content}"
+                                ContentTemplate="{TemplateBinding ContentTemplate}" />
+                        </Panel>
+                    </VisualLayerManager>
+                </Panel>
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+
+
+</ResourceDictionary>

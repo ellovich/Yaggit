@@ -1,0 +1,206 @@
+﻿<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:assets="using:CoreUI.Assets"
+    xmlns:c="using:CoreUI.Controls"
+    >
+
+    <Design.PreviewWith>
+        <StackPanel Width="300" Spacing="10">
+            <Banner
+                CanClose="True"
+                Classes="Bordered"
+                Content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat"
+                Header="Title"
+                Type="Warning"
+                />
+
+            <Banner
+                CanClose="True"
+                Content="This is the Demo of Banner. "
+                Header="Welcome to Avrora"
+                ShowIcon="True"
+                Type="{x:Static c:eNotificationType.Information}"
+                />
+            <Banner Content="This is the Demo of Banner. " Header="Welcome to Avrora" Type="{x:Static c:eNotificationType.Accent}" />
+            <Banner Content="This is the Demo of Banner. " Header="Welcome to Avrora" Type="{x:Static c:eNotificationType.Success}" />
+            <Banner Content="This is the Demo of Banner. " Header="Welcome to Avrora" Type="{x:Static c:eNotificationType.Warning}" />
+            <Banner Header="Welcome to Avrora" Type="{x:Static c:eNotificationType.Error}">
+                <Button Content="Some Content" />
+            </Banner>
+        </StackPanel>
+    </Design.PreviewWith>
+
+    <Thickness x:Key="BannerBorderThickness">1</Thickness>
+    <Thickness x:Key="BannerIconMargin">0 0 10 0</Thickness>
+
+    <!--  Add Resources Here  -->
+    <ControlTheme x:Key="{x:Type Banner}" TargetType="Banner">
+        <Setter Property="BorderThickness" Value="{DynamicResource BannerBorderThickness}" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="Padding" Value="13" />
+        <Setter Property="CornerRadius" Value="{DynamicResource DefaultCornerRadius}" />
+
+        <Setter Property="Template">
+            <ControlTemplate TargetType="Banner">
+                <Border
+                    Padding="{TemplateBinding Padding}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="{TemplateBinding CornerRadius}"
+                    Name="PART_Container"
+                    >
+                    <Grid ColumnDefinitions="*, Auto">
+                        <Grid Grid.Column="0" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" ColumnDefinitions="Auto, *">
+                            <!--  Icon Area  -->
+                            <Panel
+                                Grid.Column="0"
+                                Margin="{DynamicResource BannerIconMargin}"
+                                VerticalAlignment="Top"
+                                IsVisible="{TemplateBinding ShowIcon}"
+                                >
+                                <ContentPresenter Content="{TemplateBinding Icon}" />
+                                <Svg
+                                    Width="20"
+                                    Height="20"
+                                    IsVisible="{TemplateBinding Icon, Converter={x:Static ObjectConverters.IsNull}}"
+                                    Name="PART_BuildInIcon"
+                                    />
+                            </Panel>
+                            <StackPanel Grid.Column="1" Spacing="2">
+                                <ContentPresenter
+                                    Content="{TemplateBinding Header}"
+                                    ContentTemplate="{TemplateBinding HeaderTemplate}"
+                                    TextElement.FontSize="{DynamicResource h3Size}"
+                                    TextElement.FontWeight="Bold"
+                                    TextTrimming="CharacterEllipsis"
+                                    />
+                                <ContentPresenter Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" TextWrapping="Wrap" />
+                            </StackPanel>
+                        </Grid>
+                        <Button
+                            Grid.Column="1"
+                            Margin="{DynamicResource BannerCloseButtonMargin}"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Top"
+                            IsVisible="{TemplateBinding CanClose}"
+                            Name="{x:Static Banner.PART_CloseButton}"
+                            Theme="{DynamicResource OverlayCloseButton}"
+                            />
+                    </Grid>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+
+
+        <!--    -->
+        <!-- <Setter Property="Template"> -->
+        <!--     <ControlTemplate TargetType="Banner"> -->
+        <!--  <Border  -->
+        <!--  Padding="12"  -->
+        <!--  BorderBrush="{TemplateBinding BorderBrush}"  -->
+        <!--  BorderThickness="{TemplateBinding BorderThickness}"  -->
+        <!--  CornerRadius="{DynamicResource DefaultCornerRadius}"  -->
+        <!--  Name="PART_Container">  -->
+        <!--             <Grid ColumnDefinitions="*, Auto"> -->
+        <!--  <Grid  -->
+        <!--  Grid.Column="0"  -->
+        <!--  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"  -->
+        <!--  ColumnDefinitions="Auto, *"  -->
+        <!--  RowDefinitions="Auto, *">  -->
+        <!--  <Panel  -->
+        <!--  Grid.Row="0"  -->
+        <!--  Grid.RowSpan="2"  -->
+        <!--  Grid.Column="0"  -->
+        <!--  Margin="{DynamicResource BannerIconMargin}"  -->
+        <!--  VerticalAlignment="Top"  -->
+        <!--  IsVisible="{TemplateBinding ShowIcon}">  -->
+        <!--                         <ContentPresenter Content="{TemplateBinding Icon}" /> -->
+        <!--  <Svg  -->
+        <!--  Width="20"  -->
+        <!--  Height="20"  -->
+        <!--  IsVisible="{TemplateBinding Icon, Converter={x:Static ObjectConverters.IsNull}}"  -->
+        <!--  Name="PART_BuildInIcon" />  -->
+        <!--                     </Panel> -->
+        <!--  <ContentPresenter  -->
+        <!--  Grid.Row="0"  -->
+        <!--  Grid.Column="1"  -->
+        <!--  Content="{TemplateBinding Header}"  -->
+        <!--  ContentTemplate="{TemplateBinding HeaderTemplate}"  -->
+        <!--  IsVisible="{TemplateBinding Header, Converter={x:Static ObjectConverters.IsNotNull}}"  -->
+        <!--  TextElement.FontWeight="Bold" />  -->
+        <!--  <ContentPresenter  -->
+        <!--  Grid.Row="1"  -->
+        <!--  Grid.Column="1"  -->
+        <!--  Content="{TemplateBinding Content}"  -->
+        <!--  ContentTemplate="{TemplateBinding ContentTemplate}" />  -->
+        <!--                 </Grid> -->
+        <!--    -->
+        <!--  <IconButton  -->
+        <!--  Grid.Column="1" Cursor="Hand"  -->
+        <!--  VerticalAlignment="Top"  -->
+        <!--  IsVisible="{TemplateBinding CanClose}"  -->
+        <!--  Name="{x:Static Banner.PART_CloseButton}"  -->
+        <!--  SvgPath="{x:Static assets:Icons.closeCircle}"  -->
+        <!--  Classes="small transparent">  -->
+        <!--                 </IconButton> -->
+        <!--    -->
+        <!--    -->
+        <!--             </Grid> -->
+        <!--         </Border> -->
+        <!--     </ControlTemplate> -->
+        <!-- </Setter> -->
+
+        <Style Selector="^[Type=Accent]">
+            <Style Selector="^ /template/ Border#PART_Container">
+                <Setter Property="BorderBrush" Value="{DynamicResource AccentColor}" />
+                <Setter Property="BorderThickness" Value="2" />
+                <Setter Property="Background" Value="{DynamicResource ThirdColor}" />
+            </Style>
+            <Style Selector="^ /template/ Svg#PART_BuildInIcon">
+                <Setter Property="Path" Value="{x:Static assets:Icons+Colorful.infoCircle}" />
+            </Style>
+        </Style>
+
+        <Style Selector="^[Type=Information]">
+            <Style Selector="^ /template/ Border#PART_Container">
+                <Setter Property="BorderBrush" Value="{DynamicResource BlueNormal}" />
+                <Setter Property="Background" Value="{DynamicResource BlueNormal20}" />
+            </Style>
+            <Style Selector="^ /template/ Svg#PART_BuildInIcon">
+                <Setter Property="Path" Value="{x:Static assets:Icons+Colorful.infoCircle}" />
+            </Style>
+        </Style>
+
+        <Style Selector="^[Type=Success]">
+            <Style Selector="^ /template/ Border#PART_Container">
+                <Setter Property="BorderBrush" Value="{DynamicResource GreenNormal}" />
+                <Setter Property="Background" Value="{DynamicResource GreenNormal20}" />
+            </Style>
+            <Style Selector="^ /template/ Svg#PART_BuildInIcon">
+                <Setter Property="Path" Value="{x:Static assets:Icons+Colorful.checkCircle}" />
+            </Style>
+        </Style>
+
+        <Style Selector="^[Type=Warning]">
+            <Style Selector="^ /template/ Border#PART_Container">
+                <Setter Property="BorderBrush" Value="{DynamicResource OrangeNormal}" />
+                <Setter Property="Background" Value="{DynamicResource OrangeNormal20}" />
+            </Style>
+            <Style Selector="^ /template/ Svg#PART_BuildInIcon">
+                <Setter Property="Path" Value="{x:Static assets:Icons+Colorful.warnTriangle}" />
+            </Style>
+        </Style>
+
+        <Style Selector="^[Type=Error]">
+            <Style Selector="^ /template/ Border#PART_Container">
+                <Setter Property="BorderBrush" Value="{DynamicResource RedNormal}" />
+                <Setter Property="Background" Value="{DynamicResource RedNormal20}" />
+            </Style>
+            <Style Selector="^ /template/ Svg#PART_BuildInIcon">
+                <Setter Property="Path" Value="{x:Static assets:Icons+Colorful.errorCircle}" />
+            </Style>
+        </Style>
+
+    </ControlTheme>
+</ResourceDictionary>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!-- ####################################################################
+
+This file was generates automatically via the 
+IconPacks.Browser (MIT-License). 
+
+Visit https://github.com/MahApps/MahApps.Metro.IconPacks and 
+https://github.com/MahApps/MahApps.Metro.IconPacks/blob/develop/LICENSE 
+for more information.
+ 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+Icon-Name: 			Check
+Iconpack:			BootstrapIcons
+Iconpack-Homepage: 	https://icons.getbootstrap.com/
+Iconpack-License:	https://github.com/twbs/icons?tab=MIT-1-ov-file#readme
+
+#####################################################################-->
+
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="176"
+     height="176">
+    <path d="M205.6875 206.8125A14.0625 14.0625 0 0 0 225.7500000000001 187.125L150.9375 93.5625A14.0625 14.0625 0 0 0 130.6875 93.1875L81.075 142.8A14.0625 14.0625 0 1 0 100.95 162.675L140.2125 123.43125L205.33125 206.4z"
+          class="Normal"
+          transform="matrix(1.1514735617032688,0,0,-1.1514735617032688,-88.2015289574087,260.5817561347075)" />
+</svg>

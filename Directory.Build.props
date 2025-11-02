@@ -1,0 +1,60 @@
+<Project>
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<LangVersion>preview</LangVersion>
+		<AnalysisLevel>preview</AnalysisLevel>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<SatelliteResourceLanguages>en-US;ru-RU</SatelliteResourceLanguages>
+		<AccelerateBuildsInVisualStudio>true</AccelerateBuildsInVisualStudio>
+		<GenerateErrorForMissingTargetingPacks>false</GenerateErrorForMissingTargetingPacks>
+		<Company>Ellovich</Company>
+		<UseCurrentRuntimeIdentifier>false</UseCurrentRuntimeIdentifier>
+		
+		<!-- Централизованные папки сборки -->
+		<!--<BaseOutputPath>$(MSBuildThisFileDirectory)build/bin/</BaseOutputPath>
+		<BaseIntermediateOutputPath>$(MSBuildThisFileDirectory)build/obj/</BaseIntermediateOutputPath>-->
+	</PropertyGroup>
+
+	<!--Opens with or without Console window-->
+	<PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+		<OutputType>Exe</OutputType>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)' == 'Release'">
+		<OutputType>WinExe</OutputType>
+		<DebugType>None</DebugType>
+		<DebugSymbols>False</DebugSymbols>
+		<Optimize>True</Optimize>
+	</PropertyGroup>
+
+	<PropertyGroup Label="Publishing Common">
+		<_TargetId>Folder</_TargetId>
+		<PublishProtocol>FileSystem</PublishProtocol>
+		<PublishDir Condition="'$(PublishType)' == 'Local'">$(SolutionDir)build\bin\$(Configuration)\$(TargetFramework)\publish\$(RuntimeIdentifier)</PublishDir>
+		<PublishDir Condition="'$(PublishType)' == 'Server'">$(SolutionDir)build\bin\$(Configuration)\$(TargetFramework)\publish2\$(RuntimeIdentifier)</PublishDir>
+		<Platform>Any CPU</Platform>
+		<PublishSingleFile>True</PublishSingleFile>
+		<PublishTrimmed>True</PublishTrimmed>
+		<!--<SelfContained>True</SelfContained>-->
+		<EnableCompressionInSingleFile>True</EnableCompressionInSingleFile>
+		<PublishReadyToRun>True</PublishReadyToRun>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(RuntimeIdentifier)' == 'win-x64'">
+		<TargetFramework>net9.0</TargetFramework>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(RuntimeIdentifier)' == 'linux-x64'">
+		<TargetFramework>net9.0</TargetFramework>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(RuntimeIdentifier)' == 'macos-x64'">
+		<TargetFramework>net9.0-macos</TargetFramework>
+	</PropertyGroup>
+
+	<!--
+	dotnet publish -c Release -r win-x64 -p:PublishType=Local
+	dotnet publish -c Release -r win-x64 -p:PublishType=Server
+	dotnet publish -c Release -r linux-x64 -p:PublishType=Local
+	dotnet publish -c Release -r linux-x64 -p:PublishType=Server
+	-->
+
+</Project>

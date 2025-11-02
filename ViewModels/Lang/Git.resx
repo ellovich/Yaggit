@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+            
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="Action_Clone" xml:space="preserve">
+        <value>Clone Repository</value>
+        <comment>Git action</comment>
+    </data>
+    <data name="Action_Init" xml:space="preserve">
+        <value>Initialize Repository</value>
+        <comment>Git action</comment>
+    </data>
+    <data name="Action_Commit" xml:space="preserve">
+        <value>Commit Changes</value>
+        <comment>Git action</comment>
+    </data>
+    <data name="Action_Push" xml:space="preserve">
+        <value>Push to Remote</value>
+        <comment>Git action</comment>
+    </data>
+    <data name="Action_Pull" xml:space="preserve">
+        <value>Pull from Remote</value>
+        <comment>Git action</comment>
+    </data>
+    <data name="Action_Merge" xml:space="preserve">
+        <value>Merge Branch</value>
+        <comment>Git action</comment>
+    </data>
+    <data name="Action_Rebase" xml:space="preserve">
+        <value>Rebase</value>
+        <comment>Git action</comment>
+    </data>
+    <data name="Action_Stash" xml:space="preserve">
+        <value>Stash Changes</value>
+        <comment>Git action</comment>
+    </data>
+    <data name="Action_Checkout" xml:space="preserve">
+        <value>Checkout</value>
+        <comment>Git action</comment>
+    </data>
+    <data name="Action_CreateBranch" xml:space="preserve">
+        <value>Create Branch</value>
+        <comment>Git action</comment>
+    </data>
+    <data name="Action_DeleteBranch" xml:space="preserve">
+        <value>Delete Branch</value>
+        <comment>Git action</comment>
+    </data>
+    <data name="Error_NoRepository" xml:space="preserve">
+        <value>No Git repository found</value>
+    </data>
+    <data name="Error_MergeConflict" xml:space="preserve">
+        <value>Merge conflict detected</value>
+    </data>
+    <data name="Label_Commits" xml:space="preserve">
+        <value>Commits</value>
+        <comment>UI label</comment>
+    </data>
+    <data name="Label_Changes" xml:space="preserve">
+        <value>Changes</value>
+        <comment>UI label</comment>
+    </data>
+    <data name="Label_Unstaged" xml:space="preserve">
+        <value>Unstaged Changes</value>
+        <comment>UI label</comment>
+    </data>
+    <data name="Label_Staged" xml:space="preserve">
+        <value>Staged Changes</value>
+        <comment>UI label</comment>
+    </data>
+    <data name="Label_Branch" xml:space="preserve">
+        <value>Branch</value>
+        <comment>UI label</comment>
+    </data>
+    <data name="Result_RepoInitialized" xml:space="preserve">
+        <value>Repo Initialized</value>
+    </data>
+</root>

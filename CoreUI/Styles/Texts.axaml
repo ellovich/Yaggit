@@ -1,0 +1,221 @@
+<Styles
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:assets="using:CoreUI.Assets"
+    xmlns:eremexEditors="using:Eremex.AvaloniaUI.Controls.Editors"
+    xmlns:eremexEditorsVisuals="using:Eremex.AvaloniaUI.Controls.Editors.Visuals"
+    xmlns:sys="using:System"
+    >
+
+    <Design.PreviewWith>
+        <Border
+            Width="400"
+            Height="600"
+            Padding="10"
+            Background="{DynamicResource Bg}"
+            >
+            <StackPanel Spacing="10">
+                <ThemeToggleButton />
+                <TextBlock Classes="h1" Text="Заголовок 1" />
+                <TextBlock Classes="h2" Text="Заголовок 2" />
+                <TextBlock Classes="h3" Text="Заголовок 3" />
+                <TextBlock Text="Текст обычный" />
+                <TextBlock Classes="helper" Text="Текст вспомогательный" />
+                <TextBox Text="Пример текста" />
+                <TextBox Classes="clear">With clear button</TextBox>
+                <TextBox
+                    Classes="password"
+                    PasswordChar="*"
+                    Text="Password"
+                    Watermark="Password"
+                    />
+                <TextBox Text="Пример валидационной ошибки">
+                    <DataValidationErrors.Error>
+                        <sys:Exception />
+                    </DataValidationErrors.Error>
+                </TextBox>
+                <TextBox UseFloatingWatermark="True" Watermark="Наименование" />
+                <TextBox IsReadOnly="True" />
+            </StackPanel>
+        </Border>
+    </Design.PreviewWith>
+
+
+    <!--  Цвет всего текста  -->
+    <Style Selector="TextBlock">
+        <Setter Property="Foreground" Value="{DynamicResource TextNormal}" />
+    </Style>
+
+    <Style Selector="eremexEditors|TextEditor">
+        <Setter Property="Foreground" Value="{DynamicResource TextNormal}" />
+    </Style>
+
+	<!--<Style Selector="eremexEditorsVisuals|MxTextBlock">
+		<Setter Property="Foreground" Value="{DynamicResource TextNormal}" />
+	</Style>-->
+
+    <Style Selector="TextBox">
+        <Setter Property="Foreground" Value="{DynamicResource TextNormal}" />
+    </Style>
+
+    <!--  Заголовок первого уровня  -->
+    <Style Selector="TextBlock.h1">
+        <Setter Property="FontSize" Value="{DynamicResource h1Size}" />
+        <Setter Property="Foreground" Value="{DynamicResource Header1Color}" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="Margin" Value="0 5" />
+    </Style>
+
+    <!--  Заголовок второго уровня  -->
+    <Style Selector="TextBlock.h2">
+        <Setter Property="FontSize" Value="{DynamicResource h2Size}" />
+        <Setter Property="Foreground" Value="{DynamicResource Header2Color}" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="Margin" Value="0 3" />
+    </Style>
+
+    <!--  Заголовок второго уровня  -->
+    <Style Selector="TextBlock.h3">
+        <Setter Property="FontSize" Value="{DynamicResource h3Size}" />
+        <Setter Property="Foreground" Value="{DynamicResource Header3Color}" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="Margin" Value="0 3" />
+    </Style>
+
+    <!--  Вспомогательный текст  -->
+    <Style Selector="TextBlock.helper">
+        <Setter Property="FontSize" Value="{DynamicResource helperTextSize}" />
+        <Setter Property="Foreground" Value="{DynamicResource HelperTextColor}" />
+        <Setter Property="FontWeight" Value="Regular" />
+    </Style>
+
+    <!--  Отображение ошибок с восклицательным знаком  -->
+    <Style Selector="DataValidationErrors">
+        <Setter Property="Theme" Value="{DynamicResource TooltipDataValidationErrors}" />
+    </Style>
+
+    <!--  TextBox  -->
+    <Style Selector="TextBox">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderBrush" Value="{DynamicResource Border}" />
+        <Setter Property="FontWeight" Value="Medium" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="Transitions">
+            <Transitions>
+                <BrushTransition Easing="QuarticEaseOut" Property="Foreground" Duration="0:0:0.5" />
+                <DoubleTransition Easing="QuarticEaseOut" Property="Width" Duration="0:0:0.5" />
+            </Transitions>
+        </Setter>
+
+        <!--  Подсказка  -->
+        <Style Selector="^ /template/ TextBlock#PART_Watermark">
+            <Setter Property="Foreground" Value="{DynamicResource TextNormal}" />
+            <Setter Property="FontWeight" Value="Medium" />
+            <Setter Property="Transitions">
+                <Transitions>
+                    <BrushTransition Easing="QuarticEaseOut" Property="Foreground" Duration="0:0:0.5" />
+                </Transitions>
+            </Setter>
+        </Style>
+
+        <!--  Рамка  -->
+        <Style Selector="^ /template/ Border#PART_BorderElement">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Transitions">
+                <Transitions>
+                    <BrushTransition Easing="QuarticEaseOut" Property="BorderBrush" Duration="0:0:0.5" />
+                </Transitions>
+            </Setter>
+        </Style>
+
+        <!--  Наведение  -->
+        <Style Selector="^:pointerover">
+            <Style Selector="^ /template/ Border#PART_BorderElement">
+                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="BorderThickness" Value="2" />
+            </Style>
+            <Style Selector="^ /template/ TextBlock#PART_Watermark">
+                <Setter Property="Foreground" Value="{DynamicResource TextNormal}" />
+            </Style>
+        </Style>
+
+        <!--  Фокус  -->
+        <Style Selector="^:focus">
+            <Style Selector="^ /template/ Border#PART_BorderElement">
+                <Setter Property="Background" Value="Transparent" />
+            </Style>
+        </Style>
+    </Style>
+
+
+    <!--  Чтение  -->
+    <Style Selector="TextBox[IsReadOnly=True]">
+        <Setter Property="Background" Value="{DynamicResource TransparentColor}" />
+        <Style Selector="^:pointerover /template/ Border#PART_BorderElement">
+            <Setter Property="Background" Value="{DynamicResource TransparentColor}" />
+        </Style>
+        <Style Selector="^:focus /template/ Border#PART_BorderElement">
+            <Setter Property="Background" Value="{DynamicResource TransparentColor}" />
+        </Style>
+    </Style>
+
+    <!--  Ввод пароля  -->
+    <Style Selector="TextBox.password[AcceptsReturn=False][IsReadOnly=False]:not(TextBox:empty)">
+        <Setter Property="InnerRightContent">
+            <Template>
+                <ToggleButton
+                    Padding="-2"
+                    ClipToBounds="True"
+                    IsChecked="{Binding $parent[TextBox].RevealPassword, Mode=TwoWay}"
+                    Theme="{StaticResource FluentTextBoxToggleButton}"
+                    >
+                    <ToggleButton.Styles>
+                        <Style Selector="ToggleButton:pressed /template/ ContentPresenter#PART_ContentPresenter">
+                            <Setter Property="Background" Value="Transparent" />
+                        </Style>
+                        <Style Selector="ToggleButton:checked /template/ ContentPresenter#PART_ContentPresenter">
+                            <Setter Property="Background" Value="Transparent" />
+                        </Style>
+                    </ToggleButton.Styles>
+
+                    <Panel>
+                        <IconButton
+                            HorizontalAlignment="Center"
+                            Classes="transparent small"
+                            IsHitTestVisible="False"
+                            IsVisible="{Binding !$parent[ToggleButton].IsChecked}"
+                            SvgPath="{x:Static assets:Icons.eye}"
+                            />
+                        <IconButton
+                            HorizontalAlignment="Center"
+                            Classes="transparent small"
+                            IsHitTestVisible="False"
+                            IsVisible="{Binding $parent[ToggleButton].IsChecked}"
+                            SvgPath="{x:Static assets:Icons.eyeOff}"
+                            />
+                    </Panel>
+                </ToggleButton>
+            </Template>
+        </Setter>
+    </Style>
+
+    <!--  Со стиранием  -->
+    <Style Selector="TextBox.clear[AcceptsReturn=False][IsReadOnly=False]:focus:not(TextBox:empty)">
+        <Setter Property="InnerRightContent">
+            <Template>
+
+                <IconButton
+                    Margin="10 0"
+                    HorizontalAlignment="Center"
+                    Classes="transparent small"
+                    Command="{Binding $parent[TextBox].Clear}"
+                    IsHitTestVisible="False"
+                    SvgPath="{x:Static assets:Icons.close}"
+                    />
+            </Template>
+        </Setter>
+    </Style>
+
+
+</Styles>

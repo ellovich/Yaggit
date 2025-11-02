@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+
+<!-- ####################################################################
+
+This file was generates automatically via the
+IconPacks.Browser (MIT-License).
+
+Visit https://github.com/MahApps/MahApps.Metro.IconPacks and
+https://github.com/MahApps/MahApps.Metro.IconPacks/blob/develop/LICENSE
+for more information.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Icon-Name: 			ImageOutline
+Iconpack:			Typicons
+Iconpack-Homepage: 	https://www.s-ings.com/typicons/
+Iconpack-License:	https://github.com/stephenhutchings/typicons.font/blob/master/LICENCE.md
+
+#####################################################################-->
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="128"
+     height="128">
+    <path d=" M354.2 466.7C388.6 466.7 416.7 438.7 416.7 404.2S388.6 341.7 354.2 341.7S291.7 369.8 291.7 404.2S319.7 466.7 354.2 466.7M354.2 508.4C296.6 508.4 250 461.8 250 404.2S296.6 300 354.2 300S458.3 346.7 458.3 404.2S411.7 508.4 354.2 508.4zM666.7 300C685.4 297.9 719.6 224.9 740.8 133.3H266.1C284.2 176.4 310.1 216.7 333.3 216.7C366.9 216.7 380.2 209 397 199.2C415.7 188.5 439 175 479.1 175C526.5 175 560 211.9 589.7 244.5C615.8 273.1 640.4 300 666.7 300M666.7 341.7C583.3 341.7 541.7 216.7 479.2 216.7S416.7 258.4 333.3 258.4C250 258.4 208.3 91.7 208.3 91.7H791.7S750 341.7 666.7 341.7zM916.7 550C916.7 596 879.3 633.3 833.3 633.3H166.7C120.7 633.3 83.3 596 83.3 550V50C83.3 4 120.7 -33.3 166.7 -33.3H833.3C879.3 -33.3 916.7 4 916.7 50V550zM833.3 50H166.7V550H833.5L833.3 50z"
+          class="Normal"
+          transform="matrix(0.15358771129573134,0,0,-0.15358771129573134,-12.79385681964692,110.07631250988346)" />
+</svg>

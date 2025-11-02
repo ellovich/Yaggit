@@ -1,0 +1,377 @@
+﻿<Styles
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:assets="using:CoreUI.Assets"
+    xmlns:sc="using:System.Collections"
+    xmlns:sys="using:System"
+    >
+
+    <Design.PreviewWith>
+        <Border Width="700" Height="800" Padding="20">
+            <Border.Resources>
+                <sc:ArrayList x:Key="DesignData">
+                    <sys:String>Item 1</sys:String>
+                    <sys:String>Item 2</sys:String>
+                    <sys:String>Item 3</sys:String>
+                    <sys:String>Item 4</sys:String>
+                    <sys:String>Item 5</sys:String>
+                    <sys:String>Item 6</sys:String>
+                    <sys:String>Item 7</sys:String>
+                    <sys:String>Item 8</sys:String>
+                    <sys:String>Item 9</sys:String>
+                    <sys:String>Item 10</sys:String>
+                    <sys:String>Item 11</sys:String>
+                    <sys:String>Item 12</sys:String>
+                </sc:ArrayList>
+            </Border.Resources>
+            <StackPanel>
+                <ThemeToggleButton />
+                <DataGrid
+                    x:CompileBindings="False"
+                    Width="200"
+                    Height="200"
+                    Margin="10"
+                    CanUserResizeColumns="True"
+                    CanUserSortColumns="True"
+                    ClipboardCopyMode="IncludeHeader"
+                    FrozenColumnCount="1"
+                    IsReadOnly="True"
+                    ItemsSource="{StaticResource DesignData}"
+                    >
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Width="auto" Binding="{Binding}" Header="Наименование" />
+                        <DataGridTextColumn Width="auto" Binding="{Binding}" Header="Тип ТК" />
+                        <DataGridTextColumn Width="auto" Binding="{Binding}" Header="Срок разработки ТП" />
+                        <DataGridCheckBoxColumn Width="auto" Binding="{Binding}" Header="" />
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Border Background="Red" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <ComboBox>
+                                        <ComboBox.Items>
+                                            <sys:String>Item 1</sys:String>
+                                            <sys:String>Item 2</sys:String>
+                                        </ComboBox.Items>
+                                    </ComboBox>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+
+                <DataGrid
+                    x:CompileBindings="False"
+                    Margin="10"
+                    CanUserResizeColumns="True"
+                    CanUserSortColumns="True"
+                    Classes="stripped"
+                    ClipboardCopyMode="IncludeHeader"
+                    FrozenColumnCount="1"
+                    IsReadOnly="True"
+                    ItemsSource="{StaticResource DesignData}"
+                    >
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Width="auto" Binding="{Binding}" Header="Наименование" />
+                        <DataGridTextColumn Width="auto" Binding="{Binding}" Header="Тип ТК" />
+                        <DataGridTextColumn Width="auto" Binding="{Binding}" Header="Срок разработки ТП" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+        </Border>
+    </Design.PreviewWith>
+
+
+    <Styles.Resources>
+        <ResourceDictionary>
+            <ControlTheme x:Key="{x:Type DataGrid}" TargetType="DataGrid">
+                <Setter Property="RowBackground" Value="{DynamicResource DataGridBg}" />
+                <Setter Property="HeadersVisibility" Value="Column" />
+                <Setter Property="HorizontalScrollBarVisibility" Value="Auto" />
+                <Setter Property="VerticalScrollBarVisibility" Value="Auto" />
+                <Setter Property="SelectionMode" Value="Extended" />
+                <Setter Property="GridLinesVisibility" Value="None" />
+                <Setter Property="HorizontalGridLinesBrush" Value="{DynamicResource DataGridGridLinesBrush}" />
+                <Setter Property="VerticalGridLinesBrush" Value="{DynamicResource DataGridGridLinesBrush}" />
+                <Setter Property="FocusAdorner" Value="{x:Null}" />
+                <Setter Property="DropLocationIndicatorTemplate">
+                    <Template>
+                        <Rectangle Width="2" Fill="{DynamicResource DataGridDropLocationIndicatorBackground}" />
+                    </Template>
+                </Setter>
+                <Setter Property="Template">
+                    <ControlTemplate>
+                        <Border x:Name="DataGridBorder"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="{TemplateBinding CornerRadius}"
+                            >
+                            <Grid RowDefinitions="*,Auto">
+
+
+                                <Grid
+                                    Grid.Row="0"
+                                    ClipToBounds="True"
+                                    ColumnDefinitions="Auto,*,Auto"
+                                    RowDefinitions="Auto,*,Auto,Auto,Auto"
+                                    >
+                                    <DataGridColumnHeader Name="PART_TopLeftCornerHeader" Theme="{StaticResource DataGridTopLeftColumnHeader}" />
+                                    <DataGridColumnHeadersPresenter
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        Grid.ColumnSpan="2"
+                                        Name="PART_ColumnHeadersPresenter"
+                                        />
+                                    <Rectangle
+                                        Grid.Row="0"
+                                        Grid.Column="0"
+                                        Grid.ColumnSpan="3"
+                                        Height="1"
+                                        VerticalAlignment="Bottom"
+                                        Fill="{DynamicResource DataGridGridLinesBrush}"
+                                        Name="PART_ColumnHeadersAndRowsSeparator"
+                                        />
+
+                                    <DataGridRowsPresenter
+                                        Grid.Row="1"
+                                        Grid.RowSpan="2"
+                                        Grid.Column="0"
+                                        Grid.ColumnSpan="3"
+                                        Name="PART_RowsPresenter"
+                                        ScrollViewer.IsScrollInertiaEnabled="{TemplateBinding IsScrollInertiaEnabled}"
+                                        >
+                                        <DataGridRowsPresenter.GestureRecognizers>
+                                            <ScrollGestureRecognizer CanHorizontallyScroll="True" CanVerticallyScroll="True" IsScrollInertiaEnabled="{Binding (ScrollViewer.IsScrollInertiaEnabled), ElementName=PART_RowsPresenter}" />
+                                        </DataGridRowsPresenter.GestureRecognizers>
+                                    </DataGridRowsPresenter>
+                                    <Rectangle
+                                        Grid.Row="2"
+                                        Grid.Column="2"
+                                        Fill="{DynamicResource DataGridScrollBarsSeparatorBackground}"
+                                        Name="PART_BottomRightCorner"
+                                        />
+                                    <ScrollBar
+                                        Grid.Row="1"
+                                        Grid.Column="2"
+                                        Width="{DynamicResource ScrollBarSize}"
+                                        Name="PART_VerticalScrollbar"
+                                        Orientation="Vertical"
+                                        />
+
+                                    <Grid Grid.Row="2" Grid.Column="1" ColumnDefinitions="Auto,*">
+                                        <Rectangle Name="PART_FrozenColumnScrollBarSpacer" />
+                                        <ScrollBar
+                                            Grid.Column="1"
+                                            Height="{DynamicResource ScrollBarSize}"
+                                            Name="PART_HorizontalScrollbar"
+                                            Orientation="Horizontal"
+                                            />
+                                    </Grid>
+
+                                    <Rectangle
+                                        Grid.Row="4"
+                                        Grid.Column="0"
+                                        Grid.ColumnSpan="3"
+                                        Height="1"
+                                        VerticalAlignment="Top"
+                                        Fill="{DynamicResource DataGridGridLinesBrush}"
+                                        Name="PART_InfoAndRowsSeparator"
+                                        />
+                                </Grid>
+
+                                <!--<Border Grid.Row="1" Background="{DynamicResource SecondColor}">
+                                    <Grid ColumnDefinitions="*,Auto">
+
+                                        <TextBlock
+                                            Grid.ColumnSpan="2"
+                                            HorizontalAlignment="Center"
+                                            Classes="helper"
+                                            Text="Всего записей: "
+                                            />
+                                        <StackPanel
+                                            Grid.Column="1"
+                                            Margin="0 0 5 0"
+                                            Orientation="Horizontal"
+                                            Spacing="2"
+                                            >
+                                            <IconButton
+                                                Classes="transparent"
+                                                SvgPath="{x:Static assets:Icons.xls}"
+                                                SvgSize="11"
+                                                ToolTip.Tip="Сохранить в Excel"
+                                                />
+                                            <IconButton Classes="transparent" SvgPath="{x:Static assets:Icons.columns}" SvgSize="11" />
+                                            <IconButton Classes="transparent" SvgPath="{x:Static assets:Icons.cogs}" SvgSize="11" />
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>-->
+
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter>
+
+                <Style Selector="^:empty-columns">
+                    <Style Selector="^ /template/ DataGridColumnHeader#PART_TopLeftCornerHeader">
+                        <Setter Property="IsVisible" Value="False" />
+                    </Style>
+                    <Style Selector="^ /template/ DataGridColumnHeadersPresenter#PART_ColumnHeadersPresenter">
+                        <Setter Property="IsVisible" Value="False" />
+                    </Style>
+                    <Style Selector="^ /template/ Rectangle#PART_ColumnHeadersAndRowsSeparator">
+                        <Setter Property="IsVisible" Value="False" />
+                    </Style>
+                </Style>
+            </ControlTheme>
+        </ResourceDictionary>
+    </Styles.Resources>
+
+    <!--  Полосатый грид  -->
+    <Style Selector="DataGrid.stripped DataGridRow:nth-child(even)">
+        <Setter Property="Background" Value="{DynamicResource DataGridRowEvenBg}" />
+    </Style>
+    <Style Selector="DataGrid.stripped DataGridRow:nth-child(odd)">
+        <Setter Property="Background" Value="{DynamicResource DataGridRowOddBg}" />
+    </Style>
+
+    <Style Selector="DataGrid">
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="GridLinesVisibility" Value="All" />
+        <Setter Property="CornerRadius" Value="{DynamicResource DefaultCornerRadius}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource Border}" />
+    </Style>
+
+    <Style Selector="DataGridCell">
+        <Setter Property="MinHeight" Value="18" />
+        <Setter Property="Padding" Value="1 1" />
+        <Setter Property="FontSize" Value="{DynamicResource DefaultFontSize}" />
+
+        <Style Selector="^ TextBlock">
+            <Setter Property="Margin" Value="4 0" />
+        </Style>
+        <Style Selector="^ CheckBox">
+            <Setter Property="Margin" Value="4 -5" />
+        </Style>
+        <Style Selector="^ ComboBox">
+            <Setter Property="Margin" Value="-1" />
+            <Setter Property="CornerRadius" Value="0" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="0" />
+        </Style>
+    </Style>
+
+    <!-- <Style Selector="DataGridCell /template/ ContentPresenter"> -->
+    <!--     <Setter Property="TextWrapping" Value="Wrap"/> -->
+    <!-- </Style> -->
+
+    <!--  Заголовок таблицы  -->
+    <Style Selector="DataGridColumnHeader">
+        <Setter Property="Background" Value="{DynamicResource DataGridBorderBg}" />
+        <Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="TextWrapping" Value="Wrap" />
+            <Setter Property="FontSize" Value="{DynamicResource FontSizeNormal}" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+        </Style>
+    </Style>
+
+
+    <!--  Colors  -->
+    <Style>
+        <Style Selector="DataGridRow.None">
+            <Setter Property="Background" Value="Transparent" />
+        </Style>
+        <Style Selector="DataGridRow.Transparent">
+            <Setter Property="Background" Value="Transparent" />
+        </Style>
+        <Style Selector="DataGridRow.Accent">
+            <Setter Property="Background" Value="{DynamicResource AccentColor}" />
+        </Style>
+        <Style Selector="DataGridRow.Gray">
+            <Setter Property="Background" Value="{DynamicResource GrayNormal}" />
+        </Style>
+        <Style Selector="DataGridRow.GrayLight">
+            <Setter Property="Background" Value="{DynamicResource GrayLightNormal}" />
+        </Style>
+        <Style Selector="DataGridRow.BlueDark">
+            <Setter Property="Background" Value="{DynamicResource BlueDarkNormal}" />
+        </Style>
+        <Style Selector="DataGridRow.Blue">
+            <Setter Property="Background" Value="{DynamicResource BlueNormal}" />
+        </Style>
+        <Style Selector="DataGridRow.BlueLight">
+            <Setter Property="Background" Value="{DynamicResource BlueLightNormal}" />
+        </Style>
+        <Style Selector="DataGridRow.Red">
+            <Setter Property="Background" Value="{DynamicResource RedNormal}" />
+        </Style>
+        <Style Selector="DataGridRow.RedLight">
+            <Setter Property="Background" Value="{DynamicResource RedLightNormal}" />
+        </Style>
+        <Style Selector="DataGridRow.Yellow">
+            <Setter Property="Background" Value="{DynamicResource YellowNormal}" />
+        </Style>
+        <Style Selector="DataGridRow.YellowLight">
+            <Setter Property="Background" Value="{DynamicResource YellowLightNormal}" />
+        </Style>
+        <Style Selector="DataGridRow.Green">
+            <Setter Property="Background" Value="{DynamicResource GreenNormal}" />
+        </Style>
+        <Style Selector="DataGridRow.GreenLight">
+            <Setter Property="Background" Value="{DynamicResource GreenLightNormal}" />
+        </Style>
+        <Style Selector="DataGridRow.Purple">
+            <Setter Property="Background" Value="{DynamicResource PurpleNormal}" />
+        </Style>
+        <Style Selector="DataGridRow.PurpleLight">
+            <Setter Property="Background" Value="{DynamicResource PurpleLightNormal}" />
+        </Style>
+        <Style Selector="DataGridRow.Lime">
+            <Setter Property="Background" Value="{DynamicResource LimeNormal}" />
+        </Style>
+        <Style Selector="DataGridRow.LimeLight">
+            <Setter Property="Background" Value="{DynamicResource LimeLightNormal}" />
+        </Style>
+        <Style Selector="DataGridRow.Turquoise">
+            <Setter Property="Background" Value="{DynamicResource TurquoiseNormal}" />
+        </Style>
+        <Style Selector="DataGridRow.TurquoiseLight">
+            <Setter Property="Background" Value="{DynamicResource TurquoiseLightNormal}" />
+        </Style>
+        <Style Selector="DataGridRow.Orange">
+            <Setter Property="Background" Value="{DynamicResource OrangeNormal}" />
+        </Style>
+        <Style Selector="DataGridRow.OrangeLight">
+            <Setter Property="Background" Value="{DynamicResource OrangeLightNormal}" />
+        </Style>
+        <Style Selector="DataGridRow.Brown">
+            <Setter Property="Background" Value="{DynamicResource BrownNormal}" />
+        </Style>
+        <Style Selector="DataGridRow.BrownLight">
+            <Setter Property="Background" Value="{DynamicResource BrownLightNormal}" />
+        </Style>
+        <Style Selector="DataGridRow.Lavender">
+            <Setter Property="Background" Value="{DynamicResource LavenderNormal}" />
+        </Style>
+        <Style Selector="DataGridRow.LavenderLight">
+            <Setter Property="Background" Value="{DynamicResource LavenderLightNormal}" />
+        </Style>
+        <Style Selector="DataGridRow.Pink">
+            <Setter Property="Background" Value="{DynamicResource PinkNormal}" />
+        </Style>
+        <Style Selector="DataGridRow.PinkLight">
+            <Setter Property="Background" Value="{DynamicResource PinkLightNormal}" />
+        </Style>
+        <Style Selector="DataGridRow.Grass">
+            <Setter Property="Background" Value="{DynamicResource GrassNormal}" />
+        </Style>
+        <Style Selector="DataGridRow.GrassLight">
+            <Setter Property="Background" Value="{DynamicResource GrassLightNormal}" />
+        </Style>
+    </Style>
+</Styles>

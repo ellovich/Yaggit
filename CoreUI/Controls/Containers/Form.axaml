@@ -1,0 +1,188 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Design.PreviewWith>
+        <Border Width="700" Height="600">
+
+            <StackPanel>
+                <FormGroup Header="Состав">
+                    <Form LabelPosition="Left" LabelWidth="*">
+                        <CalendarDatePicker FormItem.Label="DateTime" />
+                        <TextBox FormItem.IsRequired="True" FormItem.Label="Name" />
+                        <TextBox FormItem.Label="Email" />
+                        <TextBox FormItem.Label="Message" />
+                    </Form>
+                </FormGroup>
+
+                <FormGroup Header="Состав">
+                    <Form LabelPosition="Left">
+                        <CalendarDatePicker FormItem.Label="DateTime" />
+                        <TextBox FormItem.IsRequired="True" FormItem.Label="Name" />
+                        <TextBox FormItem.Label="Email" />
+                        <TextBox FormItem.Label="Message" />
+                    </Form>
+                </FormGroup>
+
+                <FormGroup Header="Сроки">
+                    <Form LabelWidth="*">
+                        <TextBox HorizontalAlignment="Stretch" FormItem.IsRequired="True" FormItem.Label="Name" />
+                        <TextBox HorizontalAlignment="Stretch" FormItem.Label="Email" />
+                        <TextBox FormItem.Label="Message" />
+                    </Form>
+                </FormGroup>
+
+
+                <Form Classes="Filter">
+                    <CalendarDatePicker FormItem.Label="DateTime" />
+                    <TextBox FormItem.IsRequired="True" FormItem.Label="Name" />
+                    <TextBox FormItem.Label="Email" />
+                    <TextBox FormItem.Label="Message" />
+                </Form>
+                <!--    -->
+                <!-- <Form LabelPosition="Left" Classes="filter"> -->
+                <!--     <TextBox FormItem.IsRequired="True" FormItem.Label="Name" /> -->
+                <!--     <TextBox FormItem.Label="Email" /> -->
+                <!--     <TextBox FormItem.Label="Message" /> -->
+                <!--     <Form.ItemsPanel> -->
+                <!--         <ItemsPanelTemplate> -->
+                <!--             <StackPanel Spacing="5" VerticalAlignment="Center" Orientation="Horizontal"/> -->
+                <!--         </ItemsPanelTemplate> -->
+                <!--     </Form.ItemsPanel> -->
+                <!-- </Form> -->
+            </StackPanel>
+        </Border>
+    </Design.PreviewWith>
+
+    <ControlTheme x:Key="{x:Type Form}" TargetType="Form">
+        <Setter Property="Grid.IsSharedSizeScope" Value="False" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="Template">
+            <ControlTemplate TargetType="Form">
+                <Border Name="PART_Border">
+                    <DataValidationErrors>
+                        <ItemsPresenter ItemsPanel="{TemplateBinding ItemsPanel}" />
+                    </DataValidationErrors>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+        <Style Selector="^:fixed-width">
+            <Setter Property="Grid.IsSharedSizeScope" Value="True" />
+        </Style>
+
+    </ControlTheme>
+
+
+    <ControlTheme x:Key="{x:Type FormGroup}" TargetType="FormGroup">
+        <Setter Property="Template">
+            <ControlTemplate TargetType="FormGroup">
+
+                <Panel Margin="0 10 0 0">
+
+                    <Border
+                        Grid.Row="0"
+                        Margin="20 -11 0 0"
+                        Padding="2"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Background="{Binding $parent[FormGroup].Background}"
+                        BorderBrush="{DynamicResource Border}"
+                        BorderThickness="0"
+                        CornerRadius="50"
+                        ZIndex="1"
+                        >
+                        <TextBlock Classes="helper" IsVisible="{Binding $parent[FormGroup].Header, Converter={x:Static ObjectConverters.IsNotNull}}" Text="{TemplateBinding Header}" />
+                    </Border>
+
+                    <Border
+                        Padding="3"
+                        BorderBrush="{DynamicResource Border}"
+                        BorderThickness="1"
+                        CornerRadius="{DynamicResource DefaultCornerRadius}"
+                        >
+                        <ItemsPresenter Margin="0 5" ItemsPanel="{TemplateBinding ItemsPanel}" />
+                    </Border>
+
+                </Panel>
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+
+    <ControlTheme x:Key="{x:Type FormItem}" TargetType="FormItem">
+        <Setter Property="Margin" Value="0 2" />
+        <Setter Property="Template">
+            <ControlTemplate TargetType="FormItem">
+                <Grid ColumnDefinitions="Auto,*">
+                    <StackPanel
+                        Grid.Column="0"
+                        Margin="0 0 0 2"
+                        HorizontalAlignment="{TemplateBinding LabelAlignment}"
+                        Name="PART_LabelPanel"
+                        Orientation="Horizontal"
+                        >
+                        <Label
+                            Background="Transparent"
+                            Content="{TemplateBinding Label}"
+                            FontWeight="SemiBold"
+                            Target="{Binding #PART_ContentPresenter.Content}"
+                            />
+                        <TextBlock Foreground="{DynamicResource RedNormal}" IsVisible="{TemplateBinding IsRequired}" Text="*" />
+                    </StackPanel>
+                    <ContentPresenter
+                        Grid.Column="1"
+                        Content="{TemplateBinding Content}"
+                        ContentTemplate="{TemplateBinding ContentTemplate}"
+                        Name="PART_ContentPresenter"
+                        />
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+        <Style Selector="^:not(:no-label):horizontal">
+            <Setter Property="Template">
+                <ControlTemplate TargetType="FormItem">
+                    <Border Name="ItemBorder">
+                        <Grid VerticalAlignment="Center" RowDefinitions="*, *">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" SharedSizeGroup="Label" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Border Grid.Row="0" Grid.Column="0" Width="{TemplateBinding LabelWidth}">
+                                <StackPanel
+                                    Margin="{Binding #PART_Label.Bounds.Height, Converter={x:Static FormContentHeightToMarginConverter.Instance}}"
+                                    HorizontalAlignment="{TemplateBinding LabelAlignment}"
+                                    VerticalAlignment="{Binding #PART_ContentPresenter.Bounds.Height, Converter={x:Static FormContentHeightToAlignmentConverter.Instance}}"
+                                    Name="PART_LabelPanel"
+                                    Orientation="Horizontal"
+                                    >
+                                    <Label
+                                        Background="Transparent"
+                                        Content="{TemplateBinding Label}"
+                                        FontWeight="SemiBold"
+                                        Name="PART_Label"
+                                        Target="{Binding #PART_ContentPresenter.Content}"
+                                        />
+                                    <TextBlock Foreground="{DynamicResource RedNormal}" IsVisible="{TemplateBinding IsRequired}" Text="*" />
+                                </StackPanel>
+                            </Border>
+                            <ContentPresenter
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                VerticalAlignment="Stretch"
+                                VerticalContentAlignment="Center"
+                                Content="{TemplateBinding Content}"
+                                ContentTemplate="{TemplateBinding ContentTemplate}"
+                                Name="PART_ContentPresenter"
+                                />
+                        </Grid>
+                    </Border>
+
+                </ControlTemplate>
+            </Setter>
+        </Style>
+        <Style Selector="^:no-label">
+            <Setter Property="Template">
+                <ControlTemplate TargetType="FormItem">
+                    <ContentPresenter Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" />
+                </ControlTemplate>
+            </Setter>
+        </Style>
+    </ControlTheme>
+</ResourceDictionary>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!-- ####################################################################
+
+This file was generates automatically via the 
+IconPacks.Browser (MIT-License). 
+
+Visit https://github.com/MahApps/MahApps.Metro.IconPacks and 
+https://github.com/MahApps/MahApps.Metro.IconPacks/blob/develop/LICENSE 
+for more information.
+ 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+Icon-Name: 			RegularServer
+Iconpack:			BoxIcons
+Iconpack-Homepage: 	https://boxicons.com/
+Iconpack-License:	https://boxicons.com/usage/#license
+
+#####################################################################-->
+
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="176"
+     height="176">
+    <path d="M853.333 832h-682.667c-47.128 0-85.333-38.205-85.333-85.333v0-170.667c0-47.128 38.205-85.333 85.333-85.333v0h682.667c47.128 0 85.333 38.205 85.333 85.333v0 170.667c0 47.128-38.205 85.333-85.333 85.333v0zM170.667 576v170.667h682.667v-170.667zM853.333 405.333h-682.667c-47.128 0-85.333-38.205-85.333-85.333v0-170.667c0-47.128 38.205-85.333 85.333-85.333v0h682.667c47.128 0 85.333 38.205 85.333 85.333v0 170.667c0 47.128-38.205 85.333-85.333 85.333v0zM170.667 149.333v170.667h682.667v-170.667zM725.333 704h85.333v-85.333h-85.333zM597.333 704h85.333v-85.333h-85.333zM725.333 277.333h85.333v-85.333h-85.333zM597.333 277.333h85.333v-85.333h-85.333z"
+          class="Normal"
+          transform="matrix(0.20625007683414104,0,0,-0.20625007683414104,-17.599937844253276,180.40003442169518)" />
+</svg>

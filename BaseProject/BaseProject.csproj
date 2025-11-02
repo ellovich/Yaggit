@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+	</PropertyGroup>
+
+	<ItemGroup Label="Nugets">
+		<PackageReference Include="Avalonia.Desktop" />
+		<PackageReference Include="Avalonia.Fonts.Inter" />
+		<PackageReference Include="Microsoft.Extensions.Configuration" />
+		<PackageReference Include="Microsoft.Extensions.Hosting" />
+		<PackageReference Include="HotAvalonia.Extensions" PrivateAssets="All" Condition="'$(Configuration)' == 'Debug'" />
+		<PackageReference Include="HotAvalonia" PrivateAssets="All" Publish="True" Condition="'$(Configuration)' == 'Debug'" />
+	</ItemGroup>
+	<ItemGroup Label="Nugets for Logging">
+		<PackageReference Include="Serilog" />
+		<PackageReference Include="Serilog.Extensions.Logging" />
+		<PackageReference Include="Serilog.Settings.Configuration" />
+		<PackageReference Include="Serilog.Sinks.Console" />
+		<PackageReference Include="Serilog.Sinks.Debug" />
+		<PackageReference Include="Serilog.Sinks.File" />
+		<PackageReference Include="Serilog.Sinks.Seq" />
+	</ItemGroup>
+
+	<ItemGroup Label="Other Projects">
+		<ProjectReference Include="..\ViewModels\ViewModels.csproj" />
+	</ItemGroup>
+	<ItemGroup Label="Projects for Designer">
+		<ProjectReference Include="..\CoreUI\CoreUI.csproj" />
+		<ProjectReference Include="..\Views\Views.csproj" />
+	</ItemGroup>
+
+	<ItemGroup Label="Configuration files">
+		<EmbeddedResource Include="Configuration\appsettings.json">
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Configuration\appsettings.Development.json">
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</EmbeddedResource>
+	</ItemGroup>
+</Project>

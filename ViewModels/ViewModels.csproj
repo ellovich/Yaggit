@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+		<OutputType>Library</OutputType>
+	</PropertyGroup>
+
+    <ItemGroup Label="Nugets">
+        <PackageReference Include="CommunityToolkit.Mvvm" />
+        <PackageReference Include="AsyncAwaitBestPractices" />
+        <PackageReference Include="HanumanInstitute.MvvmDialogs.Avalonia" />
+		<PackageReference Include="livechartscore.skiasharpview" />
+	</ItemGroup>
+
+    <ItemGroup Label="Other Projects">
+        <ProjectReference Include="..\Models\Models.csproj" />
+        <ProjectReference Include="..\CoreUI\CoreUI.csproj" />
+    </ItemGroup>
+
+	<ItemGroup Label="Languages">
+		
+		<!-- Базовые .resx -->
+		<EmbeddedResource Update="Lang\**\*.resx">
+			<Generator>PublicResXFileCodeGenerator</Generator>
+			<LastGenOutput>%(Filename).Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+		
+		<!-- Локализованные файлы (например, Auth.ru-RU.resx) -->
+		<EmbeddedResource Update="Lang\**\*.??-??.resx">
+			<DependentUpon>$([System.String]::Copy('%(Filename)').Split('.')[0]).resx</DependentUpon>
+		</EmbeddedResource>
+
+		<!-- Автоматически генерируемые Designer.cs -->
+		<Compile Update="Lang\**\*.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>$([System.String]::Copy('%(Filename)').Replace('.Designer','')).resx</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+</Project>

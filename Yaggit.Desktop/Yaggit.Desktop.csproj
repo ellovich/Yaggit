@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	
+	<PropertyGroup>
+		<AssemblyName>Yaggit.Desktop</AssemblyName>
+		<ApplicationIcon>YaggitIcon.ico</ApplicationIcon>
+		<Version>1.0.0</Version>
+		<ApplicationManifest>app.manifest</ApplicationManifest>
+	</PropertyGroup>
+
+	<ItemGroup Label="Nugets">
+		<PackageReference Include="Avalonia.Desktop" />
+	</ItemGroup>
+
+	<ItemGroup Label="Other Projects">
+		<ProjectReference Include="..\BaseProject\BaseProject.csproj" />
+	</ItemGroup>
+	
+</Project>

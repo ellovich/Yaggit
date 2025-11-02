@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Library</OutputType>
+		<AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+	</PropertyGroup>
+
+	<ItemGroup Label="Assets">
+		<AvaloniaResource Include="Assets\Icons\**" />
+		<AvaloniaResource Include="Assets\Fonts\**" />
+	</ItemGroup>
+
+	<ItemGroup Label="Nugets">
+		<PackageReference Include="Avalonia" />
+		<PackageReference Include="Avalonia.Themes.Fluent" />
+		<PackageReference Include="Avalonia.Controls.DataGrid" />
+		<PackageReference Include="Avalonia.AvaloniaEdit" />
+		<PackageReference Include="Avalonia.Diagnostics" Condition="'$(Configuration)' == 'Debug'" />
+		<PackageReference Include="Avalonia.Markup.Xaml.Loader" Condition="'$(Configuration)' == 'Debug'" />
+		<PackageReference Include="HotAvalonia" PrivateAssets="All" Publish="True" Condition="'$(Configuration)' == 'Debug'" />
+		<PackageReference Include="Avalonia.Xaml.Behaviors" />
+		<PackageReference Include="Avalonia.Xaml.Interactions" />
+		<PackageReference Include="AsyncImageLoader.Avalonia" />
+		<PackageReference Include="Svg.Controls.Skia.Avalonia" />
+		<PackageReference Include="AvaloniaEdit.TextMate" />
+		<PackageReference Include="Eremex.Avalonia.Controls" />
+		<PackageReference Include="Eremex.Avalonia.Themes.DeltaDesign" />
+		<PackageReference Include="livechartscore.skiasharpview.avalonia" />
+	</ItemGroup>
+
+	<ItemGroup Label="IconsEnumGenerator">
+		<None Update="Assets\IconsEnumGenerator.tt">
+			<Generator>TextTemplatingFileGenerator</Generator>
+			<LastGenOutput>IconsEnumGenerator.cs</LastGenOutput>
+		</None>
+		<Compile Update="Assets\IconsEnumGenerator.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>IconsEnumGenerator.tt</DependentUpon>
+		</Compile>
+		<Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+	</ItemGroup>
+	
+</Project>
