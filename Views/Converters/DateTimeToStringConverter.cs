@@ -1,31 +1,21 @@
-﻿using System.Globalization;
-using Avalonia.Data.Converters;
+﻿namespace Views.Converters;
 
-namespace Views.Converters;
-
-/// <summary>
-///
-/// </summary>
-public class DateTimeToStringConverter : IValueConverter
+public sealed class DateTimeToStringConverter : IValueConverter
 {
     public string DateFormat { get; set; } = "d";
 
     public object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
-    {
-        if (value is DateTime dateTime)
-            return dateTime.ToString(DateFormat);
-
-        return null;
-    }
+        => value is DateTime dateTime
+            ? dateTime.ToString(DateFormat, culture)
+            : BindingOperations.DoNothing;
 
     public object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
-        if (string.IsNullOrEmpty(value as string))
-            return null;
+        if (value is not string s || s.Length == 0)
+            return BindingOperations.DoNothing;
 
-        if (DateTime.TryParse(value as string, culture, DateTimeStyles.None, out var result))
-            return result;
-
-        return Avalonia.Data.BindingOperations.DoNothing;
+        return DateTime.TryParse(s, culture, DateTimeStyles.None, out var result)
+            ? result
+            : BindingOperations.DoNothing;
     }
 }

@@ -11,4 +11,10 @@
         <ProjectReference Include="..\CoreUI\CoreUI.csproj" />
     </ItemGroup>
 
+	<ItemGroup>
+	  <Compile Update="UI\Yaggit\CommitHistory.axaml.cs">
+	    <DependentUpon>CommitHistory.axaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
 </Project>

@@ -32,65 +32,15 @@ public partial class VmBaseMainWindow : VmBase
         .GetCustomAttribute<AssemblyDescriptionAttribute>()?.Description.ToString();
 
     [RelayCommand]
-    public void ShowAbout()
+    public async Task ShowAbout()
     {
-        _dialogService.ShowInfoAsync(this, "О программе", ProgramDescription!, 300, 200);
+        await _dialogService.ShowInfoAsync(this, "О программе", ProgramDescription!, 300, 200);
     }
 
     [RelayCommand]
-    public void ReportBug()
+    public async Task ReportBug()
     {
-        string mailClientPath = string.Empty;
-        if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-        {
-            string[] candidates =
-            {
-                @"C:\Program Files\Microsoft Office\root\Office16\OUTLOOK.EXE",
-                @"C:\Program Files (x86)\RuPost Desktop\rupost-desktop.exe",
-                @"C:\Program Files\Mozilla Thunderbird\thunderbird.exe"
-            };
-            foreach (var path in candidates)
-            {
-                if (File.Exists(path))
-                {
-                    mailClientPath = path;
-                    break;
-                }
-            }
-        }
-        else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
-        {
-            string[] candidates = { "/usr/bin/thunderbird", "/usr/bin/rupost" };
-            foreach (var path in candidates)
-            {
-                if (File.Exists(path))
-                {
-                    mailClientPath = path;
-                    break;
-                }
-            }
-        }
-
-        if (string.IsNullOrEmpty(mailClientPath))
-            return;
-
-        // TODO: Адрес получателя и тема берутся из свойств проекта
-        string recipient = "examle@mail.ru";
-        string subject = "Баг";
-        string body = Uri.EscapeDataString(string.Empty);
-
-        string arguments;
-        if (mailClientPath.EndsWith("OUTLOOK.EXE", StringComparison.OrdinalIgnoreCase))
-        {
-            arguments = $"/c ipm.note /m \"{recipient}?subject={Uri.EscapeDataString(subject)}&body={body}\"";
-        }
-        else
-        {
-            arguments = $"-compose \"to='{recipient}',subject='{subject}',body='{body}'\"";
-        }
-
-        Process.Start(
-            new ProcessStartInfo { FileName = mailClientPath, Arguments = arguments, UseShellExecute = false });
+        await Task.Delay(500);
     }
 
     [RelayCommand]

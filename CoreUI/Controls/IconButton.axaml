@@ -11,7 +11,7 @@
             HorizontalAlignment="Left"
             Spacing="16">
             <ToggleSwitch Content="Toggle Loading" Name="loading" />
-            <EnumSelector EnumType="{x:Type c:Position}" Name="placement" />
+          <!--  <EnumSelector EnumType="{x:Type c:Position}" Name="placement" />
             <IconButton
                 Content="IconButton"
                 IconPlacement="{Binding #placement.Value}"
@@ -41,7 +41,7 @@
                 SvgSize="50"
                 IconPlacement="{Binding #placement.Value}"
                 IsLoading="{Binding #loading.IsChecked}"
-                SvgPath="{x:Static assets:Icons.cogs}" />
+                SvgPath="{x:Static assets:Icons.cogs}" />-->
         </StackPanel>
     </Design.PreviewWith>
 
@@ -88,8 +88,7 @@
                                 Width="{Binding $parent[IconButton].SvgSize}"
                                 Height="{Binding $parent[IconButton].SvgSize}"
                                 Path="{Binding $parent[IconButton].SvgPath}"
-                                Opacity="{Binding !$parent[IconButton].IsLoading, 
-                                    Converter={StaticResource BoolToOpacityConverter}}" />
+                                Opacity="{Binding !$parent[IconButton].IsLoading, Converter={StaticResource BoolToOpacityConverter}}" />
                             <LoadingIcon 
                                 Classes="Small" 
                                 Foreground="{TemplateBinding Foreground}"

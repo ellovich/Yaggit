@@ -44,6 +44,10 @@ public class App : Application
             Resources[typeof(IServiceProvider)] = ServiceProvider;
 
         AvaloniaXamlLoader.Load(this);
+#if DEBUG
+        if (!Design.IsDesignMode)
+            this.AttachDeveloperTools();
+#endif
     }
 
     public override void OnFrameworkInitializationCompleted()

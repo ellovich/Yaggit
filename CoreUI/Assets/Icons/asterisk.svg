@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!-- ####################################################################
+
+This file was generates automatically via the 
+IconPacks.Browser (MIT-License). 
+
+Visit https://github.com/MahApps/MahApps.Metro.IconPacks and 
+https://github.com/MahApps/MahApps.Metro.IconPacks/blob/develop/LICENSE 
+for more information.
+ 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+Icon-Name: 			Asterisk
+Iconpack:			BootstrapIcons
+Iconpack-Homepage: 	https://icons.getbootstrap.com/
+Iconpack-License:	https://github.com/twbs/icons?tab=MIT-1-ov-file#readme
+
+#####################################################################-->
+
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="48"
+     height="48">
+    <path d="M150 300A18.75 18.75 0 0 0 168.75 281.25V182.475L254.2875 231.8625A18.75 18.75 0 1 0 273.0375 199.3875L187.5 150L273.0375 100.6125A18.75 18.75 0 1 0 254.2875 68.1375L168.75 117.525V18.75A18.75 18.75 0 1 0 131.25 18.75V117.525L45.7125 68.1375A18.75 18.75 0 1 0 26.9625 100.6125L112.5 150L26.9625 199.3875A18.75 18.75 0 0 0 45.7125 231.8625L131.25 182.475V281.25A18.75 18.75 0 0 0 150 300"
+          class="Green"
+          transform="matrix(0.15999999987284338,0,0,-0.15999999987284338,-6.237030019792654E-06,47.999999961853014)" />
+</svg>

@@ -76,6 +76,8 @@ public partial class VmRegister : VmBase
     [RelayCommand]
     private async Task Register()
     {
+        await Task.CompletedTask;
+
         //ValidateAllProperties();
 
         //if (HasErrors)

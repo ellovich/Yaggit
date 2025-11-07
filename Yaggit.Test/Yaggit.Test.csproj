@@ -18,10 +18,18 @@
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 		<PackageReference Include="NUnit3TestAdapter" />
+		<PackageReference Include="ReportGenerator" />
 	</ItemGroup>
 
 	<ItemGroup Label="Other Projects">
 	  <ProjectReference Include="..\Models\Models.csproj" />
 	</ItemGroup>
+
+	<PropertyGroup Label="Coverage Settings">
+		<CollectCoverage>true</CollectCoverage>
+		<CoverletOutputFormat>cobertura,opencover,json</CoverletOutputFormat>
+		<Exclude>[xunit.*]*</Exclude>
+		<ExcludeByAttribute>Obsolete,GeneratedCode</ExcludeByAttribute>
+	</PropertyGroup>
 
 </Project>

@@ -1,29 +1,21 @@
-﻿using System.Globalization;
-using Avalonia.Data.Converters;
-
-namespace Views.Converters;
+﻿namespace Views.Converters;
 
 /// <summary>
 /// Конвертер: ноль -> нет, любое другое число -> да,
 /// </summary>
-public class YesNoNullableConverter : IValueConverter
+public sealed class YesNoNullableConverter : IValueConverter
 {
     public object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
-    {
-        if (value is int valueInt)
-            return valueInt == 0 ? "нет" : "да";
+        => value switch
+        {
+            int v => v == 0 ? ViewModels.Lang.Common.String_No : ViewModels.Lang.Common.String_Yes,
+            byte v => v == 0 ? ViewModels.Lang.Common.String_No : ViewModels.Lang.Common.String_Yes,
+            long v => v == 0 ? ViewModels.Lang.Common.String_No : ViewModels.Lang.Common.String_Yes,
+            _ => null
+        };
 
-        if (value is byte valueByte)
-            return valueByte == 0 ? "нет" : "да";
-
-        return null;
-    }
-
-    public object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
-    {
-        if (value is string valueStr)
-            return valueStr == "да" ? 1 : 0;
-
-        return null;
-    }
+    public object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture) =>
+            value is string s
+                ? s.Equals(ViewModels.Lang.Common.String_Yes, StringComparison.OrdinalIgnoreCase) ? 1 : 0
+                : null;
 }

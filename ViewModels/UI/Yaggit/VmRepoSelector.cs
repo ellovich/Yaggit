@@ -7,8 +7,6 @@ namespace ViewModels.UI.Yaggit;
 /// </summary>
 public partial class VmRepoSelector : VmBase
 {
-    public VmBaseMainWindow VmMainWindow { get; set; }
-
     private readonly ILogger<VmRepoSelector> _logger;
     private readonly IDialogService _dialogService;
     private readonly IGitRepositoryContext _gitRepositoryContext;
@@ -35,18 +33,21 @@ public partial class VmRepoSelector : VmBase
     #region PROPS
 
     [ObservableProperty]
-    public partial string RepoPath { get; set; }
+    public required partial string? RepoPath { get; set; } = string.Empty;
 
     [ObservableProperty]
-    public partial string RepoName { get; set; }
+    public required partial string? RepoName { get; set; } = string.Empty;
 
     [ObservableProperty]
     public partial bool IsRepositoryInitialized { get; set; }
 
-    partial void OnRepoPathChanged(string value)
+    partial void OnRepoPathChanged(string? value)
     {
-        RepoName = new DirectoryInfo(value).Name;
-        IsRepositoryInitialized = _gitInitializer.IsRepositoryInitialized(value);
+        if (value is not null)
+        {
+            RepoName = new DirectoryInfo(value).Name;
+            IsRepositoryInitialized = _gitInitializer.IsRepositoryInitialized(value);
+        }
     }
 
     #endregion PROPS
@@ -59,7 +60,7 @@ public partial class VmRepoSelector : VmBase
     {
         try
         {
-            var res = await _dialogService.ShowOpenFolderDialogAsync(VmMainWindow);
+            var res = await _dialogService.ShowOpenFolderDialogAsync(MainVm);
             if (res is null)
                 return;
 
@@ -68,7 +69,7 @@ public partial class VmRepoSelector : VmBase
             if (!_gitInitializer.IsRepositoryInitialized(RepoPath))
             {
                 var confirm = await _dialogService.ShowConfirmDialog(
-                    VmMainWindow,
+                    MainVm,
                     "Папка не является Git-репозиторием",
                     "Создать новый репозиторий?"
                 );
@@ -77,7 +78,7 @@ public partial class VmRepoSelector : VmBase
                 {
                     await _gitInitializer.InitializeRepositoryAsync(RepoPath);
                     IsRepositoryInitialized = true;
-                    await _dialogService.ShowInfoAsync(VmMainWindow,  Lang.Git.Result_RepoInitialized, RepoPath);
+                    await _dialogService.ShowInfoAsync(MainVm, Lang.Git.Result_RepoInitialized, RepoPath);
                 }
                 else
                 {
@@ -96,16 +97,14 @@ public partial class VmRepoSelector : VmBase
         catch (GitException ex)
         {
             _logger.LogError(ex, "Ошибка git при выборе репозитория.");
-            await _dialogService.ShowErrorAsync(VmMainWindow, "Ошибка Git", ex.Message);
+            await _dialogService.ShowErrorAsync(MainVm, "Ошибка Git", ex.Message);
         }
         catch (Exception ex)
         {
             _logger.LogError(ex, "Ошибка выбора репозитория.");
-            await _dialogService.ShowErrorAsync(VmMainWindow, "Ошибка выбора папки", ex.Message);
+            await _dialogService.ShowErrorAsync(MainVm, "Ошибка выбора папки", ex.Message);
         }
     }
-
-
 
     /// <summary>
     /// Создание нового git-репозитория.
@@ -115,7 +114,7 @@ public partial class VmRepoSelector : VmBase
     {
         try
         {
-            var res = await _dialogService.ShowOpenFolderDialogAsync(VmMainWindow);
+            var res = await _dialogService.ShowOpenFolderDialogAsync(MainVm);
             if (res is null)
                 return;
 
@@ -123,7 +122,7 @@ public partial class VmRepoSelector : VmBase
 
             if (_gitInitializer.IsRepositoryInitialized(RepoPath))
             {
-                await _dialogService.ShowInfoAsync(VmMainWindow, "Репозиторий уже существует", RepoPath);
+                await _dialogService.ShowInfoAsync(MainVm, "Репозиторий уже существует", RepoPath);
                 _gitRepositoryContext.SetRepository(RepoPath);
                 return;
             }
@@ -133,17 +132,17 @@ public partial class VmRepoSelector : VmBase
 
             IsRepositoryInitialized = true;
             _logger.LogInformation("Репозиторий успешно инициализирован: {Path}", RepoPath);
-            await _dialogService.ShowInfoAsync(VmMainWindow, "Репозиторий создан", RepoPath);
+            await _dialogService.ShowInfoAsync(MainVm, "Репозиторий создан", RepoPath);
         }
         catch (GitException ex)
         {
             _logger.LogError(ex, "Ошибка git при инициализации репозитория.");
-            await _dialogService.ShowErrorAsync(VmMainWindow, "Ошибка Git", ex.Message);
+            await _dialogService.ShowErrorAsync(MainVm, "Ошибка Git", ex.Message);
         }
         catch (Exception ex)
         {
             _logger.LogError(ex, "Ошибка при инициализации репозитория.");
-            await _dialogService.ShowErrorAsync(VmMainWindow, "Ошибка", ex.Message);
+            await _dialogService.ShowErrorAsync(MainVm, "Ошибка", ex.Message);
         }
     }
 

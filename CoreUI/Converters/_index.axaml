@@ -7,8 +7,5 @@
     <StringToDocumentConverter x:Key="StringToDocumentConverter" />
     <NavMarginConverter x:Key="NavMarginConverter" />
     <NullToBoolConverter x:Key="NullToBoolConverter" />
-    <NumToEnumConverter x:Key="NumToEnumConverter" />
-    <EnumDescriptionConverter x:Key="EnumDescriptionConverter" />
     <NavMenuWidthToCollapsedMultiConverter x:Key="NavMenuWidthToCollapsedMultiConverter" />
-    <WaveProgressValueConverter x:Key="WaveProgressValueConverter" />
 </ResourceDictionary>

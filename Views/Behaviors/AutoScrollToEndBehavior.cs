@@ -3,7 +3,7 @@ using Avalonia.Xaml.Interactivity;
 
 namespace Views.Behaviors;
 
-public class AutoScrollToEndBehavior : Behavior<ItemsControl>
+public partial class AutoScrollToEndBehavior : Behavior<ItemsControl>
 {
     protected override void OnAttachedToVisualTree()
     {

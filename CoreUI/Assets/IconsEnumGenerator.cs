@@ -1,4 +1,4 @@
-﻿// File generated: 02.11.2025 02:56
+﻿// File generated: 08.11.2025 20:08
 
 namespace CoreUI.Assets;
 
@@ -9,6 +9,7 @@ public static class Icons
     public const string arrowLeft = @"avares://CoreUI/Assets/Icons/arrowLeft.svg";
     public const string arrowRight = @"avares://CoreUI/Assets/Icons/arrowRight.svg";
     public const string arrowUp = @"avares://CoreUI/Assets/Icons/arrowUp.svg";
+    public const string asterisk = @"avares://CoreUI/Assets/Icons/asterisk.svg";
     public const string backspace = @"avares://CoreUI/Assets/Icons/backspace.svg";
     public const string bug = @"avares://CoreUI/Assets/Icons/bug.svg";
     public const string calendar = @"avares://CoreUI/Assets/Icons/calendar.svg";
@@ -41,6 +42,8 @@ public static class Icons
     public const string file = @"avares://CoreUI/Assets/Icons/file.svg";
     public const string folder = @"avares://CoreUI/Assets/Icons/folder.svg";
     public const string generate = @"avares://CoreUI/Assets/Icons/generate.svg";
+    public const string gitLogo = @"avares://CoreUI/Assets/Icons/gitLogo.svg";
+    public const string gitStar = @"avares://CoreUI/Assets/Icons/gitStar.svg";
     public const string info = @"avares://CoreUI/Assets/Icons/info.svg";
     public const string linux = @"avares://CoreUI/Assets/Icons/linux.svg";
     public const string list = @"avares://CoreUI/Assets/Icons/list.svg";
@@ -51,6 +54,7 @@ public static class Icons
     public const string panelCollapse = @"avares://CoreUI/Assets/Icons/panelCollapse.svg";
     public const string panelExpand = @"avares://CoreUI/Assets/Icons/panelExpand.svg";
     public const string pc = @"avares://CoreUI/Assets/Icons/pc.svg";
+    public const string pin = @"avares://CoreUI/Assets/Icons/pin.svg";
     public const string play = @"avares://CoreUI/Assets/Icons/play.svg";
     public const string plug = @"avares://CoreUI/Assets/Icons/plug.svg";
     public const string plus = @"avares://CoreUI/Assets/Icons/plus.svg";
@@ -66,6 +70,7 @@ public static class Icons
     public const string sun = @"avares://CoreUI/Assets/Icons/sun.svg";
     public const string textSearch = @"avares://CoreUI/Assets/Icons/textSearch.svg";
     public const string tree = @"avares://CoreUI/Assets/Icons/tree.svg";
+    public const string unpin = @"avares://CoreUI/Assets/Icons/unpin.svg";
     public const string update = @"avares://CoreUI/Assets/Icons/update.svg";
     public const string upload = @"avares://CoreUI/Assets/Icons/upload.svg";
     public const string version = @"avares://CoreUI/Assets/Icons/version.svg";
@@ -110,5 +115,144 @@ public static class Icons
         public const string maximize = @"avares://CoreUI/Assets/Icons/TitleBar/maximize.svg";
         public const string minimize = @"avares://CoreUI/Assets/Icons/TitleBar/minimize.svg";
         public const string restore = @"avares://CoreUI/Assets/Icons/TitleBar/restore.svg";
+    }
+    public static class Vs22 {
+        public const string Base = @"avares://CoreUI/Assets/Icons/Vs22/";
+        public const string Add = @"avares://CoreUI/Assets/Icons/Vs22/Add.svg";
+        public const string AddAttachment = @"avares://CoreUI/Assets/Icons/Vs22/AddAttachment.svg";
+        public const string AddAttribute = @"avares://CoreUI/Assets/Icons/Vs22/AddAttribute.svg";
+        public const string AddComment = @"avares://CoreUI/Assets/Icons/Vs22/AddComment.svg";
+        public const string AddConnection = @"avares://CoreUI/Assets/Icons/Vs22/AddConnection.svg";
+        public const string AddControl = @"avares://CoreUI/Assets/Icons/Vs22/AddControl.svg";
+        public const string AddDataSource = @"avares://CoreUI/Assets/Icons/Vs22/AddDataSource.svg";
+        public const string AddDictionary = @"avares://CoreUI/Assets/Icons/Vs22/AddDictionary.svg";
+        public const string AddDictionaryItem = @"avares://CoreUI/Assets/Icons/Vs22/AddDictionaryItem.svg";
+        public const string AddDocument = @"avares://CoreUI/Assets/Icons/Vs22/AddDocument.svg";
+        public const string AddDocumentGroup = @"avares://CoreUI/Assets/Icons/Vs22/AddDocumentGroup.svg";
+        public const string AddFolder = @"avares://CoreUI/Assets/Icons/Vs22/AddFolder.svg";
+        public const string AddItem = @"avares://CoreUI/Assets/Icons/Vs22/AddItem.svg";
+        public const string Aserif = @"avares://CoreUI/Assets/Icons/Vs22/Aserif.svg";
+        public const string Attach = @"avares://CoreUI/Assets/Icons/Vs22/Attach.svg";
+        public const string AttachDocument = @"avares://CoreUI/Assets/Icons/Vs22/AttachDocument.svg";
+        public const string AudioMute = @"avares://CoreUI/Assets/Icons/Vs22/AudioMute.svg";
+        public const string AudioPlayback = @"avares://CoreUI/Assets/Icons/Vs22/AudioPlayback.svg";
+        public const string AudioRecording = @"avares://CoreUI/Assets/Icons/Vs22/AudioRecording.svg";
+        public const string AutosizeOptimize = @"avares://CoreUI/Assets/Icons/Vs22/AutosizeOptimize.svg";
+        public const string Backwards = @"avares://CoreUI/Assets/Icons/Vs22/Backwards.svg";
+        public const string BarChart = @"avares://CoreUI/Assets/Icons/Vs22/BarChart.svg";
+        public const string Binary = @"avares://CoreUI/Assets/Icons/Vs22/Binary.svg";
+        public const string Bios = @"avares://CoreUI/Assets/Icons/Vs22/Bios.svg";
+        public const string Bookmark = @"avares://CoreUI/Assets/Icons/Vs22/Bookmark.svg";
+        public const string Cancel = @"avares://CoreUI/Assets/Icons/Vs22/Cancel.svg";
+        public const string CheckboxList = @"avares://CoreUI/Assets/Icons/Vs22/CheckboxList.svg";
+        public const string CleanData = @"avares://CoreUI/Assets/Icons/Vs22/CleanData.svg";
+        public const string ClearSort = @"avares://CoreUI/Assets/Icons/Vs22/ClearSort.svg";
+        public const string Close = @"avares://CoreUI/Assets/Icons/Vs22/Close.svg";
+        public const string Collapse = @"avares://CoreUI/Assets/Icons/Vs22/Collapse.svg";
+        public const string CollapseLeft = @"avares://CoreUI/Assets/Icons/Vs22/CollapseLeft.svg";
+        public const string CollapseUp = @"avares://CoreUI/Assets/Icons/Vs22/CollapseUp.svg";
+        public const string ColorPalette = @"avares://CoreUI/Assets/Icons/Vs22/ColorPalette.svg";
+        public const string CompareFiles = @"avares://CoreUI/Assets/Icons/Vs22/CompareFiles.svg";
+        public const string CompareFolders = @"avares://CoreUI/Assets/Icons/Vs22/CompareFolders.svg";
+        public const string Computer = @"avares://CoreUI/Assets/Icons/Vs22/Computer.svg";
+        public const string Console = @"avares://CoreUI/Assets/Icons/Vs22/Console.svg";
+        public const string ContractArrow = @"avares://CoreUI/Assets/Icons/Vs22/ContractArrow.svg";
+        public const string Copy = @"avares://CoreUI/Assets/Icons/Vs22/Copy.svg";
+        public const string CSFileNode = @"avares://CoreUI/Assets/Icons/Vs22/CSFileNode.svg";
+        public const string CSProjectNode = @"avares://CoreUI/Assets/Icons/Vs22/CSProjectNode.svg";
+        public const string Delete = @"avares://CoreUI/Assets/Icons/Vs22/Delete.svg";
+        public const string DeleteAttachment = @"avares://CoreUI/Assets/Icons/Vs22/DeleteAttachment.svg";
+        public const string DeleteFilter = @"avares://CoreUI/Assets/Icons/Vs22/DeleteFilter.svg";
+        public const string Disconnect = @"avares://CoreUI/Assets/Icons/Vs22/Disconnect.svg";
+        public const string Document = @"avares://CoreUI/Assets/Icons/Vs22/Document.svg";
+        public const string DocumentOK = @"avares://CoreUI/Assets/Icons/Vs22/DocumentOK.svg";
+        public const string Expand = @"avares://CoreUI/Assets/Icons/Vs22/Expand.svg";
+        public const string ExpandAll = @"avares://CoreUI/Assets/Icons/Vs22/ExpandAll.svg";
+        public const string ExpandDown = @"avares://CoreUI/Assets/Icons/Vs22/ExpandDown.svg";
+        public const string ExpandRight = @"avares://CoreUI/Assets/Icons/Vs22/ExpandRight.svg";
+        public const string Favorite = @"avares://CoreUI/Assets/Icons/Vs22/Favorite.svg";
+        public const string Filter = @"avares://CoreUI/Assets/Icons/Vs22/Filter.svg";
+        public const string FlagDarkRed = @"avares://CoreUI/Assets/Icons/Vs22/FlagDarkRed.svg";
+        public const string FolderClosed = @"avares://CoreUI/Assets/Icons/Vs22/FolderClosed.svg";
+        public const string FolderOffline = @"avares://CoreUI/Assets/Icons/Vs22/FolderOffline.svg";
+        public const string FolderOpened = @"avares://CoreUI/Assets/Icons/Vs22/FolderOpened.svg";
+        public const string History = @"avares://CoreUI/Assets/Icons/Vs22/History.svg";
+        public const string Home = @"avares://CoreUI/Assets/Icons/Vs22/Home.svg";
+        public const string Infinity = @"avares://CoreUI/Assets/Icons/Vs22/Infinity.svg";
+        public const string Key = @"avares://CoreUI/Assets/Icons/Vs22/Key.svg";
+        public const string Keyboard = @"avares://CoreUI/Assets/Icons/Vs22/Keyboard.svg";
+        public const string MoveDown = @"avares://CoreUI/Assets/Icons/Vs22/MoveDown.svg";
+        public const string MoveUp = @"avares://CoreUI/Assets/Icons/Vs22/MoveUp.svg";
+        public const string OpenFile = @"avares://CoreUI/Assets/Icons/Vs22/OpenFile.svg";
+        public const string OpenFolder = @"avares://CoreUI/Assets/Icons/Vs22/OpenFolder.svg";
+        public const string Pin = @"avares://CoreUI/Assets/Icons/Vs22/Pin.svg";
+        public const string RemoteDesktop = @"avares://CoreUI/Assets/Icons/Vs22/RemoteDesktop.svg";
+        public const string RemoteFolder = @"avares://CoreUI/Assets/Icons/Vs22/RemoteFolder.svg";
+        public const string Save = @"avares://CoreUI/Assets/Icons/Vs22/Save.svg";
+        public const string SaveAll = @"avares://CoreUI/Assets/Icons/Vs22/SaveAll.svg";
+        public const string SaveAs = @"avares://CoreUI/Assets/Icons/Vs22/SaveAs.svg";
+        public const string SearchFolderClosed = @"avares://CoreUI/Assets/Icons/Vs22/SearchFolderClosed.svg";
+        public const string Settings = @"avares://CoreUI/Assets/Icons/Vs22/Settings.svg";
+        public const string SettingsFile = @"avares://CoreUI/Assets/Icons/Vs22/SettingsFile.svg";
+        public const string ShowConflicts = @"avares://CoreUI/Assets/Icons/Vs22/ShowConflicts.svg";
+        public const string ShowParentNodeOnly = @"avares://CoreUI/Assets/Icons/Vs22/ShowParentNodeOnly.svg";
+        public const string ShowWordDiff = @"avares://CoreUI/Assets/Icons/Vs22/ShowWordDiff.svg";
+        public const string ShutDown = @"avares://CoreUI/Assets/Icons/Vs22/ShutDown.svg";
+        public const string SidebySide = @"avares://CoreUI/Assets/Icons/Vs22/SidebySide.svg";
+        public const string Unpin = @"avares://CoreUI/Assets/Icons/Vs22/Unpin.svg";
+        public const string Wizard = @"avares://CoreUI/Assets/Icons/Vs22/Wizard.svg";
+        public const string WordWrap = @"avares://CoreUI/Assets/Icons/Vs22/WordWrap.svg";
+        public static class Git {
+            public const string Base = @"avares://CoreUI/Assets/Icons/Vs22/Git/";
+            public const string Branch = @"avares://CoreUI/Assets/Icons/Vs22/Git/Branch.svg";
+            public const string BranchCompare = @"avares://CoreUI/Assets/Icons/Vs22/Git/BranchCompare.svg";
+            public const string BranchFork = @"avares://CoreUI/Assets/Icons/Vs22/Git/BranchFork.svg";
+            public const string BranchGroup = @"avares://CoreUI/Assets/Icons/Vs22/Git/BranchGroup.svg";
+            public const string BranchRemote = @"avares://CoreUI/Assets/Icons/Vs22/Git/BranchRemote.svg";
+            public const string BranchUploaded = @"avares://CoreUI/Assets/Icons/Vs22/Git/BranchUploaded.svg";
+            public const string Commit = @"avares://CoreUI/Assets/Icons/Vs22/Git/Commit.svg";
+            public const string Merge = @"avares://CoreUI/Assets/Icons/Vs22/Git/Merge.svg";
+            public const string MergeChangeswithTool = @"avares://CoreUI/Assets/Icons/Vs22/Git/MergeChangeswithTool.svg";
+            public const string NewBranch = @"avares://CoreUI/Assets/Icons/Vs22/Git/NewBranch.svg";
+            public const string NewPullRequest = @"avares://CoreUI/Assets/Icons/Vs22/Git/NewPullRequest.svg";
+            public const string PendingChange = @"avares://CoreUI/Assets/Icons/Vs22/Git/PendingChange.svg";
+            public const string Pull = @"avares://CoreUI/Assets/Icons/Vs22/Git/Pull.svg";
+            public const string PullRequest = @"avares://CoreUI/Assets/Icons/Vs22/Git/PullRequest.svg";
+            public const string Push = @"avares://CoreUI/Assets/Icons/Vs22/Git/Push.svg";
+            public const string Rebase = @"avares://CoreUI/Assets/Icons/Vs22/Git/Rebase.svg";
+            public const string RedoMerge = @"avares://CoreUI/Assets/Icons/Vs22/Git/RedoMerge.svg";
+            public const string Stash = @"avares://CoreUI/Assets/Icons/Vs22/Git/Stash.svg";
+        }
+        public static class OnlineStatus {
+            public const string Base = @"avares://CoreUI/Assets/Icons/Vs22/OnlineStatus/";
+            public const string OnlineStatusAvailable = @"avares://CoreUI/Assets/Icons/Vs22/OnlineStatus/OnlineStatusAvailable.svg";
+            public const string OnlineStatusAway = @"avares://CoreUI/Assets/Icons/Vs22/OnlineStatus/OnlineStatusAway.svg";
+            public const string OnlineStatusBusy = @"avares://CoreUI/Assets/Icons/Vs22/OnlineStatus/OnlineStatusBusy.svg";
+            public const string OnlineStatusOffline = @"avares://CoreUI/Assets/Icons/Vs22/OnlineStatus/OnlineStatusOffline.svg";
+            public const string OnlineStatusPresenting = @"avares://CoreUI/Assets/Icons/Vs22/OnlineStatus/OnlineStatusPresenting.svg";
+            public const string OnlineStatusUnknown = @"avares://CoreUI/Assets/Icons/Vs22/OnlineStatus/OnlineStatusUnknown.svg";
+        }
+        public static class Status {
+            public const string Base = @"avares://CoreUI/Assets/Icons/Vs22/Status/";
+            public const string StatusInformation = @"avares://CoreUI/Assets/Icons/Vs22/Status/StatusInformation.svg";
+            public const string StatusInformationOutline = @"avares://CoreUI/Assets/Icons/Vs22/Status/StatusInformationOutline.svg";
+            public const string StatusInvalid = @"avares://CoreUI/Assets/Icons/Vs22/Status/StatusInvalid.svg";
+            public const string StatusInvalidOutline = @"avares://CoreUI/Assets/Icons/Vs22/Status/StatusInvalidOutline.svg";
+            public const string StatusOK = @"avares://CoreUI/Assets/Icons/Vs22/Status/StatusOK.svg";
+            public const string StatusOKOutline = @"avares://CoreUI/Assets/Icons/Vs22/Status/StatusOKOutline.svg";
+            public const string StatusPaused = @"avares://CoreUI/Assets/Icons/Vs22/Status/StatusPaused.svg";
+            public const string StatusPausedOutline = @"avares://CoreUI/Assets/Icons/Vs22/Status/StatusPausedOutline.svg";
+            public const string StatusWarning = @"avares://CoreUI/Assets/Icons/Vs22/Status/StatusWarning.svg";
+            public const string StatusWarningOutline = @"avares://CoreUI/Assets/Icons/Vs22/Status/StatusWarningOutline.svg";
+        }
+        public static class Zoom {
+            public const string Base = @"avares://CoreUI/Assets/Icons/Vs22/Zoom/";
+            public const string ZoomIn = @"avares://CoreUI/Assets/Icons/Vs22/Zoom/ZoomIn.svg";
+            public const string ZoomLock = @"avares://CoreUI/Assets/Icons/Vs22/Zoom/ZoomLock.svg";
+            public const string ZoomOriginalSize = @"avares://CoreUI/Assets/Icons/Vs22/Zoom/ZoomOriginalSize.svg";
+            public const string ZoomOut = @"avares://CoreUI/Assets/Icons/Vs22/Zoom/ZoomOut.svg";
+            public const string ZoomToFit = @"avares://CoreUI/Assets/Icons/Vs22/Zoom/ZoomToFit.svg";
+            public const string ZoomZoom = @"avares://CoreUI/Assets/Icons/Vs22/Zoom/ZoomZoom.svg";
+        }
     }
 }

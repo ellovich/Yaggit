@@ -1,4 +1,4 @@
-name: .NET Tests
+﻿name: .NET Tests
 
 on:
   push:
@@ -26,9 +26,73 @@ jobs:
       - name: Build
         run: dotnet build --no-restore --configuration Release
 
-      - name: Run tests
-        run: dotnet test ./Yaggit.Test/Yaggit.Test.csproj --configuration Debug --verbosity normal --collect:"XPlat Code Coverage" -p:Platform="AnyCPU"
+      - name: Run tests with coverage
+        run: >
+          dotnet test ./Yaggit.Test/Yaggit.Test.csproj
+          --configuration Debug
+          --verbosity normal
+          --collect:"XPlat Code Coverage"
+          -p:Platform="AnyCPU"
+        continue-on-error: false
 
+      # ------------------------------
+      # ✅ Установка ReportGenerator
+      # ------------------------------
+      - name: Install ReportGenerator
+        run: dotnet tool install --global dotnet-reportgenerator-globaltool
+
+      # ------------------------------
+      # ✅ Генерация HTML-отчёта покрытия
+      # ------------------------------
+      - name: Generate coverage report (HTML)
+        run: |
+          reportgenerator \
+            -reports:"**/coverage.cobertura.xml" \
+            -targetdir:"coverage-report" \
+            -reporttypes:HtmlInline;TextSummary
+
+      # ------------------------------
+      # ✅ Проверка порога покрытия
+      # ------------------------------
+      - name: Enforce coverage threshold
+        run: |
+          summary=$(cat coverage-report/Summary.txt | grep "Line coverage" | grep -o "[0-9.]*")
+          echo "Line coverage: ${summary}%"
+          
+          # Порог можно менять (0-100)
+          threshold=0.05
+
+          awk -v cov="$summary" -v thr="$threshold" '
+            BEGIN {
+              if (cov+0 < thr+0) {
+                printf("Coverage %.2f%% is below threshold %.2f%%\n", cov, thr)
+                exit 1
+              } else {
+                printf("Coverage %.2f%% OK (threshold %.2f%%)\n", cov, thr)
+              }
+            }         
+
+      # ------------------------------
+      # ✅ Загружаем HTML отчёт как артефакт
+      # ------------------------------
+      - name: Upload Coverage HTML
+        uses: actions/upload-artifact@v4
+        with:
+          name: CoverageReport
+          path: coverage-report
+
+      # ------------------------------
+      # ✅ Загружаем raw cobertura файл
+      # ------------------------------
+      - name: Upload Raw Coverage XML
+        uses: actions/upload-artifact@v4
+        with:
+          name: CoverageRaw
+          path: "**/coverage.cobertura.xml"
+
+      # ------------------------------
+      # ✅ Загружаем результаты тестов
+      # ------------------------------
       - name: Upload test results
         uses: actions/upload-artifact@v4
         with:

@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Text;
 using Models.Services.Yaggit;
 using Models.Services.Yaggit.Contracts;
 using static System.Net.Mime.MediaTypeNames;
@@ -28,14 +29,21 @@ public class GitCommandService : IGitCommandService
             throw new ArgumentException("Аргументы команды не могут быть пустыми.", nameof(args));
 
         CommandExecuted?.Invoke(new ConsoleLine($"> git {args}", eConsoleLineType.Command));
+        // Принуждаем git вывести UTF-8 в любом окружении
+        var finalArgs = $"-c i18n.logOutputEncoding=UTF-8 -c core.quotepath=false {args}";
 
-        var startInfo = new ProcessStartInfo("git", args)
+        var startInfo = new ProcessStartInfo("git", finalArgs)
+        //var startInfo = new ProcessStartInfo("git", args)
         {
             WorkingDirectory = _context.RepositoryPath,
             RedirectStandardOutput = true,
             RedirectStandardError = true,
             UseShellExecute = false,
-            CreateNoWindow = true
+            CreateNoWindow = true,
+
+              // Гарантированно читаем UTF-8
+            StandardOutputEncoding = Encoding.UTF8,
+            StandardErrorEncoding = Encoding.UTF8
         };
 
         using var process = new Process { StartInfo = startInfo };
@@ -59,7 +67,7 @@ public class GitCommandService : IGitCommandService
             }
 
             if (!result.IsSuccess)
-                throw new GitException($"Ошибка выполнения git {args}: {result.Error}", result.ExitCode);
+                throw new GitException($"Ошибка выполнения 'git {args}': {result.Error}", result.ExitCode);
 
             return result;
         }

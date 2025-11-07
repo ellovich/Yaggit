@@ -1,22 +1,12 @@
-﻿using System.Globalization;
-using Avalonia.Data.Converters;
+﻿namespace Views.Converters;
 
-namespace Views.Converters;
-
-public class InitialConverter : IValueConverter
+public sealed class InitialConverter : IValueConverter
 {
     public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
-    {
-        if (value is string s && !string.IsNullOrEmpty(s))
-        {
-            return s[0].ToString().ToUpper();
-        }
-
-        return "A";
-    }
+        => value is string { Length: > 0 } s
+            ? s[0].ToString().ToUpper(culture)
+            : string.Empty;
 
     public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
-    {
-        throw new NotImplementedException();
-    }
+        => BindingOperations.DoNothing;
 }

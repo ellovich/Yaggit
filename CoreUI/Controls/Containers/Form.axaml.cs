@@ -6,7 +6,7 @@ using Avalonia.VisualTree;
 
 namespace CoreUI.Controls;
 
-public enum Position
+public enum ePosition
 {
     Left,
     Top,
@@ -38,10 +38,10 @@ public class Form : ItemsControl
         set => SetValue(LabelWidthProperty, value);
     }
 
-    public static readonly StyledProperty<Position> LabelPositionProperty = AvaloniaProperty.Register<Form, Position>(
-        nameof(LabelPosition), defaultValue: Position.Left);
+    public static readonly StyledProperty<ePosition> LabelPositionProperty = AvaloniaProperty.Register<Form, ePosition>(
+        nameof(LabelPosition), defaultValue: ePosition.Left);
 
-    public Position LabelPosition
+    public ePosition LabelPosition
     {
         get => GetValue(LabelPositionProperty);
         set => SetValue(LabelPositionProperty, value);
@@ -201,7 +201,7 @@ public class FormItem : ContentControl
                 .Subscribe(new AnonymousObserver<GridLength>(length => { LabelWidth = length.IsAbsolute ? length.Value : double.NaN; }));
             var positionSubscription = form
                 .GetObservable(Form.LabelPositionProperty)
-                .Subscribe(new AnonymousObserver<Position>(position => { PseudoClasses.Set(PC_Horizontal, position == Position.Left); }));
+                .Subscribe(new AnonymousObserver<ePosition>(position => { PseudoClasses.Set(PC_Horizontal, position == ePosition.Left); }));
             var alignmentSubscription = form
                 .GetObservable(Form.LabelAlignmentProperty)
                 .Subscribe(new AnonymousObserver<HorizontalAlignment>(alignment => { LabelAlignment = alignment; }));

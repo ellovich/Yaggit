@@ -133,8 +133,7 @@
         </Setter>
         <Style Selector="^:pointerover /template/ ContentPresenter#PART_HoverMask">
             <Setter Property="IsVisible"
-                    Value="{Binding HoverMask,RelativeSource={RelativeSource TemplatedParent},
-                        Converter={x:Static ObjectConverters.IsNotNull}}" />
+                    Value="{Binding HoverMask, RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static ObjectConverters.IsNotNull}}" />
         </Style>
 
         <!-- Form -->

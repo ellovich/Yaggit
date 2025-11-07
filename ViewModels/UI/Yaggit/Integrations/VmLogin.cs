@@ -9,7 +9,7 @@ public partial class VmLogin : VmBase
     //private readonly IAuthService _authService;
     //private readonly DataManager _dataManager;
 
- //   public WindowNotificationManager? NotificationManager { get; set; }
+    //   public WindowNotificationManager? NotificationManager { get; set; }
 
 #pragma warning disable CS8618
 
@@ -44,13 +44,13 @@ public partial class VmLogin : VmBase
     #region FIELDS
 
     [ObservableProperty]
-  //  [Required(ErrorMessageResourceName = nameof(AppDictionary.UsernameRequired), ErrorMessageResourceType = typeof(AppDictionary))]
-  //  [MinLength(4, ErrorMessageResourceName = nameof(AppDictionary.UsernameLength), ErrorMessageResourceType = typeof(AppDictionary))]
+    //  [Required(ErrorMessageResourceName = nameof(AppDictionary.UsernameRequired), ErrorMessageResourceType = typeof(AppDictionary))]
+    //  [MinLength(4, ErrorMessageResourceName = nameof(AppDictionary.UsernameLength), ErrorMessageResourceType = typeof(AppDictionary))]
     public partial string? Username { get; set; }
 
     [ObservableProperty]
-  //  [Required(ErrorMessageResourceName = nameof(AppDictionary.PasswordRequired), ErrorMessageResourceType = typeof(AppDictionary))]
-  //  [MinLength(6, ErrorMessageResourceName = nameof(AppDictionary.PasswordLength), ErrorMessageResourceType = typeof(AppDictionary))]
+    //  [Required(ErrorMessageResourceName = nameof(AppDictionary.PasswordRequired), ErrorMessageResourceType = typeof(AppDictionary))]
+    //  [MinLength(6, ErrorMessageResourceName = nameof(AppDictionary.PasswordLength), ErrorMessageResourceType = typeof(AppDictionary))]
     public partial string? Password { get; set; }
 
     [ObservableProperty]
@@ -63,41 +63,43 @@ public partial class VmLogin : VmBase
     [RelayCommand]
     private async Task Login()
     {
-//        ValidateAllProperties();
+        await Task.CompletedTask;
 
-//        if (HasErrors)
-//            return;
+        //        ValidateAllProperties();
 
-//        try
-//        {
-//#if NO_SERVER
-//            User user = new User() { Username = "Test User" };
-//#else
-//            User user = await _dataManager.TryLogin(Username!, Password!);
-//#endif
+        //        if (HasErrors)
+        //            return;
 
-//            _authService.DeleteToken();
-//            _authService.SaveToken(user.Token);
+        //        try
+        //        {
+        //#if NO_SERVER
+        //            User user = new User() { Username = "Test User" };
+        //#else
+        //            User user = await _dataManager.TryLogin(Username!, Password!);
+        //#endif
 
-//            // Отправляем сообщение о успешном входе
-//            var vmUser = new VM_User(user.Username);
-//            _messengerService.Send(new UserLoggedInMessage(vmUser));
+        //            _authService.DeleteToken();
+        //            _authService.SaveToken(user.Token);
 
-//            _navigationService.NavigateTo(PageType.Dashboard);
+        //            // Отправляем сообщение о успешном входе
+        //            var vmUser = new VM_User(user.Username);
+        //            _messengerService.Send(new UserLoggedInMessage(vmUser));
 
-//            _logger.LogInformation("LoggedIn successfully as {userName} (id: {userId})", user.Username, user.Id);
-//            ShowSuccessfulLogin();
+        //            _navigationService.NavigateTo(PageType.Dashboard);
 
-//            if (Platform.IsMobile)
-//            {
-//                _popupService.ShowPopup($"LoggedIn successfully as {user.Username} (id: {user.Id})");
-//            }
-//        }
-//        catch (Exception ex)
-//        {
-//            _logger.LogError(ex.Message);
-//            ShowErrorLogin();
-//        }
+        //            _logger.LogInformation("LoggedIn successfully as {userName} (id: {userId})", user.Username, user.Id);
+        //            ShowSuccessfulLogin();
+
+        //            if (Platform.IsMobile)
+        //            {
+        //                _popupService.ShowPopup($"LoggedIn successfully as {user.Username} (id: {user.Id})");
+        //            }
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            _logger.LogError(ex.Message);
+        //            ShowErrorLogin();
+        //        }
     }
 
     [RelayCommand]

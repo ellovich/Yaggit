@@ -14,8 +14,7 @@
     <Application.Styles>
         <theme:DeltaDesignTheme />
         <StyleInclude Source="avares://CoreUI/Styles/_index.axaml" />
-        <!-- <StyleInclude Source="avares://Views/Common/_index.axaml" /> -->
-    </Application.Styles>
+<!--         <StyleInclude Source="avares://Views/UI/Common/_index.axaml" /> -->    </Application.Styles>
 
     <Application.Resources>
         <ResourceDictionary>

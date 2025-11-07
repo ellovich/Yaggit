@@ -1,37 +1,56 @@
 ﻿namespace ViewModels.UI.Yaggit;
 
+public enum eBranchNodeType
+{
+    Repository,
+    LocalGroup,
+    RemoteGroup,
+    RemoteHost,
+    Folder,    
+    Branch
+}
+
 /// <summary>
 /// Узел для древовидного отображения веток Git.
 /// </summary>
-public partial class VmBranchNode : VmBase
+public partial class VmBranchNode(string name, eBranchNodeType type) : VmBase
 {
-    /// <summary>Отображаемое имя узла (часть между '/').</summary>
-    public string Name { get; }
+    /// <summary>
+    /// Тип узла
+    /// </summary>
+    public eBranchNodeType NodeType { get; set; } = type;
 
-    /// <summary>Полное имя ветки (например, feature/aaa) для листовых узлов.</summary>
-    public string? FullName { get; protected set; }
+    /// <summary>
+    /// Отображаемое имя узла.
+    /// </summary>
+    public string Name { get; } = name;
 
-    /// <summary>Является ли узел текущей (активной) веткой.</summary>
+    /// <summary>
+    /// Полное имя ветки.
+    /// </summary>
+    public string FullName { get; protected set; } = string.Empty;
+
+    /// <summary>
+    /// Является ли узел активной веткой.
+    /// </summary>
     [ObservableProperty]
     public partial bool IsCurrent { get; set; }
 
+    /// <summary>
+    /// Развернут ли узел.
+    /// </summary>
+    [ObservableProperty]
+    public partial bool IsExpanded { get; set; }
+
+    /// <summary>
+    /// Закреплен ли узел.
+    /// </summary>
     [ObservableProperty]
     public partial bool IsPinned { get; set; }
 
     public bool IsBranch { get; protected set; }
 
-    public bool IsPinnedPlaceholder { get; set; }
-
-    public bool IsSeparator { get; set; }
-
-
-    /// <summary>Дети узла.</summary>
     public ObservableCollection<VmBranchNode> Children { get; } = [];
-
-    public VmBranchNode(string name)
-    {
-        Name = name;
-    }
 
     /// <summary>
     /// Пометить этот узел как лист с полным именем ветки и флагом current.
@@ -43,27 +62,5 @@ public partial class VmBranchNode : VmBase
         IsCurrent = isCurrent;
     }
 
-    public VmBranchNode CloneShallow()
-    {
-        return new VmBranchNode(Name)
-        {
-            FullName = FullName,
-            IsCurrent = IsCurrent,
-            IsPinned = IsPinned,
-            IsPinnedPlaceholder = true
-        };
-    }
-
-
     public override string ToString() => Name;
-}
-
-public sealed class VmBranchSeparator : VmBranchNode
-{
-    public VmBranchSeparator() : base("───────────────")
-    {
-        IsBranch = false;
-        IsPinnedPlaceholder = true;
-        IsSeparator = true;
-    }
 }

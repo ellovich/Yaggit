@@ -8,29 +8,39 @@ public partial class IconsViewer : UserControl
         FillTabControl(Tabs);
     }
 
-    private void FillTabControl(TabControl tabs)
+    private static void FillTabControl(TabControl tabs)
     {
-        var folders = Directory.GetDirectories(GetIconsPath()).ToList();
-        folders.Insert(0, GetIconsPath());
+        var root = IconsPath;
+        var allFolders = GetAllFolders(root);
 
-        foreach (var path in folders)
+        foreach (var path in allFolders)
         {
             var tabItem = new TabItem()
             {
-                Header = Path.GetFileName(path),
+                Header = GetTabHeader(root, path),
                 Content = new CoreUI.Controls.AutoGrid()
                 {
                     ChildMargin = new Avalonia.Thickness(2),
-                    ColumnCount = 8,
+                    ColumnCount = 6,
                     RowCount = 1000,
                 }
             };
+
             FillGridWithIcons(path, (tabItem.Content as CoreUI.Controls.AutoGrid)!.Children);
             tabs.Items.Add(tabItem);
         }
     }
 
-    private void FillGridWithIcons(string path, Avalonia.Controls.Controls children)
+    private static string GetTabHeader(string root, string fullPath)
+    {
+        if (string.Equals(root, fullPath, StringComparison.OrdinalIgnoreCase))
+            return "Icons";
+
+        return Path.GetRelativePath(root, fullPath)
+                   .Replace(Path.DirectorySeparatorChar, '/');
+    }
+
+    private static void FillGridWithIcons(string path, Avalonia.Controls.Controls children)
     {
         var files = Directory.GetFiles(path, "*.svg");
 
@@ -63,15 +73,26 @@ public partial class IconsViewer : UserControl
         }
     }
 
-    private string GetIconsPath()
+    private static string IconsPath
     {
-        string dir = AppContext.BaseDirectory;
-        dir = GetIconsPath(dir, "Yaggit");
-        dir = Path.Combine(dir, "CoreUI", "Assets", "Icons");
-        return dir;
+        get
+        {
+            string dir = AppContext.BaseDirectory;
+            dir = GetIconsPath(dir, "Yaggit");
+            dir = Path.Combine(dir, "CoreUI", "Assets", "Icons");
+            return dir;
+        }
     }
 
-    private string GetIconsPath(string path, string folderName)
+    private static IEnumerable<string> GetAllFolders(string root)
+    {
+        yield return root;
+
+        foreach (var dir in Directory.GetDirectories(root, "*", SearchOption.AllDirectories))
+            yield return dir;
+    }
+
+    private static string GetIconsPath(string path, string folderName)
     {
         int index = path.IndexOf(folderName, StringComparison.OrdinalIgnoreCase);
         if (index != -1)

@@ -7,11 +7,6 @@
         <ResourceInclude Source="Containers/Form.axaml" />
         <ResourceInclude Source="Containers/NavMenu.axaml" />
         
-        <ResourceInclude Source="DateSelectors/CalendarView.axaml" />
-        <ResourceInclude Source="DateSelectors/DateRangeSelector.axaml" />
-        <ResourceInclude Source="DateSelectors/DateSelector.axaml" />
-        <ResourceInclude Source="DateSelectors/DateTimeSelector.axaml" />
-
         <ResourceInclude Source="Notification/Notification.axaml" />
         <ResourceInclude Source="Timeline/Timeline.axaml" />
 
@@ -29,11 +24,8 @@
         <ResourceInclude Source="Clock.axaml" />
         <ResourceInclude Source="ColorItem.axaml" />
         <ResourceInclude Source="DataValidationErrors.axaml" />
-        <ResourceInclude Source="EnumSelector.axaml" />
         <ResourceInclude Source="IconButton.axaml" />
-        <ResourceInclude Source="ItemsSelector.axaml" />
         <ResourceInclude Source="Loading.axaml" />
-        <ResourceInclude Source="MultiComboBox.axaml" />
         <ResourceInclude Source="RangeSlider.axaml" />
         <ResourceInclude Source="Tabs.axaml" />
         <ResourceInclude Source="ThemeToggleButton.axaml" />

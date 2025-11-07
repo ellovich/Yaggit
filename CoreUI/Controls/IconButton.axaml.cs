@@ -29,8 +29,8 @@ public class IconButton : Button
     public static readonly StyledProperty<bool> IsLoadingProperty =
         AvaloniaProperty.Register<IconButton, bool>(nameof(IsLoading));
 
-    public static readonly StyledProperty<Position> IconPlacementProperty =
-        AvaloniaProperty.Register<IconButton, Position>(nameof(IconPlacement), defaultValue: Position.Left);
+    public static readonly StyledProperty<ePosition> IconPlacementProperty =
+        AvaloniaProperty.Register<IconButton, ePosition>(nameof(IconPlacement), defaultValue: ePosition.Left);
 
     public string? SvgPath
     {
@@ -56,7 +56,7 @@ public class IconButton : Button
         set => SetValue(IsLoadingProperty, value);
     }
 
-    public Position IconPlacement
+    public ePosition IconPlacement
     {
         get => GetValue(IconPlacementProperty);
         set => SetValue(IconPlacementProperty, value);
@@ -64,7 +64,7 @@ public class IconButton : Button
 
     static IconButton()
     {
-        IconPlacementProperty.Changed.AddClassHandler<IconButton, Position>((o, e) =>
+        IconPlacementProperty.Changed.AddClassHandler<IconButton, ePosition>((o, e) =>
         {
             o.SetPlacement(e.NewValue.Value, o.SvgPath);
             o.InvalidateRootPanel();
@@ -91,7 +91,7 @@ public class IconButton : Button
         SetPlacement(IconPlacement, SvgPath);
     }
 
-    private void SetPlacement(Position placement, object? icon)
+    private void SetPlacement(ePosition placement, object? icon)
     {
         if (icon is null)
         {
@@ -103,9 +103,9 @@ public class IconButton : Button
             return;
         }
         PseudoClasses.Set(PC_Empty, false);
-        PseudoClasses.Set(PC_Left, placement == Position.Left);
-        PseudoClasses.Set(PC_Right, placement == Position.Right);
-        PseudoClasses.Set(PC_Top, placement == Position.Top);
-        PseudoClasses.Set(PC_Bottom, placement == Position.Bottom);
+        PseudoClasses.Set(PC_Left, placement == ePosition.Left);
+        PseudoClasses.Set(PC_Right, placement == ePosition.Right);
+        PseudoClasses.Set(PC_Top, placement == ePosition.Top);
+        PseudoClasses.Set(PC_Bottom, placement == ePosition.Bottom);
     }
 }

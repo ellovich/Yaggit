@@ -1,4 +1,5 @@
-﻿using Models.Services.Yaggit.Contracts;
+﻿using CommunityToolkit.Mvvm.Messaging;
+using ViewModels.UI.Yaggit.Messages;
 
 namespace ViewModels.UI.Yaggit;
 
@@ -13,13 +14,12 @@ public partial class VmBranches : VmBase
 
     public VmBranches(
         ILogger<VmBranches> logger,
-        IGitBranchesService YaggitService
+        IGitBranchesService gitBranchesService
     )
     {
         _logger = logger ?? throw new ArgumentNullException(nameof(logger));
-        _gitBranchesService = YaggitService ?? throw new ArgumentNullException(nameof(YaggitService));
+        _gitBranchesService = gitBranchesService ?? throw new ArgumentNullException(nameof(gitBranchesService));
     }
-
 
 
     #region PROPS
@@ -38,6 +38,15 @@ public partial class VmBranches : VmBase
     [ObservableProperty]
     [NotifyCanExecuteChangedFor(nameof(CheckoutBranchCommand))]
     public partial VmBranchNode? SelectedBranchNode { get; set; }
+
+    partial void OnSelectedBranchNodeChanged(VmBranchNode? value)
+    {
+        if (value?.FullName is null)
+            return;
+
+        _logger.LogInformation("Selected branch: {branch}", value);
+        WeakReferenceMessenger.Default.Send(new BranchSelectedMessage(value.FullName));
+    }
 
     [ObservableProperty]
     public partial GitBranch? CurrentBranch { get; set; }
@@ -82,7 +91,35 @@ public partial class VmBranches : VmBase
 
             _logger.LogInformation("Построение древа веток ({Count} веток).", branches.Count);
 
-            BranchTree.Init(BuildBranchTree(branches));
+            // --------------------------
+            // сохраняем expand-state + выделение
+            // --------------------------
+            var expandState = BranchTree.SaveExpandState();
+            var selectedKey = SelectedBranchNode?.FullName;
+            var currentKey = CurrentBranch?.Name;
+
+            // перестраиваем
+            BranchTree.Init(BuildBranchTree("Yaggit", branches));
+
+            // --------------------------
+            // восстанавливаем expand-state
+            // --------------------------
+            BranchTree.RestoreExpandState(expandState);
+
+            // --------------------------
+            // авто-раскрытие пути к текущей ветке
+            // --------------------------
+            BranchTree.ExpandPathTo(currentKey);
+
+            // --------------------------
+            // восстановление выделения
+            // --------------------------
+            if (selectedKey != null)
+                SelectedBranchNode = BranchTree.FindNode(selectedKey) ?? SelectedBranchNode;
+
+            // --------------------------
+            // авто-scroll к текущей ветке (через ScrollBehavior)
+            // --------------------------
 
             // Восстанавливаем IsPinned для веток, которые были закреплены
             foreach (var pinned in PinnedBranches)
@@ -102,7 +139,6 @@ public partial class VmBranches : VmBase
             // await _dialogService.ShowErrorAsync(VmMainWindow, "Ошибка", ex.Message);
         }
     }
-
 
     [RelayCommand]
     private void TogglePin(VmBranchNode? node)
@@ -144,11 +180,6 @@ public partial class VmBranches : VmBase
         return null;
     }
 
-    partial void OnSelectedBranchNodeChanged(VmBranchNode? value)
-    {
-        _logger.LogInformation("Selected branch: {branch}", value);
-    }
-
     /// <summary>
     /// Команда переключения на выбранную ветку.
     /// </summary>
@@ -171,45 +202,89 @@ public partial class VmBranches : VmBase
         }
     }
 
-    private bool CanCheckoutBranch() => SelectedBranchNode is not null;
+    private bool CanCheckoutBranch() => 
+        SelectedBranchNode is not null 
+        && !SelectedBranchNode.IsCurrent 
+        && SelectedBranchNode.IsBranch;
 
-    protected static List<VmBranchNode> BuildBranchTree(IEnumerable<GitBranch> branches)
+    protected static List<VmBranchNode> BuildBranchTree(string repositoryName,
+                                                    IEnumerable<GitBranch> branches)
     {
-        var roots = new List<VmBranchNode>();
+        var root = new VmBranchNode(repositoryName, eBranchNodeType.Repository);
 
-        foreach (var branch in branches)
+        var locals = new VmBranchNode("Local", eBranchNodeType.LocalGroup);
+        var remotes = new VmBranchNode("Remotes", eBranchNodeType.RemoteGroup);
+
+        root.Children.Add(locals);
+        root.Children.Add(remotes);
+
+        // Группируем remote по remote-name
+        var remoteGroups = new Dictionary<string, VmBranchNode>();
+
+        foreach (var br in branches)
         {
-            var parts = branch.Name.Split('/', StringSplitOptions.RemoveEmptyEntries);
-            IList<VmBranchNode> currentLevel = roots;
-            VmBranchNode? node = null;
-            var prefixParts = new List<string>();
-
-            for (int i = 0; i < parts.Length; i++)
+            if (br.Name.StartsWith("remotes/"))
             {
-                var part = parts[i];
-                prefixParts.Add(part);
+                // remotes/origin/master → origin, master
+                var parts = br.Name.Split('/', 3);
+                var remoteName = parts[1];
+                var branchPath = parts[2];
 
-                node = currentLevel.FirstOrDefault(n => n.Name == part);
-                if (node == null)
+                if (!remoteGroups.TryGetValue(remoteName, out var hostNode))
                 {
-                    node = new VmBranchNode(part);
-                    currentLevel.Add(node);
+                    hostNode = new VmBranchNode(remoteName, eBranchNodeType.RemoteHost);
+                    remoteGroups[remoteName] = hostNode;
+                    remotes.Children.Add(hostNode);
                 }
 
-                if (i == parts.Length - 1)
-                {
-                    var fullName = string.Join('/', prefixParts);
-                    node.MarkAsBranch(fullName, branch.IsCurrent);
-                }
-
-                currentLevel = node.Children;
+                InsertBranchNode(hostNode, branchPath, br);
+            }
+            else
+            {
+                // local branches
+                InsertBranchNode(locals, br.Name, br);
             }
         }
 
-        // Рекурсивно сортируем узлы
-        SortNodesRecursive(roots);
+        AssignFolderTypes(root.Children);
 
-        return roots;
+        return [root];
+    }
+
+    // ----------------------------
+    // Recursive tree builder (like your original one)
+    // ----------------------------
+    private static void InsertBranchNode(VmBranchNode parent, string branchPath, GitBranch br)
+    {
+        var parts = branchPath.Split('/');
+        var current = parent;
+        var prefix = new List<string>();
+
+        foreach (var part in parts)
+        {
+            prefix.Add(part);
+
+            var next = current.Children.FirstOrDefault(x => x.Name == part);
+            if (next == null)
+            {
+                next = new VmBranchNode(part, eBranchNodeType.Branch);
+                current.Children.Add(next);
+            }
+            current = next;
+        }
+
+        current.MarkAsBranch(string.Join('/', prefix), br.IsCurrent);
+    }
+
+    static void AssignFolderTypes(IEnumerable<VmBranchNode> nodes)
+    {
+        foreach (var n in nodes)
+        {
+            if (!n.IsBranch && n.Children.Count > 0)
+                n.NodeType = eBranchNodeType.Folder;
+
+            AssignFolderTypes(n.Children);
+        }
     }
 
     private static void SortNodesRecursive(IList<VmBranchNode> nodes)
@@ -228,7 +303,6 @@ public partial class VmBranches : VmBase
         foreach (var node in nodes)
             SortNodesRecursive(node.Children);
     }
-
 
     #endregion CMDS
 }
@@ -249,6 +323,6 @@ public class MockVmBranches : VmBranches
             new("hotfix/hf3", false),
             new("hotfix/hf4", false),
         };
-        BranchTree.Init(BuildBranchTree(branches));
+        BranchTree.Init(BuildBranchTree("DemoRepo", branches));
     }
 }

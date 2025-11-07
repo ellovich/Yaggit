@@ -1,0 +1,79 @@
+﻿<AvroView
+xmlns="https://github.com/avaloniaui"
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+xmlns:assets="using:CoreUI.Assets"
+xmlns:b="using:Views.Behaviors"
+xmlns:converter="using:Views.Converters"
+xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+xmlns:i="using:Avalonia.Xaml.Interactivity"
+xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+xmlns:vm="using:ViewModels.UI.Yaggit"
+mc:Ignorable="d"
+x:Class="Views.UI.Yaggit.CommitHistory"
+x:DataType="vm:VmCommitHistory"
+d:DesignWidth="700"
+d:DesignHeight="440"
+>
+
+	<Design.DataContext>
+		<vm:MockVmCommitHistory />
+	</Design.DataContext>
+
+	<Grid RowDefinitions="Auto,*"
+		  ColumnDefinitions="4*,2,3*"
+		  Margin="8">
+
+		<!-- Поиск -->
+		<StackPanel Grid.ColumnSpan="2" Orientation="Horizontal" Spacing="8">
+			<TextBlock Text="History"
+					   FontSize="18"
+					   FontWeight="Bold"/>
+			<TextBox Width="250"
+					 Watermark="Search..."
+					 Text="{Binding FilterText, Mode=TwoWay}"/>
+		</StackPanel>
+
+		<!-- История -->
+		<DataGrid Grid.Row="1"
+				  ItemsSource="{Binding FilteredCommits}"
+				  SelectedItem="{Binding SelectedCommit, Mode=TwoWay}"
+				  AutoGenerateColumns="False"
+				  HeadersVisibility="Column"
+				  
+				  GridLinesVisibility="All"
+				  BorderBrush="{DynamicResource Border}"
+				  BorderThickness="1"
+				  FontSize="13">
+
+			<DataGrid.Columns>
+				<DataGridTextColumn Header="Hash"
+									Binding="{Binding Hash}"
+									Width="1*"
+									FontFamily="Consolas" />
+				<DataGridTextColumn Header="Message"
+									Binding="{Binding Message}"
+									Width="3*" />
+				<DataGridTextColumn Header="Author"
+									Binding="{Binding Author}"
+									Width="1.2*" />
+				<DataGridTextColumn Header="Date"
+									Binding="{Binding Date}"
+									Width="1.4*" />
+			</DataGrid.Columns>
+		</DataGrid>
+
+
+		<GridSplitter Grid.Row="1" Grid.Column="1"/>
+
+		<!-- Детали коммита -->
+		<Form LabelWidth="*" Grid.Row="1" Grid.Column="2">
+			<TextBox FormItem.Label="Hash:" Text="{Binding SelectedCommit?.Hash}"
+					 FontFamily="Consolas"/>
+			<TextBox FormItem.Label="Author:" Text="{Binding SelectedCommit?.Author}"/>
+			<TextBox FormItem.Label="Date:" Text="{Binding SelectedCommit?.Date}"/>
+			<TextBox FormItem.Label="Message:" Text="{Binding SelectedCommit?.Message}"
+					 TextWrapping="Wrap" MaxWidth="600"/>
+		</Form>
+	</Grid>
+
+</AvroView>

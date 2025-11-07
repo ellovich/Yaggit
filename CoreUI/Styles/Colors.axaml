@@ -228,9 +228,51 @@
 
             <SolidColorBrush x:Key="Outline/Accent/Focus" Color="#4C62C9" />
 
-            <x:String x:Key="SvgColor">.Accent { fill: #4C62C9; } .Normal { fill: #3b3e42; } .Blue { fill: #70bbff; } .Green { fill: #61cb6d; } .Orange { fill: #f99b0d; } .Red { fill: #ff625b; }</x:String>
-            <x:String x:Key="SvgColorDisabled">.Accent { fill: #5d6bae; } .Normal { fill: #484c51; } .Blue { fill: #70bbff; } .Green { fill: #61cb6d; } .Orange { fill: #f99b0d; } .Red { fill: #ff625b; }</x:String>
-            <x:String x:Key="SvgColorHover">.Accent { fill: #4255ae; } .Normal { fill: #2b2d30; } .Blue { fill: #70bbff; } .Green { fill: #61cb6d; } .Orange { fill: #f99b0d; } .Red { fill: #ff625b; }</x:String>
+            <x:String x:Key="SvgColor">
+                .Accent { fill: #4C62C9; } 
+                .Accent-01 { fill: #4C62C9; fill-opacity: 0.1; } 
+                .Normal { fill: #3b3e42;  } 
+                .Normal-01 { fill: #3b3e42; fill-opacity: 0.1; } 
+                .Blue { fill: #70bbff; } 
+                .Blue-01 { fill: #70bbff; fill-opacity: 0.1; } 
+                .Green { fill: #61cb6d; } 
+                .Green-01 { fill: #61cb6d; fill-opacity: 0.1; } 
+                .Orange { fill: #f99b0d; } 
+                .Orange-01 { fill: #f99b0d; fill-opacity: 0.1; } 
+                .Red { fill: #ff625b; }
+                .Red-01 { fill: #ff625b; fill-opacity: 0.1; } 
+                .White { fill: #ffffff; }
+            </x:String>
+            <x:String x:Key="SvgColorDisabled">
+                .Accent { fill: #5d6bae; } 
+                .Accent-01 { fill: #5d6bae; fill-opacity: 0.1; }  
+                .Normal { fill: #484c51; } 
+                .Normal-01 { fill: #484c51; fill-opacity: 0.1; } 
+                .Blue { fill: #70bbff; } 
+                .Blue-01 { fill: #70bbff; fill-opacity: 0.1; } 
+                .Green { fill: #61cb6d; } 
+                .Green-01 { fill: #61cb6d; fill-opacity: 0.1; } 
+                .Orange { fill: #f99b0d; } 
+                .Orange-01 { fill: #f99b0d; fill-opacity: 0.1; } 
+                .Red { fill: #ff625b; }
+                .Red-01 { fill: #ff625b;  fill-opacity: 0.1; } 
+                .White { fill: #ffffff; }
+            </x:String>
+            <x:String x:Key="SvgColorHover">
+                .Accent { fill: #4255ae; } 
+                .Accent-01 { fill: #4255ae; fill-opacity: 0.1; } 
+                .Normal { fill: #2b2d30; } 
+                .Normal-01 { fill: #484c51; fill-opacity: 0.1; } 
+                .Blue { fill: #70bbff; } 
+                .Blue-01 { fill: #70bbff; fill-opacity: 0.1; } 
+                .Green { fill: #61cb6d; } 
+                .Green-01 { fill: #61cb6d; fill-opacity: 0.1; } 
+                .Orange { fill: #f99b0d; } 
+                .Orange-01 { fill: #f99b0d; fill-opacity: 0.1; } 
+                .Red { fill: #ff625b; }
+                .Red-01 { fill: #ff625b;  fill-opacity: 0.1; } 
+                .White { fill: #ffffff; }
+            </x:String>
 
             <Color x:Key="DefaultBackground">#ebf1f9</Color>
             <Color x:Key="DefaultForeground">#2b2b2b</Color>
@@ -401,9 +443,51 @@
         <ResourceDictionary x:Key="Dark">
             <SolidColorBrush x:Key="Outline/Accent/Focus" Color="#4C62C9" />
 
-            <x:String x:Key="SvgColor">.Accent { fill: #4C62C9; } .Normal { fill: #D4D5D6; } .Blue { fill: #539bdb; } .Green { fill: #33944b; } .Orange { fill: #d27e35; } .Red { fill: #bd4343; }</x:String>
-            <x:String x:Key="SvgColorHover">.Accent { fill: #4255ae; } .Normal { fill: #eaebec; } .Blue { fill: #539bdb; } .Green { fill: #33944b; } .Orange { fill: #d27e35; } .Red { fill: #bd4343; }</x:String>
-            <x:String x:Key="SvgColorDisabled">.Accent { fill: #5d6bae; } .Normal { fill: #a1a2a3; } .Blue { fill: #539bdb; } .Green { fill: #33944b; } .Orange { fill: #d27e35; } .Red { fill: #bd4343; }</x:String>
+            <x:String x:Key="SvgColor">
+                .Accent { fill: #4C62C9; } 
+                .Accent-01 { fill: #4C62C9; fill-opacity: 0.1; } 
+                .Normal { fill: #D4D5D6; } 
+                .Normal-01 { fill: #D4D5D6; fill-opacity: 0.1; } 
+                .Blue { fill: #539bdb; } 
+                .Blue-01 { fill: #539bdb; fill-opacity: 0.1; } 
+                .Green { fill: #33944b; } 
+                .Green-01 { fill: #33944b; fill-opacity: 0.1; } 
+                .Orange { fill: #d27e35; }
+                .Orange-01 { fill: #d27e35; fill-opacity: 0.1; } 
+                .Red { fill: #bd4343; }
+                .Red-01 { fill: #bd4343;  fill-opacity: 0.1; } 
+                .White { fill: #ffffff; }
+            </x:String>
+            <x:String x:Key="SvgColorHover">
+                .Accent { fill: #4255ae; } 
+                .Accent-01 { fill: #4255ae; fill-opacity: 0.1; } 
+                .Normal { fill: #eaebec; } 
+                .Normal-01 { fill: #eaebec; fill-opacity: 0.1; }
+                .Blue { fill: #539bdb; } 
+                .Blue-01 { fill: #539bdb; fill-opacity: 0.1; } 
+                .Green { fill: #33944b; } 
+                .Green-01 { fill: #33944b; fill-opacity: 0.1; } 
+                .Orange { fill: #d27e35; } 
+                .Orange-01 { fill: #d27e35; fill-opacity: 0.1; } 
+                .Red { fill: #bd4343; }
+                .Red-01 { fill: #bd4343; fill-opacity: 0.1; } 
+                .White { fill: #ffffff; }
+            </x:String>
+            <x:String x:Key="SvgColorDisabled">
+                .Accent { fill: #5d6bae; } 
+                .Accent-01 { fill: #5d6bae; fill-opacity: 0.1; } 
+                .Normal { fill: #a1a2a3; } 
+                .Normal-01 { fill: #a1a2a3; fill-opacity: 0.1; } 
+                .Blue { fill: #539bdb; } 
+                .Blue-01 { fill: #539bdb; fill-opacity: 0.1; } 
+                .Green { fill: #33944b; }
+                .Green-01 { fill: #33944b; fill-opacity: 0.1; } 
+                .Orange { fill: #d27e35; } 
+                .Orange-01 { fill: #d27e35; fill-opacity: 0.1; } 
+                .Red { fill: #bd4343; }
+                .Red-01 { fill: #bd4343; fill-opacity: 0.1; } 
+                .White { fill: #ffffff; }
+            </x:String>
 
             <Color x:Key="DefaultBackground">#2B333C</Color>
             <Color x:Key="DefaultForeground">#D4D5D6</Color>

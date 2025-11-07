@@ -113,5 +113,23 @@ namespace ViewModels.Lang {
                 return ResourceManager.GetString("Dialog_Warning", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to no.
+        /// </summary>
+        public static string String_No {
+            get {
+                return ResourceManager.GetString("String_No", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to yes.
+        /// </summary>
+        public static string String_Yes {
+            get {
+                return ResourceManager.GetString("String_Yes", resourceCulture);
+            }
+        }
     }
 }

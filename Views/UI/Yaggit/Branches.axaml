@@ -1,98 +1,123 @@
 ﻿<AvroView
-xmlns="https://github.com/avaloniaui"
-xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-xmlns:assets="using:CoreUI.Assets"
-xmlns:b="using:Views.Behaviors"
-xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-xmlns:i="using:Avalonia.Xaml.Interactivity"
-xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-xmlns:vm="using:ViewModels.UI.Yaggit"
-mc:Ignorable="d"
-Background="{DynamicResource DefaultBackground}"
-x:Class="Views.UI.Yaggit.Branches"
-x:DataType="vm:VmBranches"
-d:DesignWidth="400"
-d:DesignHeight="740"
->
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:assets="using:CoreUI.Assets"
+	xmlns:b="using:Views.Behaviors"
+	xmlns:converter="using:Views.Converters"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:i="using:Avalonia.Xaml.Interactivity"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:vm="using:ViewModels.UI.Yaggit"
+	mc:Ignorable="d"
+	x:Class="Views.UI.Yaggit.Branches"
+	x:DataType="vm:VmBranches"
+	d:DesignWidth="400"
+	d:DesignHeight="740"
+	>
 
 	<Design.DataContext>
 		<vm:MockVmBranches />
 	</Design.DataContext>
 
-	<StackPanel Spacing="16" Margin="10">
 
-		<IconButton
-		Content="Get branches"
-		Classes="bordered-accent"
-		Command="{Binding GetBranchesCommand}"
-		SvgPath="{x:Static assets:Icons.arrowDown}" />
+	<AutoGrid ChildMargin="50" Grid.RowDefinitions="Auto, Auto, Auto, *, Auto, Auto">
 
-		<TextBlock Text="Current branch:" Classes="h3"/>
-		<TextBlock Text="{Binding CurrentBranch.Name}" Classes="h4"/>
+		<IconButton 
+			Grid.Row="0"
+			Content="Get branches"
+			Classes="bordered-accent s"
+			Command="{Binding GetBranchesCommand}"
+			SvgPath="{x:Static assets:Icons.arrowDown}" 
+			/>
+		<TextBlock 
+			Grid.Row="1"
+			Text="{Binding CurrentBranch?.Name, StringFormat='Current Branch: {0}'}"
+			Classes="h3"
+			/>
+		<TextBlock 
+			Grid.Row="2"
+			Text="{Binding PinnedBranches.Count, StringFormat='Branches: {0}'}"
+			Classes="h3"
+			/>
+		<TreeView 
+			Grid.Row="3"
+			ItemsSource="{Binding BranchTree}"
+			Background="{DynamicResource DefaultBackground}"
+			SelectedItem="{Binding SelectedBranchNode, Mode=TwoWay}">
 
-		<TextBlock Text="Branches:" Classes="h3"/>
+			<TreeView.Styles>
+				<!-- 
+				<Style Selector="TreeViewItem[IsCurrent=True] /template/ Border#PART_LayoutRoot">
+					<Setter Property="Background" Value="Green"/>
+				</Style>
+				-->
+				<Style Selector="TreeViewItem" x:DataType="vm:VmBranchNode">
+					<Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}"/>
+				</Style>
 
-		<TextBlock Text="{Binding PinnedBranches.Count}"/>
+			</TreeView.Styles>
+			    <i:Interaction.Behaviors>
+				<b:ScrollToSelectedBehavior/>
+				</i:Interaction.Behaviors>
 
-		<TreeView ItemsSource="{Binding BranchTree}"
-				  Background="{DynamicResource DefaultBackground}"
-				  SelectedItem="{Binding SelectedBranchNode, Mode=TwoWay}">
 			<TreeView.ItemTemplate>
 				<TreeDataTemplate ItemsSource="{Binding Children}">
-
-					<Grid Height="30" Background="{DynamicResource DefaultBackground}" ColumnDefinitions="*,Auto">
+					<Grid Height="24" ColumnDefinitions="*,Auto" Background="Transparent">
 						<StackPanel VerticalAlignment="Center" Grid.Column="0" Orientation="Horizontal" Spacing="8">
-							<TextBlock Text="{Binding Name}" />
-							<TextBlock Text="*"
-									   Foreground="Green"
-									   FontWeight="Bold"
-									   IsVisible="{Binding IsCurrent}" />
+							<Svg 
+								VerticalAlignment="Center"
+								Margin="-5 0 -0 0"
+								Width="17"
+								Height="17"
+								Path="{Binding NodeType, Converter={StaticResource BranchNodeTypeToSvgPath}}"
+								/>
 
+							<TextBlock VerticalAlignment="Center" Text="{Binding Name}" />
+							
+							<!--Звездочка-->
+							<Svg 
+								VerticalAlignment="Center"
+								Width="{DynamicResource SmallFontSize}"
+								Height="{DynamicResource SmallFontSize}"
+								Classes="small"
+								Path="{x:Static assets:Icons.asterisk}"
+								IsVisible="{Binding IsCurrent}" 
+								/>		
 						</StackPanel>
 
 						<!-- Кнопка Pin -->
-						<Button Grid.Column="1"
-								Classes="small"
-								Command="{Binding $parent[TreeView].((vm:VmBranches)DataContext).TogglePinCommand}"
-								CommandParameter="{Binding .}"
-								IsVisible="{Binding $parent[Control].IsPointerOver}"
-								>
-							<Grid>
-
-								<TextBlock Text="📌"
-										   Foreground="Yellow"
-										   IsVisible="{Binding !IsPinned}"
-										   />
-								<TextBlock Text="📌"
-										   Foreground="Red"
-										   IsVisible="{Binding IsPinned}"
-										   />
-							</Grid>
-
-						</Button>
-
+						<IconButton
+							Grid.Column="1"
+							Width="30"
+							Classes="small transparent"
+							Command="{Binding $parent[TreeView].((vm:VmBranches)DataContext).TogglePinCommand}"
+							CommandParameter="{Binding .}"
+							SvgPath="{Binding IsPinned, Converter={StaticResource PinnedSvgPathConverter}}"
+							>
+							<IconButton.IsVisible>
+								<MultiBinding Converter="{x:Static BoolConverters.Or}">
+									<Binding Path="$parent[Control].IsPointerOver"/>
+									<Binding Path="IsPinned"/>
+								</MultiBinding>
+							</IconButton.IsVisible>
+						</IconButton>
 					</Grid>
-
-				</TreeDataTemplate >
-
-
+				</TreeDataTemplate>
 			</TreeView.ItemTemplate>
-
 		</TreeView>
 
-		<StackPanel Orientation="Horizontal">
-
-
-			<IconButton
+		<IconButton
+			Grid.Row="4"
 			Content="Checkout"
 			Command="{Binding CheckoutBranchCommand}"
-			IsEnabled="{Binding SelectedBranchNode.FullName, Converter={StaticResource NullToBoolConverter}}"
-			SvgPath="{x:Static assets:Icons.arrowUp}" />
-
-			<TextBlock Text="{Binding SelectedBranchNode.Name, StringFormat='Selected: {0}'}"
-					   FontStyle="Italic"/>
-		</StackPanel>
-
-	</StackPanel>
+			IsEnabled="{Binding SelectedBranchNode?.FullName, Converter={StaticResource NullToBoolConverter}}"
+			SvgPath="{x:Static assets:Icons.arrowUp}" 
+			/>
+		<TextBlock 
+			Grid.Row="5"
+			Text="{Binding SelectedBranchNode?.Name, StringFormat='Selected: {0}'}"
+			FontStyle="Italic"
+			/>
+	</AutoGrid>
 
 </AvroView>

@@ -18,17 +18,26 @@ d:DesignHeight="540"
 		<vm:VmYaggitMain />
 	</Design.DataContext>
 
-	<Grid RowDefinitions="Auto,2*,*">
+	<Grid RowDefinitions="Auto,3*,*">
 
 		<ContentControl
 		Grid.Row="0"
 		Content="{Binding RepoSelector}"
 		/>
 
-		<ContentControl
-		Grid.Row="1"
-		Content="{Binding Branches}"
-		/>
+		<Grid Grid.Row="1" ColumnDefinitions="250,*">
+
+			<ContentControl
+			Grid.Column="0"
+			Content="{Binding Branches}"
+			/>
+
+			<ContentControl
+			Grid.Column="1"
+			Content="{Binding CommitHistory}"
+			/>
+
+		</Grid>
 
 		<ContentControl
 		Grid.Row="2"

@@ -7,6 +7,7 @@ public partial class VmYaggitMain : VmBaseMainWindow
     public VmBranches Branches { get; }
     public VmRepoSelector RepoSelector { get; }
     public VmConsole Console { get; }
+    public VmCommitHistory CommitHistory { get; }
 
 #pragma warning disable CS9264, CS8618
     public VmYaggitMain() : base(null!) { }
@@ -17,15 +18,15 @@ public partial class VmYaggitMain : VmBaseMainWindow
         IDialogService dialogService,
         VmBranches branches,
         VmRepoSelector repoSelector,
-        VmConsole console
+        VmConsole console,
+        VmCommitHistory commitHistory
     ) : base(dialogService)
     {
         _logger = logger;
         Branches = branches;
         RepoSelector = repoSelector;
         Console = console;
-
-        RepoSelector.VmMainWindow = this;
+        CommitHistory = commitHistory;
     }
 
     #region COMMANDS

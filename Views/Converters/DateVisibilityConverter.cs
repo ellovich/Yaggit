@@ -1,22 +1,10 @@
-﻿using System.Globalization;
-using Avalonia.Data.Converters;
+﻿namespace Views.Converters;
 
-namespace Views.Converters;
-
-public class DateVisibilityConverter : IValueConverter
+public sealed class DateVisibilityConverter : IValueConverter
 {
-    public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
-    {
-        if (value is DateTime dateTime)
-        {
-            return dateTime != DateTime.MinValue;
-        }
-
-        return false;
-    }
+    public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture) 
+        => value is DateTime dateTime && dateTime != default;
 
     public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
-    {
-        throw new NotImplementedException();
-    }
+        => BindingOperations.DoNothing;
 }

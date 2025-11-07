@@ -13,7 +13,7 @@ internal class Program
     [STAThread]
     public static void Main(string[] args) => BuildAvaloniaApp()
         .SetServices(
-            typeof(ViewModels.UI.Yaggit.VmYaggitMain),
+            typeof(VmYaggitMain),
             new ViewModelsRegistrar(),
             typeof(Program)
         )
@@ -36,6 +36,7 @@ public class ViewModelsRegistrar : IViewModelsRegistrar
 
         services.AddTransient<IGitBranchesService, GitBranchesService>();
         services.AddTransient<IGitRepositoryInitializer, GitRepositoryInitializer>();
+        services.AddTransient<IGitHistoryService, GitHistoryService>();
     }
 
     public void AddViewModels(IServiceCollection services)
@@ -45,5 +46,6 @@ public class ViewModelsRegistrar : IViewModelsRegistrar
         services.AddTransient<VmRepoSelector>();
         services.AddTransient<VmBranches>();
         services.AddTransient<VmConsole>();
+        services.AddTransient<VmCommitHistory>();
     }
 }

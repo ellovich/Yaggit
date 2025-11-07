@@ -1,406 +1,404 @@
 <Styles xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:assets="using:CoreUI.Assets">
-    <Design.PreviewWith>
-        <StackPanel Spacing="5">
-            <ThemeToggleButton />
-            <AutoGrid
-                ChildMargin="5"
-                ColumnCount="2"
-                RowCount="8"
-                RowHeight="40"
-                >
-                <Button Content="Button" />
-                <IconButton Content="IconButton" SvgPath="{x:Static assets:Icons.cogs}" />
+	<Design.PreviewWith>
+		<StackPanel Spacing="5">
+			<ThemeToggleButton />
+			<AutoGrid
+			ChildMargin="5"
+			ColumnCount="2"
+			RowCount="8"
+			RowHeight="40"
+			>
+				<Button Content="Button" />
+				<IconButton Content="IconButton" SvgPath="{x:Static assets:Icons.cogs}" />
 
-                <Button Content="Button :disabled" IsEnabled="False" />
-                <IconButton Content="IconButton :disabled" IsEnabled="False" SvgPath="{x:Static assets:Icons.cogs}" />
+				<Button Content="Button :disabled" IsEnabled="False" />
+				<IconButton Content="IconButton :disabled" IsEnabled="False" SvgPath="{x:Static assets:Icons.cogs}" />
 
-                <Button Classes="transparent" Content="Button.transparent" />
-                <IconButton Classes="transparent" Content="IconButton.transparent" SvgPath="{x:Static assets:Icons.cogs}" />
+				<Button Classes="transparent" Content="Button.transparent" />
+				<IconButton Classes="transparent" Content="IconButton.transparent" SvgPath="{x:Static assets:Icons.cogs}" />
 
-                <Button Classes="bordered">Button.bordered</Button>
-                <IconButton Classes="bordered" Content="IconButton.bordered" SvgPath="{x:Static assets:Icons.cogs}" />
+				<Button Classes="bordered">Button.bordered</Button>
+				<IconButton Classes="bordered" Content="IconButton.bordered" SvgPath="{x:Static assets:Icons.cogs}" />
 
-                <Button Classes="accent">Button.accent</Button>
-                <IconButton Classes="accent" Content="IconButton.accent" SvgPath="{x:Static assets:Icons.cogs}" />
+				<Button Classes="accent">Button.accent</Button>
+				<IconButton Classes="accent" Content="IconButton.accent" SvgPath="{x:Static assets:Icons.cogs}" />
 
-                <Button Classes="bordered-accent">Button.bordered-accent</Button>
-                <IconButton Classes="bordered-accent" Content="IconButton.bordered-accent" SvgPath="{x:Static assets:Icons.cogs}" />
+				<Button Classes="bordered-accent">Button.bordered-accent</Button>
+				<IconButton Classes="bordered-accent" Content="IconButton.bordered-accent" SvgPath="{x:Static assets:Icons.cogs}" />
 
-                <Button Classes="close">Button.close</Button>
-                <IconButton Classes="close" Content="IconButton.close" SvgPath="{x:Static assets:Icons.closeCircle}" />
+				<Button Classes="close">Button.close</Button>
+				<IconButton Classes="close" Content="IconButton.close" SvgPath="{x:Static assets:Icons.closeCircle}" />
 
-                <Button Classes="filter">Button.filter</Button>
+				<Button Classes="filter">Button.filter</Button>
 
-                <Button HorizontalAlignment="Stretch" Classes="google" />
+				<Button HorizontalAlignment="Stretch" Classes="google" />
 
 
-                <IconButton Classes="filter" Content="IconButton.filter" SvgPath="{x:Static assets:Icons.cogs}" />
-            </AutoGrid>
-            <Expander HorizontalAlignment="Stretch" Header="Colorful buttons" IsExpanded="True">
+				<IconButton Classes="filter" Content="IconButton.filter" SvgPath="{x:Static assets:Icons.cogs}" />
+			</AutoGrid>
+			<Expander HorizontalAlignment="Stretch" Header="Colorful buttons" IsExpanded="True">
 
-                <AutoGrid
-                    ChildMargin="5"
-                    ColumnCount="2"
-                    RowCount="10"
-                    RowHeight="40"
-                    >
+				<AutoGrid
+				ChildMargin="5"
+				ColumnCount="2"
+				RowCount="10"
+				RowHeight="40"
+				>
 
-                    <Button Classes="red">Button.red</Button>
-                    <IconButton Classes="red" Content="IconButton.red" SvgPath="{x:Static assets:Icons.cogs}" />
+					<Button Classes="red">Button.red</Button>
+					<IconButton Classes="red" Content="IconButton.red" SvgPath="{x:Static assets:Icons.cogs}" />
 
-                    <Button Classes="green">Button.green</Button>
-                    <IconButton Classes="green" Content="IconButton.green" SvgPath="{x:Static assets:Icons.cogs}" />
+					<Button Classes="green">Button.green</Button>
+					<IconButton Classes="green" Content="IconButton.green" SvgPath="{x:Static assets:Icons.cogs}" />
 
-                    <Button Classes="blue">Button.blue</Button>
-                    <IconButton Classes="blue" Content="IconButton.blue" SvgPath="{x:Static assets:Icons.cogs}" />
+					<Button Classes="blue">Button.blue</Button>
+					<IconButton Classes="blue" Content="IconButton.blue" SvgPath="{x:Static assets:Icons.cogs}" />
 
-                    <Button Classes="yellow">Button.yellow</Button>
-                    <IconButton Classes="yellow" Content="IconButton.yellow" SvgPath="{x:Static assets:Icons.cogs}" />
+					<Button Classes="yellow">Button.yellow</Button>
+					<IconButton Classes="yellow" Content="IconButton.yellow" SvgPath="{x:Static assets:Icons.cogs}" />
 
-                    <Button Classes="lime">Button.lime</Button>
-                    <IconButton Classes="lime" Content="IconButton.lime" SvgPath="{x:Static assets:Icons.cogs}" />
+					<Button Classes="lime">Button.lime</Button>
+					<IconButton Classes="lime" Content="IconButton.lime" SvgPath="{x:Static assets:Icons.cogs}" />
 
-                    <Button Classes="orange">Button.orange</Button>
-                    <IconButton Classes="orange" Content="IconButton.orange" SvgPath="{x:Static assets:Icons.cogs}" />
+					<Button Classes="orange">Button.orange</Button>
+					<IconButton Classes="orange" Content="IconButton.orange" SvgPath="{x:Static assets:Icons.cogs}" />
 
-                    <Button Classes="lavender">Button.lavender</Button>
-                    <IconButton Classes="lavender" Content="IconButton.lavender" SvgPath="{x:Static assets:Icons.cogs}" />
+					<Button Classes="lavender">Button.lavender</Button>
+					<IconButton Classes="lavender" Content="IconButton.lavender" SvgPath="{x:Static assets:Icons.cogs}" />
 
-                    <Button Classes="pink">Button.pink</Button>
-                    <IconButton Classes="pink" Content="IconButton.pink" SvgPath="{x:Static assets:Icons.cogs}" />
-                </AutoGrid>
+					<Button Classes="pink">Button.pink</Button>
+					<IconButton Classes="pink" Content="IconButton.pink" SvgPath="{x:Static assets:Icons.cogs}" />
+				</AutoGrid>
 
-            </Expander>
-        </StackPanel>
-    </Design.PreviewWith>
+			</Expander>
+		</StackPanel>
+	</Design.PreviewWith>
 
-    <!--  Button fix  -->
-    <Style Selector="Button">
-        <Style Selector="^ /template/ ContentPresenter">
-            <Setter Property="Background" Value="{Binding $parent[Button].Background}" />
-        </Style>
-        <Style Selector="^:pointerover /template/ ContentPresenter">
-            <Setter Property="Background" Value="{Binding $parent[Button].Background}" />
-        </Style>
-        <Style Selector="^:pressed /template/ ContentPresenter">
-            <Setter Property="Background" Value="{Binding $parent[Button].Background}" />
-        </Style>
-    </Style>
+	<!--  Button fix  -->
+	<Style Selector="Button">
+		<Style Selector="^ /template/ ContentPresenter">
+			<Setter Property="Background" Value="{Binding $parent[Button].Background}" />
+		</Style>
+		<Style Selector="^:pointerover /template/ ContentPresenter">
+			<Setter Property="Background" Value="{Binding $parent[Button].Background}" />
+		</Style>
+		<Style Selector="^:pressed /template/ ContentPresenter">
+			<Setter Property="Background" Value="{Binding $parent[Button].Background}" />
+		</Style>
+	</Style>
 
-    <!--  Button Base  -->
-    <Style Selector="Button">
-        <Setter Property="CornerRadius" Value="{DynamicResource DefaultCornerRadius}" />
-        <Setter Property="Background" Value="{DynamicResource TransparentColor}" />
-        <Setter Property="Transitions">
-            <Transitions>
-                <BrushTransition Property="Background" Duration="0:0:0.15" />
-            </Transitions>
-        </Setter>
-        <Style Selector="^:pointerover">
-            <Setter Property="Background" Value="{DynamicResource TransparentColorHover}" />
-        </Style>
-        <Style Selector="^:pressed">
-            <Setter Property="Background" Value="{DynamicResource TransparentColorSelected}" />
-        </Style>
+	<!--  Button Base  -->
+	<Style Selector="Button">
+		<Setter Property="CornerRadius" Value="{DynamicResource DefaultCornerRadius}" />
+		<Setter Property="Background" Value="{DynamicResource TransparentColor}" />
+		<Setter Property="Transitions">
+			<Transitions>
+				<BrushTransition Property="Background" Duration="0:0:0.15" />
+			</Transitions>
+		</Setter>
+		<Style Selector="^:pointerover">
+			<Setter Property="Background" Value="{DynamicResource TransparentColorHover}" />
+		</Style>
+		<Style Selector="^:pressed">
+			<Setter Property="Background" Value="{DynamicResource TransparentColorSelected}" />
+		</Style>
 
-        <Style Selector="^:disabled">
-            <Setter Property="Opacity" Value="0.5" />
-            <Setter Property="Cursor" Value="No" />
-        </Style>
+		<Style Selector="^:disabled">
+			<Setter Property="Opacity" Value="0.5" />
+			<Setter Property="Cursor" Value="No" />
+		</Style>
 
-    </Style>
+	</Style>
 
-    <!--  Transparent  -->
-    <Style Selector=":is(Button).transparent">
-        <Setter Property="Background" Value="Transparent" />
-        <Setter Property="BorderThickness" Value="0" />
-        <Style Selector="^:pointerover">
-            <Setter Property="Background" Value="Transparent" />
-        </Style>
-        <Style Selector="^:pressed">
-            <Setter Property="Background" Value="Transparent" />
-        </Style>
-    </Style>
+	<!--  Transparent  -->
+	<Style Selector=":is(Button).transparent">
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="BorderThickness" Value="0" />
+		<Style Selector="^:pointerover">
+			<Setter Property="Background" Value="Transparent" />
+		</Style>
+		<Style Selector="^:pressed">
+			<Setter Property="Background" Value="Transparent" />
+		</Style>
+	</Style>
 
-    <!--  Bordered  -->
-    <Style Selector=":is(Button).bordered">
-        <Setter Property="Background" Value="Transparent" />
-        <Setter Property="BorderBrush" Value="{DynamicResource Border}" />
-        <Setter Property="BorderThickness" Value="1" />
-        <Style Selector="^:pointerover">
-            <Setter Property="Background" Value="Transparent" />
-            <Setter Property="BorderThickness" Value="1" />
-        </Style>
-        <Style Selector="^:pressed">
-            <Setter Property="Background" Value="Transparent" />
-            <Setter Property="BorderThickness" Value="1" />
-        </Style>
-    </Style>
+	<!--  Bordered  -->
+	<Style Selector=":is(Button).bordered">
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="BorderBrush" Value="{DynamicResource Border}" />
+		<Setter Property="BorderThickness" Value="1" />
+		<Style Selector="^:pointerover">
+			<Setter Property="Background" Value="Transparent" />
+			<Setter Property="BorderThickness" Value="1" />
+		</Style>
+		<Style Selector="^:pressed">
+			<Setter Property="Background" Value="Transparent" />
+			<Setter Property="BorderThickness" Value="1" />
+		</Style>
+	</Style>
 
-    <Style Selector=":is(Button).close">
-        <Setter Property="Background" Value="Transparent" />
-        <Setter Property="BorderThickness" Value="0" />
-        <Style Selector="^:pointerover">
-            <Setter Property="Background" Value="{DynamicResource RedHover}" />
-        </Style>
-        <Style Selector="^:pressed">
-            <Setter Property="Background" Value="{DynamicResource RedSelected}" />
-        </Style>
-    </Style>
+	<Style Selector=":is(Button).close">
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="BorderThickness" Value="0" />
+		<Style Selector="^:pointerover">
+			<Setter Property="Background" Value="{DynamicResource RedHover}" />
+		</Style>
+		<Style Selector="^:pressed">
+			<Setter Property="Background" Value="{DynamicResource RedSelected}" />
+		</Style>
+	</Style>
 
-    <!--    -->
-    <!--    -->
+	<!--    -->
+	<!--    -->
 
-    <!--    -->
-    <!--    -->
-    <!-- <Style Selector="Button.close"> -->
-    <!--     <Setter Property="Background" Value="Transparent" /> -->
-    <!--     <Setter Property="BorderThickness" Value="0" /> -->
-    <!--     <Style Selector="^:pointerover"> -->
-    <!--         <Style Selector="^ /template/ ContentPresenter"> -->
-    <!--             <Setter Property="Background" Value="{DynamicResource RedHover}" /> -->
-    <!--         </Style> -->
-    <!--         <Setter Property="Background" Value="{DynamicResource RedHover}" /> -->
-    <!--     </Style> -->
-    <!--     <Style Selector="^:pressed"> -->
-    <!--         <Style Selector="^ /template/ ContentPresenter"> -->
-    <!--             <Setter Property="Background" Value="{DynamicResource RedSelected}" /> -->
-    <!--         </Style> -->
-    <!--         <Setter Property="Background" Value="{DynamicResource RedSelected}" /> -->
-    <!--     </Style> -->
-    <!-- </Style> -->
+	<!--    -->
+	<!--    -->
+	<!-- <Style Selector="Button.close"> -->
+	<!--     <Setter Property="Background" Value="Transparent" /> -->
+	<!--     <Setter Property="BorderThickness" Value="0" /> -->
+	<!--     <Style Selector="^:pointerover"> -->
+	<!--         <Style Selector="^ /template/ ContentPresenter"> -->
+	<!--             <Setter Property="Background" Value="{DynamicResource RedHover}" /> -->
+	<!--         </Style> -->
+	<!--         <Setter Property="Background" Value="{DynamicResource RedHover}" /> -->
+	<!--     </Style> -->
+	<!--     <Style Selector="^:pressed"> -->
+	<!--         <Style Selector="^ /template/ ContentPresenter"> -->
+	<!--             <Setter Property="Background" Value="{DynamicResource RedSelected}" /> -->
+	<!--         </Style> -->
+	<!--         <Setter Property="Background" Value="{DynamicResource RedSelected}" /> -->
+	<!--     </Style> -->
+	<!-- </Style> -->
 
-    <!--  Accent  -->
-    <Style Selector=":is(Button).accent">
-        <Setter Property="FontWeight" Value="SemiBold" />
-        <Setter Property="Transitions">
-            <Transitions>
-                <BrushTransition Property="Background" Duration="0:0:0.55" />
-            </Transitions>
-        </Setter>
-        <Setter Property="Background" Value="{DynamicResource AccentColor}" />
-        <Setter Property="BorderBrush" Value="{DynamicResource AccentGradient}" />
-        <Style Selector="^:pointerover">
-            <Setter Property="Background" Value="{DynamicResource AccentGradient}" />
-        </Style>
-        <Style Selector="^:pressed">
-            <Setter Property="Background" Value="{DynamicResource AccentGradient}" />
-        </Style>
-        <Style Selector="^:disabled">
-            <Setter Property="BorderBrush" Value="{DynamicResource Border}" />
-            <Setter Property="Cursor" Value="Cross" />
-        </Style>
-    </Style>
+	<!--  Accent  -->
+	<Style Selector=":is(Button).accent">
+		<Setter Property="FontWeight" Value="SemiBold" />
+		<Setter Property="Transitions">
+			<Transitions>
+				<BrushTransition Property="Background" Duration="0:0:0.55" />
+			</Transitions>
+		</Setter>
+		<Setter Property="Background" Value="{DynamicResource AccentColor}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource AccentGradient}" />
+		<Style Selector="^:pointerover">
+			<Setter Property="Background" Value="{DynamicResource AccentGradient}" />
+		</Style>
+		<Style Selector="^:pressed">
+			<Setter Property="Background" Value="{DynamicResource AccentGradient}" />
+		</Style>
+		<Style Selector="^:disabled">
+			<Setter Property="BorderBrush" Value="{DynamicResource Border}" />
+			<Setter Property="Cursor" Value="Cross" />
+		</Style>
+	</Style>
 
-    <!--  Bordered-Accent  -->
-    <Style Selector=":is(Button).bordered-accent">
-        <Setter Property="BorderThickness" Value="2" />
-        <Setter Property="Background" Value="Transparent" />
-        <Setter Property="BorderBrush" Value="{DynamicResource AccentGradient}" />
-        <Style Selector="^:pointerover">
-            <Setter Property="Background" Value="{DynamicResource AccentGradient}" />
-        </Style>
-        <Style Selector="^:pressed">
-            <Setter Property="Background" Value="{DynamicResource AccentGradient}" />
-        </Style>
-        <Style Selector="^:disabled">
-            <Setter Property="BorderBrush" Value="{DynamicResource Border}" />
-            <Setter Property="Cursor" Value="Cross" />
-        </Style>
-    </Style>
+	<!--  Bordered-Accent  -->
+	<Style Selector=":is(Button).bordered-accent">
+		<Setter Property="BorderThickness" Value="2" />
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="BorderBrush" Value="{DynamicResource AccentGradient}" />
+		<Style Selector="^:pointerover">
+			<Setter Property="Background" Value="{DynamicResource AccentGradient}" />
+		</Style>
+		<Style Selector="^:pressed">
+			<Setter Property="Background" Value="{DynamicResource AccentGradient}" />
+		</Style>
+		<Style Selector="^:disabled">
+			<Setter Property="BorderBrush" Value="{DynamicResource Border}" />
+			<Setter Property="Cursor" Value="Cross" />
+		</Style>
+	</Style>
 
-    <!--  Filter  -->
-    <Style Selector=":is(Button).filter">
-        <Setter Property="Background" Value="{DynamicResource FilterColor}" />
-        <Setter Property="BorderBrush" Value="{DynamicResource FilterColor}" />
-        <Style Selector="^:pointerover">
-            <Setter Property="Background" Value="{DynamicResource FilterColor}" />
-        </Style>
-        <Style Selector="^:pressed">
-            <Setter Property="Background" Value="{DynamicResource FilterColor}" />
-        </Style>
-    </Style>
+	<!--  Filter  -->
+	<Style Selector=":is(Button).filter">
+		<Setter Property="Background" Value="{DynamicResource FilterColor}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource FilterColor}" />
+		<Style Selector="^:pointerover">
+			<Setter Property="Background" Value="{DynamicResource FilterColor}" />
+		</Style>
+		<Style Selector="^:pressed">
+			<Setter Property="Background" Value="{DynamicResource FilterColor}" />
+		</Style>
+	</Style>
 
-    <!--  Colors  -->
-    <Style>
+	<!--  Colors  -->
 
-        <!--  Red  -->
-        <Style Selector=":is(Button).red">
-            <Setter Property="Background" Value="{DynamicResource RedNormal}" />
-            <Setter Property="BorderBrush" Value="{DynamicResource RedHover}" />
-            <Style Selector="^:pointerover">
-                <Setter Property="Background" Value="{DynamicResource RedHover}" />
-            </Style>
-            <Style Selector="^:pressed">
-                <Setter Property="Background" Value="{DynamicResource RedSelected}" />
-            </Style>
-        </Style>
+		<!--  Red  -->
+		<Style Selector=":is(Button).red">
+			<Setter Property="Background" Value="{DynamicResource RedNormal}" />
+			<Setter Property="BorderBrush" Value="{DynamicResource RedHover}" />
+			<Style Selector="^:pointerover">
+				<Setter Property="Background" Value="{DynamicResource RedHover}" />
+			</Style>
+			<Style Selector="^:pressed">
+				<Setter Property="Background" Value="{DynamicResource RedSelected}" />
+			</Style>
+		</Style>
 
-        <!--  Green  -->
-        <Style Selector=":is(Button).green">
-            <Setter Property="Background" Value="{DynamicResource GreenNormal}" />
-            <Setter Property="BorderBrush" Value="{DynamicResource GreenHover}" />
-            <Style Selector="^:pointerover">
-                <Setter Property="Background" Value="{DynamicResource GreenHover}" />
-            </Style>
-            <Style Selector="^:pressed">
-                <Setter Property="Background" Value="{DynamicResource GreenSelected}" />
-            </Style>
-        </Style>
+		<!--  Green  -->
+		<Style Selector=":is(Button).green">
+			<Setter Property="Background" Value="{DynamicResource GreenNormal}" />
+			<Setter Property="BorderBrush" Value="{DynamicResource GreenHover}" />
+			<Style Selector="^:pointerover">
+				<Setter Property="Background" Value="{DynamicResource GreenHover}" />
+			</Style>
+			<Style Selector="^:pressed">
+				<Setter Property="Background" Value="{DynamicResource GreenSelected}" />
+			</Style>
+		</Style>
 
-        <!--  Blue  -->
-        <Style Selector=":is(Button).blue">
-            <Setter Property="Background" Value="{DynamicResource BlueNormal}" />
-            <Setter Property="BorderBrush" Value="{DynamicResource BlueHover}" />
-            <Style Selector="^:pointerover">
-                <Setter Property="Background" Value="{DynamicResource BlueHover}" />
-            </Style>
-            <Style Selector="^:pressed">
-                <Setter Property="Background" Value="{DynamicResource BlueSelected}" />
-            </Style>
-        </Style>
+		<!--  Blue  -->
+		<Style Selector=":is(Button).blue">
+			<Setter Property="Background" Value="{DynamicResource BlueNormal}" />
+			<Setter Property="BorderBrush" Value="{DynamicResource BlueHover}" />
+			<Style Selector="^:pointerover">
+				<Setter Property="Background" Value="{DynamicResource BlueHover}" />
+			</Style>
+			<Style Selector="^:pressed">
+				<Setter Property="Background" Value="{DynamicResource BlueSelected}" />
+			</Style>
+		</Style>
 
-        <!--  Yellow  -->
-        <Style Selector=":is(Button).yellow">
-            <Setter Property="Background" Value="{DynamicResource YellowNormal}" />
-            <Setter Property="BorderBrush" Value="{DynamicResource YellowHover}" />
-            <Style Selector="^:pointerover">
-                <Setter Property="Background" Value="{DynamicResource YellowHover}" />
-            </Style>
-            <Style Selector="^:pressed">
-                <Setter Property="Background" Value="{DynamicResource YellowSelected}" />
-            </Style>
-        </Style>
+		<!--  Yellow  -->
+		<Style Selector=":is(Button).yellow">
+			<Setter Property="Background" Value="{DynamicResource YellowNormal}" />
+			<Setter Property="BorderBrush" Value="{DynamicResource YellowHover}" />
+			<Style Selector="^:pointerover">
+				<Setter Property="Background" Value="{DynamicResource YellowHover}" />
+			</Style>
+			<Style Selector="^:pressed">
+				<Setter Property="Background" Value="{DynamicResource YellowSelected}" />
+			</Style>
+		</Style>
 
-        <!--  Lime  -->
-        <Style Selector=":is(Button).lime">
-            <Setter Property="Background" Value="{DynamicResource LimeNormal}" />
-            <Setter Property="BorderBrush" Value="{DynamicResource LimeHover}" />
-            <Style Selector="^:pointerover">
-                <Setter Property="Background" Value="{DynamicResource LimeHover}" />
-            </Style>
-            <Style Selector="^:pressed">
-                <Setter Property="Background" Value="{DynamicResource LimeSelected}" />
-            </Style>
-        </Style>
+		<!--  Lime  -->
+		<Style Selector=":is(Button).lime">
+			<Setter Property="Background" Value="{DynamicResource LimeNormal}" />
+			<Setter Property="BorderBrush" Value="{DynamicResource LimeHover}" />
+			<Style Selector="^:pointerover">
+				<Setter Property="Background" Value="{DynamicResource LimeHover}" />
+			</Style>
+			<Style Selector="^:pressed">
+				<Setter Property="Background" Value="{DynamicResource LimeSelected}" />
+			</Style>
+		</Style>
 
-        <!--  Orange  -->
-        <Style Selector=":is(Button).orange">
-            <Setter Property="Background" Value="{DynamicResource OrangeNormal}" />
-            <Setter Property="BorderBrush" Value="{DynamicResource OrangeHover}" />
-            <Style Selector="^:pointerover">
-                <Setter Property="Background" Value="{DynamicResource OrangeHover}" />
-            </Style>
-            <Style Selector="^:pressed">
-                <Setter Property="Background" Value="{DynamicResource OrangeSelected}" />
-            </Style>
-        </Style>
+		<!--  Orange  -->
+		<Style Selector=":is(Button).orange">
+			<Setter Property="Background" Value="{DynamicResource OrangeNormal}" />
+			<Setter Property="BorderBrush" Value="{DynamicResource OrangeHover}" />
+			<Style Selector="^:pointerover">
+				<Setter Property="Background" Value="{DynamicResource OrangeHover}" />
+			</Style>
+			<Style Selector="^:pressed">
+				<Setter Property="Background" Value="{DynamicResource OrangeSelected}" />
+			</Style>
+		</Style>
 
-        <!--  Lavender  -->
-        <Style Selector=":is(Button).lavender">
-            <Setter Property="Background" Value="{DynamicResource LavenderNormal}" />
-            <Setter Property="BorderBrush" Value="{DynamicResource LavenderHover}" />
-            <Style Selector="^:pointerover">
-                <Setter Property="Background" Value="{DynamicResource LavenderHover}" />
-            </Style>
-            <Style Selector="^:pressed">
-                <Setter Property="Background" Value="{DynamicResource LavenderSelected}" />
-            </Style>
-        </Style>
+		<!--  Lavender  -->
+		<Style Selector=":is(Button).lavender">
+			<Setter Property="Background" Value="{DynamicResource LavenderNormal}" />
+			<Setter Property="BorderBrush" Value="{DynamicResource LavenderHover}" />
+			<Style Selector="^:pointerover">
+				<Setter Property="Background" Value="{DynamicResource LavenderHover}" />
+			</Style>
+			<Style Selector="^:pressed">
+				<Setter Property="Background" Value="{DynamicResource LavenderSelected}" />
+			</Style>
+		</Style>
 
-        <!--  Pink  -->
-        <Style Selector=":is(Button).pink">
-            <Setter Property="Background" Value="{DynamicResource PinkNormal}" />
-            <Setter Property="BorderBrush" Value="{DynamicResource PinkHover}" />
-            <Style Selector="^:pointerover">
-                <Setter Property="Background" Value="{DynamicResource PinkHover}" />
-            </Style>
-            <Style Selector="^:pressed">
-                <Setter Property="Background" Value="{DynamicResource PinkSelected}" />
-            </Style>
-        </Style>
-    </Style>
+		<!--  Pink  -->
+		<Style Selector=":is(Button).pink">
+			<Setter Property="Background" Value="{DynamicResource PinkNormal}" />
+			<Setter Property="BorderBrush" Value="{DynamicResource PinkHover}" />
+			<Style Selector="^:pointerover">
+				<Setter Property="Background" Value="{DynamicResource PinkHover}" />
+			</Style>
+			<Style Selector="^:pressed">
+				<Setter Property="Background" Value="{DynamicResource PinkSelected}" />
+			</Style>
+		</Style>
 
-    <Style Selector=":is(Button).google">
-        <Setter Property="Height" Value="50" />
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="Button">
-                    <Border
-                        Background="{DynamicResource Bg}"
-                        BorderThickness="2"
-                        Classes="base"
-                        ClipToBounds="True"
-                        CornerRadius="12"
-                        >
-                        <Border.Styles>
-                            <Style Selector="Border.base">
-                                <Setter Property="BorderBrush" Value="rgba(0,0,0,0.3)" />
-                                <Setter Property="Transitions">
-                                    <Transitions>
-                                        <BrushTransition Easing="QuarticEaseOut" Property="BorderBrush" Duration="0:0:0.5" />
-                                    </Transitions>
-                                </Setter>
-                                <Style Selector="^ Grid.logo">
-                                    <Setter Property="Margin" Value="10 0 0 0" />
-                                    <Setter Property="Background" Value="{DynamicResource Bg}" />
-                                    <Setter Property="Transitions">
-                                        <Transitions>
-                                            <ThicknessTransition Easing="QuarticEaseOut" Property="Margin" Duration="0:0:0.5" />
-                                        </Transitions>
-                                    </Setter>
-                                </Style>
-                                <Style Selector="^ TextBlock.text">
-                                    <Setter Property="Width" Value="0" />
-                                    <Setter Property="Transitions">
-                                        <Transitions>
-                                            <DoubleTransition Easing="QuarticEaseOut" Property="Width" Duration="0:0:0.5" />
-                                        </Transitions>
-                                    </Setter>
-                                </Style>
-                                <Style Selector="^:pointerover">
-                                    <Setter Property="BorderBrush" Value="{DynamicResource AccentColor}" />
-                                    <Style Selector="^ Grid.logo">
-                                        <Setter Property="Margin" Value="0 0 0 0" />
-                                    </Style>
-                                    <Style Selector="^ TextBlock.text">
-                                        <Setter Property="Width" Value="114" />
-                                    </Style>
-                                </Style>
-                            </Style>
-                        </Border.Styles>
+	<Style Selector=":is(Button).google">
+		<Setter Property="Height" Value="50" />
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="Button">
+					<Border
+					Background="{DynamicResource Bg}"
+					BorderThickness="2"
+					Classes="base"
+					ClipToBounds="True"
+					CornerRadius="12"
+					>
+						<Border.Styles>
+							<Style Selector="Border.base">
+								<Setter Property="BorderBrush" Value="rgba(0,0,0,0.3)" />
+								<Setter Property="Transitions">
+									<Transitions>
+										<BrushTransition Easing="QuarticEaseOut" Property="BorderBrush" Duration="0:0:0.5" />
+									</Transitions>
+								</Setter>
+								<Style Selector="^ Grid.logo">
+									<Setter Property="Margin" Value="10 0 0 0" />
+									<Setter Property="Background" Value="{DynamicResource Bg}" />
+									<Setter Property="Transitions">
+										<Transitions>
+											<ThicknessTransition Easing="QuarticEaseOut" Property="Margin" Duration="0:0:0.5" />
+										</Transitions>
+									</Setter>
+								</Style>
+								<Style Selector="^ TextBlock.text">
+									<Setter Property="Width" Value="0" />
+									<Setter Property="Transitions">
+										<Transitions>
+											<DoubleTransition Easing="QuarticEaseOut" Property="Width" Duration="0:0:0.5" />
+										</Transitions>
+									</Setter>
+								</Style>
+								<Style Selector="^:pointerover">
+									<Setter Property="BorderBrush" Value="{DynamicResource AccentColor}" />
+									<Style Selector="^ Grid.logo">
+										<Setter Property="Margin" Value="0 0 0 0" />
+									</Style>
+									<Style Selector="^ TextBlock.text">
+										<Setter Property="Width" Value="114" />
+									</Style>
+								</Style>
+							</Style>
+						</Border.Styles>
 
-                        <StackPanel
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"
-                            Orientation="Horizontal"
-                            Spacing="10"
-                            >
-                            <Grid
-                                Width="23"
-                                Height="23"
-                                Background="Transparent"
-                                Classes="logo"
-                                >
-                                <Path Data="M5.01822 11C5.01822 10.3331 5.12898 9.69378 5.32666 9.09411L1.86655 6.45184C1.19219 7.82104 0.812256 9.36384 0.812256 11C0.812256 12.6347 1.19173 14.1766 1.86515 15.5448L5.32339 12.8974C5.12758 12.3006 5.01822 11.6636 5.01822 11Z" Fill="#FBBC05" />
-                                <Path Data="M11.0935 4.93331C12.5423 4.93331 13.8508 5.44664 14.8789 6.28664L17.8698 3.29997C16.0472 1.71331 13.7106 0.733307 11.0935 0.733307C7.03057 0.733307 3.53868 3.05684 1.86658 6.45184L5.32668 9.09411C6.12395 6.67397 8.39657 4.93331 11.0935 4.93331Z" Fill="#EB4335" />
-                                <Path Data="M11.0935 17.0667C8.39657 17.0667 6.12395 15.326 5.32668 12.9059L1.86658 15.5477C3.53868 18.9431 7.03057 21.2667 11.0935 21.2667C13.6012 21.2667 15.9954 20.3763 17.7922 18.7079L14.5078 16.1688C13.5811 16.7526 12.4142 17.0667 11.0935 17.0667Z" Fill="#34A853" />
-                                <Path Data="M20.9074 11C20.9074 10.3933 20.814 9.73997 20.6738 9.1333H11.0935V13.1H16.608C16.3323 14.4524 15.5817 15.4921 14.5078 16.1688L17.7922 18.7079C19.6798 16.956 20.9074 14.3464 20.9074 11Z" Fill="#4285F4" />
-                            </Grid>
-                            <TextBlock
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center"
-                                Classes="text"
-                                FontSize="13"
-                                FontWeight="SemiBold"
-                                Foreground="{DynamicResource AccentColor}"
-                                Text="Login with Google"
-                                />
-                        </StackPanel>
-                    </Border>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
+						<StackPanel
+						HorizontalAlignment="Center"
+						VerticalAlignment="Center"
+						Orientation="Horizontal"
+						Spacing="10"
+						>
+							<Grid
+							Width="23"
+							Height="23"
+							Background="Transparent"
+							Classes="logo"
+							>
+								<Path Data="M5.01822 11C5.01822 10.3331 5.12898 9.69378 5.32666 9.09411L1.86655 6.45184C1.19219 7.82104 0.812256 9.36384 0.812256 11C0.812256 12.6347 1.19173 14.1766 1.86515 15.5448L5.32339 12.8974C5.12758 12.3006 5.01822 11.6636 5.01822 11Z" Fill="#FBBC05" />
+								<Path Data="M11.0935 4.93331C12.5423 4.93331 13.8508 5.44664 14.8789 6.28664L17.8698 3.29997C16.0472 1.71331 13.7106 0.733307 11.0935 0.733307C7.03057 0.733307 3.53868 3.05684 1.86658 6.45184L5.32668 9.09411C6.12395 6.67397 8.39657 4.93331 11.0935 4.93331Z" Fill="#EB4335" />
+								<Path Data="M11.0935 17.0667C8.39657 17.0667 6.12395 15.326 5.32668 12.9059L1.86658 15.5477C3.53868 18.9431 7.03057 21.2667 11.0935 21.2667C13.6012 21.2667 15.9954 20.3763 17.7922 18.7079L14.5078 16.1688C13.5811 16.7526 12.4142 17.0667 11.0935 17.0667Z" Fill="#34A853" />
+								<Path Data="M20.9074 11C20.9074 10.3933 20.814 9.73997 20.6738 9.1333H11.0935V13.1H16.608C16.3323 14.4524 15.5817 15.4921 14.5078 16.1688L17.7922 18.7079C19.6798 16.956 20.9074 14.3464 20.9074 11Z" Fill="#4285F4" />
+							</Grid>
+							<TextBlock
+							HorizontalAlignment="Center"
+							VerticalAlignment="Center"
+							Classes="text"
+							FontSize="13"
+							FontWeight="SemiBold"
+							Foreground="{DynamicResource AccentColor}"
+							Text="Login with Google"
+							/>
+						</StackPanel>
+					</Border>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
 
 </Styles>
