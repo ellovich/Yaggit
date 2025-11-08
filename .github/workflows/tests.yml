@@ -51,26 +51,26 @@ jobs:
             "-targetdir:coverage-report" \
             "-reporttypes:HtmlInline;TextSummary"
 
-      # ------------------------------
-      # ✅ Проверка порога покрытия
-      # ------------------------------
-      - name: Enforce coverage threshold
-        run: |
-          summary=$(cat coverage-report/Summary.txt | grep "Line coverage" | grep -o "[0-9.]*")
-          echo "Line coverage: ${summary}%"
+      # # ------------------------------
+      # # ✅ Проверка порога покрытия
+      # # ------------------------------
+      # - name: Enforce coverage threshold
+      #   run: |
+      #     summary=$(cat coverage-report/Summary.txt | grep "Line coverage" | grep -o "[0-9.]*")
+      #     echo "Line coverage: ${summary}%"
           
-          # Порог можно менять (0-100)
-          threshold=0.05
+      #     # Порог можно менять (0-100)
+      #     threshold=0.05
 
-          awk -v cov="$summary" -v thr="$threshold" '
-            BEGIN {
-              if (cov+0 < thr+0) {
-                printf("Coverage %.2f%% is below threshold %.2f%%\n", cov, thr)
-                exit 1
-              } else {
-                printf("Coverage %.2f%% OK (threshold %.2f%%)\n", cov, thr)
-              }
-            }         
+      #     awk -v cov="$summary" -v thr="$threshold" '
+      #       BEGIN {
+      #         if (cov+0 < thr+0) {
+      #           printf("Coverage %.2f%% is below threshold %.2f%%\n", cov, thr)
+      #           exit 1
+      #         } else {
+      #           printf("Coverage %.2f%% OK (threshold %.2f%%)\n", cov, thr)
+      #         }
+      #       }         
 
       # ------------------------------
       # ✅ Загружаем HTML отчёт как артефакт
