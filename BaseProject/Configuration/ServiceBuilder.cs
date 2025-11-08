@@ -3,7 +3,6 @@ using HanumanInstitute.MvvmDialogs.Avalonia;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Models.Enums.Common;
 using Serilog;
 using ViewModels.Common;
 using ViewModels.Infrastructure;
@@ -12,117 +11,94 @@ using Views.UI;
 
 namespace BaseProject.Configuration;
 
-public static class ConfigurationExtensions
+/// <summary>
+/// Provides a centralized service-registration builder used to configure
+/// dependency injection, logging, navigation, dialogs, and ViewModel bindings.
+/// </summary>
+public sealed class ServiceBuilder(IConfiguration configuration)
 {
-    public static string GetConnectionString(this IConfiguration configuration, eConnString connStr)
+    private readonly IServiceCollection _serviceCollection = new ServiceCollection();
+    private readonly IConfiguration _configuration = configuration
+            ?? throw new ArgumentNullException(nameof(configuration));
+
+    public IServiceProvider BuildServices(IViewModelsRegistrar? viewModelRegistrar)
     {
-        return configuration.GetConnectionString(Enum.GetName(typeof(eConnString), connStr)!)!;
-    }
-}
+        ConfigureConfiguration();
+        ConfigureLogging();
+        ConfigureViewModels();
+        ConfigureNavigation();
+        ConfigureWindowManager();
+        ConfigureDialogs();
+        ConfigureViewLocator();
 
-public class ServiceBuilder
-{
-    protected IServiceCollection _serviceCollection;
-    private readonly IConfiguration _configuration;
-    protected ILoggerFactory _loggerFactory;
-    private IServiceProvider _serviceProvider;
+        if (viewModelRegistrar is null)
+            throw new InvalidOperationException("ViewModels не зарегистрированы. Проверьте Program.cs");
 
-#pragma warning disable CS8618
+        viewModelRegistrar.AddServices(_serviceCollection);
+        viewModelRegistrar.AddViewModels(_serviceCollection);
 
-    public ServiceBuilder(IConfiguration configuration)
-#pragma warning restore CS8618
-    {
-        _configuration = configuration;
-        _serviceCollection ??= new ServiceCollection();
-    }
-
-    public IServiceProvider BuildServices(Type programType, IViewModelsRegistrar? viewModelRegistrar)
-    {
-        AddConfiguration();
-        AddLogger();
-        AddStandardViewModels();
-        AddNavigationService();
-        AddWindowManager();
-
-        // services.AddSingleton<IFilesService, FilesService>();
-        // services.AddSingleton<ISettingsService, SettingsService>();
-        // services.AddSingleton<IClipboardService, ClipboardService>();
-        // services.AddSingleton<IShareService, ShareService>();
-        // services.AddSingleton<IEmailService, EmailService>();
-
-        if (viewModelRegistrar != null)
-        {
-            viewModelRegistrar.AddServices(_serviceCollection);
-            viewModelRegistrar.AddViewModels(_serviceCollection);
-        }
-        else
-        {
-            throw new Exception("Не зарегистрированы ViewModels в Program.cs");
-        }
-
-        AddViewLocator();
-        AddDialogsService();
-        _serviceProvider = _serviceCollection.BuildServiceProvider();
-        return _serviceProvider;
+        return _serviceCollection.BuildServiceProvider();
     }
 
-    private void AddViewLocator()
-    {
-        _serviceCollection.AddSingleton<IViewLocator, ViewLocator>();
-    }
-
-    private void AddStandardViewModels()
-    {
-        _serviceCollection.AddTransient<VmMessageBox>();
-        _serviceCollection.AddTransient<VmMessageBoxYesNo>();
-    }
-
-    private void AddNavigationService()
-    {
-        _serviceCollection.AddSingleton<IVmFactory>(sp =>
-            new VmFactory(type =>
-            {
-                var service = sp.GetService(type);
-                return service != null
-                    ? (VmBase)service
-                    : throw new InvalidOperationException($"ViewModel типа {type.FullName} не зарегистрирован в Program.cs");
-            })
-        );
-        _serviceCollection.AddScoped<INavigationService, NavigationService>();
-    }
-
-    private void AddWindowManager()
-    {
-        _serviceCollection.AddSingleton<IDockingService, DockingService>();
-    }
-
-    private void AddConfiguration()
+    private void ConfigureConfiguration()
     {
         _serviceCollection.AddSingleton(_configuration);
     }
 
-    private void AddLogger()
+    private void ConfigureLogging()
     {
         var serilogLogger = new LoggerConfiguration()
             .ReadFrom.Configuration(_configuration)
             .CreateLogger();
 
-        _loggerFactory = LoggerFactory.Create(builder => builder.AddSerilog(serilogLogger));
-
-        _serviceCollection.AddSingleton(_loggerFactory);
-        _serviceCollection.AddLogging(loggingBuilder =>
-        loggingBuilder.AddSerilog(serilogLogger, dispose: true));
+        // Add Serilog to Microsoft ILogger
+        _serviceCollection.AddLogging(builder =>
+            builder.ClearProviders().AddSerilog(serilogLogger, dispose: true));
     }
 
-    private void AddDialogsService()
+    private void ConfigureViewModels()
     {
-        _serviceCollection.AddSingleton<IDialogService>(provider =>
-            new DialogService(
-                new DialogManager(
-                    viewLocator: provider.GetRequiredService<IViewLocator>(),
-                    dialogFactory: new DialogFactory(),// .AddMessageBox(MessageBoxMode.Popup),
-                    logger: _loggerFactory.CreateLogger<DialogManager>()),
-                viewModelFactory: x => provider.GetRequiredService<IVmFactory>().GetVm(x))
-        );
+        _serviceCollection.AddTransient<VmMessageBox>();
+        _serviceCollection.AddTransient<VmMessageBoxYesNo>();
+    }
+
+    private void ConfigureNavigation()
+    {
+        _serviceCollection.AddSingleton<IVmFactory>(sp =>
+            new VmFactory(type =>
+            {
+                var instance = sp.GetService(type);
+                return instance is VmBase vm
+                    ? vm
+                    : throw new InvalidOperationException($"ViewModel типа {type.FullName} не зарегистрирован.");
+            }));
+
+        _serviceCollection.AddScoped<INavigationService, NavigationService>();
+    }
+
+    private void ConfigureWindowManager()
+    {
+        _serviceCollection.AddSingleton<IDockingService, DockingService>();
+    }
+
+    private void ConfigureDialogs()
+    {
+        _serviceCollection.AddSingleton<IDialogService>(serviceProvider =>
+        {
+            var viewLocator = serviceProvider.GetRequiredService<IViewLocator>();
+            var loggerFactory = serviceProvider.GetRequiredService<ILoggerFactory>();
+            var logger = loggerFactory.CreateLogger<DialogManager>();
+            var dialogFactory = new DialogFactory();
+            VmBase vmFactory(Type vmType) => serviceProvider.GetRequiredService<IVmFactory>().GetVm(vmType);
+
+            var dialogManager = new DialogManager(viewLocator, dialogFactory, logger);
+
+            return new DialogService(dialogManager, vmFactory);
+        });
+    }
+
+    private void ConfigureViewLocator()
+    {
+        _serviceCollection.AddSingleton<IViewLocator, ViewLocator>();
     }
 }

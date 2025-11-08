@@ -2,19 +2,13 @@
 
     <PropertyGroup>
         <OutputType>Library</OutputType>
-        <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
-    </PropertyGroup>
+		<AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+	</PropertyGroup>
 
 	<ItemGroup Label="Other Projects">
         <ProjectReference Include="..\Models\Models.csproj" />
         <ProjectReference Include="..\ViewModels\ViewModels.csproj" />
         <ProjectReference Include="..\CoreUI\CoreUI.csproj" />
     </ItemGroup>
-
-	<ItemGroup>
-	  <Compile Update="UI\Yaggit\CommitHistory.axaml.cs">
-	    <DependentUpon>CommitHistory.axaml</DependentUpon>
-	  </Compile>
-	</ItemGroup>
 
 </Project>

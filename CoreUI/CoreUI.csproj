@@ -23,8 +23,6 @@
 		<PackageReference Include="AsyncImageLoader.Avalonia" />
 		<PackageReference Include="Svg.Controls.Skia.Avalonia" />
 		<PackageReference Include="AvaloniaEdit.TextMate" />
-		<PackageReference Include="Eremex.Avalonia.Controls" />
-		<PackageReference Include="Eremex.Avalonia.Themes.DeltaDesign" />
 		<PackageReference Include="livechartscore.skiasharpview.avalonia" />
 	</ItemGroup>
 

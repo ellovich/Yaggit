@@ -1,5 +1,4 @@
 ﻿using Avalonia;
-using BasaProject.Configuration;
 using BaseProject.Configuration;
 
 namespace BaseProject;
@@ -9,14 +8,13 @@ public static class AppStarter
     public static AppBuilder SetServices(
         this AppBuilder appBuilder,
         Type mainViewModelType,
-        IViewModelsRegistrar viewModelsRegistrar,
-        Type program)
+        IViewModelsRegistrar viewModelsRegistrar)
     {
         var configuration = ConfigurationLoader.LoadConfiguration();
         var serviceBuilder = new ServiceBuilder(configuration);
 
         App.SetMainViewModelType(mainViewModelType);
-        var serviceProvider = serviceBuilder.BuildServices(program, viewModelsRegistrar);
+        var serviceProvider = serviceBuilder.BuildServices(viewModelsRegistrar);
         App.SetServiceProvider(serviceProvider);
 
         return appBuilder;

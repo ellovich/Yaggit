@@ -1,4 +1,6 @@
-﻿using Models.Services.Yaggit.Contracts;
+﻿using CommunityToolkit.Mvvm.Messaging;
+using Models.Services.Yaggit.Contracts;
+using ViewModels.UI.Yaggit.Messages;
 
 namespace ViewModels.UI.Yaggit;
 
@@ -33,10 +35,10 @@ public partial class VmRepoSelector : VmBase
     #region PROPS
 
     [ObservableProperty]
-    public required partial string? RepoPath { get; set; } = string.Empty;
+    public partial string? RepoPath { get; protected set; } = string.Empty;
 
     [ObservableProperty]
-    public required partial string? RepoName { get; set; } = string.Empty;
+    public partial string? RepoName { get; protected set; } = string.Empty;
 
     [ObservableProperty]
     public partial bool IsRepositoryInitialized { get; set; }
@@ -92,6 +94,7 @@ public partial class VmRepoSelector : VmBase
             }
 
             _gitRepositoryContext.SetRepository(RepoPath);
+            WeakReferenceMessenger.Default.Send(new RepositoryChangedMessage(RepoPath));
             _logger.LogInformation("Выбран репозиторий {Path}", RepoPath);
         }
         catch (GitException ex)
@@ -105,10 +108,7 @@ public partial class VmRepoSelector : VmBase
             await _dialogService.ShowErrorAsync(MainVm, "Ошибка выбора папки", ex.Message);
         }
     }
-
-    /// <summary>
-    /// Создание нового git-репозитория.
-    /// </summary>
+    
     [RelayCommand]
     private async Task InitRepo()
     {
@@ -124,11 +124,13 @@ public partial class VmRepoSelector : VmBase
             {
                 await _dialogService.ShowInfoAsync(MainVm, "Репозиторий уже существует", RepoPath);
                 _gitRepositoryContext.SetRepository(RepoPath);
+                WeakReferenceMessenger.Default.Send(new RepositoryChangedMessage(RepoPath));
                 return;
             }
 
             await _gitInitializer.InitializeRepositoryAsync(RepoPath);
             _gitRepositoryContext.SetRepository(RepoPath);
+            WeakReferenceMessenger.Default.Send(new RepositoryChangedMessage(RepoPath));
 
             IsRepositoryInitialized = true;
             _logger.LogInformation("Репозиторий успешно инициализирован: {Path}", RepoPath);
@@ -153,7 +155,7 @@ public class MockVmRepoSelector : VmRepoSelector
 {
     public MockVmRepoSelector()
     {
-        RepoPath = @"C:\Users\ello\Desktop\Projects\AvaMarketSimulationOld";
-        RepoName = @"AvaMarketSimulationOld";
+       RepoPath = @"C:\Users\ello\Desktop\Projects\AvaMarketSimulationOld";
+       RepoName = @"AvaMarketSimulationOld";
     }
 }

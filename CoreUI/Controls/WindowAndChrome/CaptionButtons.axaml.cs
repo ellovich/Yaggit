@@ -1,6 +1,7 @@
 ﻿using Avalonia.Controls.Metadata;
 using Avalonia.Controls.Primitives;
 using Avalonia.Interactivity;
+using AvaloniaEdit.Utils;
 
 namespace CoreUI.Controls;
 

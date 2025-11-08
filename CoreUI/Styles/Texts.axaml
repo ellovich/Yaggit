@@ -2,8 +2,6 @@
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:assets="using:CoreUI.Assets"
-    xmlns:eremexEditors="using:Eremex.AvaloniaUI.Controls.Editors"
-    xmlns:eremexEditorsVisuals="using:Eremex.AvaloniaUI.Controls.Editors.Visuals"
     xmlns:sys="using:System"
     >
 
@@ -21,6 +19,7 @@
                 <TextBlock Classes="h3" Text="Заголовок 3" />
                 <TextBlock Text="Текст обычный" />
                 <TextBlock Classes="helper" Text="Текст вспомогательный" />
+                <TextBlock Classes="accent" Text="Текст акцентный" />
                 <TextBox Text="Пример текста" />
                 <TextBox Classes="clear">With clear button</TextBox>
                 <TextBox
@@ -45,14 +44,6 @@
     <Style Selector="TextBlock">
         <Setter Property="Foreground" Value="{DynamicResource TextNormal}" />
     </Style>
-
-    <Style Selector="eremexEditors|TextEditor">
-        <Setter Property="Foreground" Value="{DynamicResource TextNormal}" />
-    </Style>
-
-	<!--<Style Selector="eremexEditorsVisuals|MxTextBlock">
-		<Setter Property="Foreground" Value="{DynamicResource TextNormal}" />
-	</Style>-->
 
     <Style Selector="TextBox">
         <Setter Property="Foreground" Value="{DynamicResource TextNormal}" />
@@ -87,6 +78,11 @@
         <Setter Property="FontSize" Value="{DynamicResource helperTextSize}" />
         <Setter Property="Foreground" Value="{DynamicResource HelperTextColor}" />
         <Setter Property="FontWeight" Value="Regular" />
+    </Style>
+ 
+    <!--  Акцентный текст  -->
+    <Style Selector="TextBlock.accent">
+        <Setter Property="Foreground" Value="{DynamicResource AccentColor}" />
     </Style>
 
     <!--  Отображение ошибок с восклицательным знаком  -->

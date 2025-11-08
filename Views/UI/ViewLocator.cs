@@ -29,9 +29,17 @@ public class ViewLocator : StrongViewLocator
     private void RegisterYaggit()
     {
         Register<VmYaggitMain, Yaggit.YaggitMainView, Yaggit.YaggitMainWindow>();
+
         Register<VmBranches, Yaggit.Branches>();
         Register<VmRepoSelector, Yaggit.RepoSelector>();
         Register<VmConsole, Yaggit.Console>();
-        Register<VmCommitHistory, Yaggit.CommitHistory>();
+        Register<VmBranchHistory, Yaggit.BranchHistory>();
+
+#if DEBUG
+        Register<MockVmBranches, Yaggit.Branches>();
+        Register<MockVmRepoSelector, Yaggit.RepoSelector>();
+        Register<MockVmConsole, Yaggit.Console>();
+        Register<MockVmBranchHistory, Yaggit.BranchHistory>();
+#endif
     }
 }

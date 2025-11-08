@@ -1,33 +1,43 @@
 <AvroView
-	xmlns="https://github.com/avaloniaui"
-	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-	xmlns:assets="using:CoreUI.Assets"
-	xmlns:b="using:Views.Behaviors"
-	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-	xmlns:i="using:Avalonia.Xaml.Interactivity"
-	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-	xmlns:vm="using:ViewModels.UI.Yaggit"
-	mc:Ignorable="d"
-	x:Class="Views.UI.Yaggit.RepoSelector"
-	x:DataType="vm:VmRepoSelector"
-	d:DesignWidth="300"
-	d:DesignHeight="100"
+xmlns="https://github.com/avaloniaui"
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+xmlns:assets="using:CoreUI.Assets"
+xmlns:b="using:Views.Behaviors"
+xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+xmlns:i="using:Avalonia.Xaml.Interactivity"
+xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+xmlns:vm="using:ViewModels.UI.Yaggit"
+mc:Ignorable="d"
+x:Class="Views.UI.Yaggit.RepoSelector"
+x:DataType="vm:VmRepoSelector"
+d:DesignWidth="300"
+d:DesignHeight="100"
 >
 
 	<Design.DataContext>
 		<vm:MockVmRepoSelector />
 	</Design.DataContext>
 
-	<StackPanel Spacing="10">
+	<Grid ColumnDefinitions="Auto, *">
 
-		<Button Classes="bordered-accent" Command="{Binding SelectRepoCommand}" Content="Select repo"/>
-		<Button Classes="bordered-accent" Content="Init New Repo" Command="{Binding InitRepoCommand}" />
+		<IconButton
+		HorizontalAlignment="Center"
+		Grid.Column="0"
+		Classes="transparent"
+		Command="{Binding SelectRepoCommand}"
+		SvgPath="{x:Static assets:Icons+Vs22+Git.RepositoryAccentColor}"/>
+
+		<!--		<Button Classes="bordered-accent" Content="Init New Repo" Command="{Binding InitRepoCommand}" />
+		-->
 
 		<TextBlock
-			ToolTip.Tip="{Binding RepoPath}"
-			Classes="h2"
-			Text="{Binding RepoName}"/>
+		HorizontalAlignment="Center"
+		Margin="5 0 0 0"
+		Grid.Column="1"
+		Classes="h2 accent"
+		ToolTip.Tip="{Binding RepoPath}"
+		Text="{Binding RepoName, FallbackValue='Choose Repo'}"/>
 
-	</StackPanel>
+	</Grid>
 
 </AvroView>

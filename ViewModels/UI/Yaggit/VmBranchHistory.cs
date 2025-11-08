@@ -3,17 +3,17 @@ using ViewModels.UI.Yaggit.Messages;
 
 namespace ViewModels.UI.Yaggit;
 
-public partial class VmCommitHistory : VmBase
+public partial class VmBranchHistory : VmBase
 {
-    private readonly IGitHistoryService _historyService;
+    private readonly IGitBranchHistoryService _historyService;
 
     public ObservableCollection<GitCommit> Commits { get; protected set; } = [];
 
 #pragma warning disable CS9264, CS8618
-    public VmCommitHistory() { }
+    public VmBranchHistory() { }
 #pragma warning restore CS9264, CS8618
 
-    public VmCommitHistory(IGitHistoryService historyService)
+    public VmBranchHistory(IGitBranchHistoryService historyService)
     {
         _historyService = historyService ?? throw new ArgumentNullException(nameof(historyService));
 
@@ -33,9 +33,9 @@ public partial class VmCommitHistory : VmBase
         if (string.IsNullOrWhiteSpace(SelectedBranch))
             return;
 
-        using (var loading = new LoadingScope(nameof(_historyService.GetCommitHistoryAsync)))
+        using (var loading = new LoadingScope(nameof(_historyService.GetBranchHistoryAsync)))
         {
-            var commits = await _historyService.GetCommitHistoryAsync(SelectedBranch, 200);
+            var commits = await _historyService.GetBranchHistoryAsync(SelectedBranch, 200);
             Commits.Init(commits);
         }
     }
@@ -65,9 +65,9 @@ public partial class VmCommitHistory : VmBase
     #endregion PROPS
 }
 
-public class MockVmCommitHistory : VmCommitHistory
+public class MockVmBranchHistory : VmBranchHistory
 {
-    public MockVmCommitHistory()
+    public MockVmBranchHistory()
     {
         Commits = [
             new GitCommit("30495023523045", "Daniil", DateTime.Now, "текст первого коммита"),

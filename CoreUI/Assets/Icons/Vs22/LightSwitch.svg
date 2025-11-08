@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+    <path class="Normal-01" d="M12.5,1.5v13h-9V1.5Z" />
+    <path class="Normal" d="M12.5,1h-9L3,1.5v13l.5.5h9l.5-.5V1.5ZM12,14H4V2h8Z" />
+    <path class="Normal" d="M10,7.5V4H6v8H9.75L11,9.5ZM7,5H9V7H7Zm2.132,6H7V10H9.632ZM7,9V8H9.132l.5,1Z" />
+</svg>

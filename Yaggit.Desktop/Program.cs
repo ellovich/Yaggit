@@ -14,9 +14,7 @@ internal class Program
     public static void Main(string[] args) => BuildAvaloniaApp()
         .SetServices(
             typeof(VmYaggitMain),
-            new ViewModelsRegistrar(),
-            typeof(Program)
-        )
+            new ViewModelsRegistrar())
         .StartWithClassicDesktopLifetime(args);
 
     private static AppBuilder BuildAvaloniaApp()
@@ -36,7 +34,7 @@ public class ViewModelsRegistrar : IViewModelsRegistrar
 
         services.AddTransient<IGitBranchesService, GitBranchesService>();
         services.AddTransient<IGitRepositoryInitializer, GitRepositoryInitializer>();
-        services.AddTransient<IGitHistoryService, GitHistoryService>();
+        services.AddTransient<IGitBranchHistoryService, GitBranchHistoryService>();
     }
 
     public void AddViewModels(IServiceCollection services)
@@ -46,6 +44,13 @@ public class ViewModelsRegistrar : IViewModelsRegistrar
         services.AddTransient<VmRepoSelector>();
         services.AddTransient<VmBranches>();
         services.AddTransient<VmConsole>();
-        services.AddTransient<VmCommitHistory>();
+        services.AddTransient<VmBranchHistory>();
+
+#if DEBUG
+        services.AddTransient<MockVmRepoSelector>();
+        services.AddTransient<MockVmBranches>();
+        services.AddTransient<MockVmConsole>();
+        services.AddTransient<MockVmBranchHistory>();
+#endif
     }
 }

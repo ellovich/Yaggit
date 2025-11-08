@@ -3,6 +3,7 @@
 using System.ComponentModel;
 using Avalonia.Data;
 using Avalonia.Layout;
+using AvaloniaEdit.Utils;
 
 namespace CoreUI.Controls;
 

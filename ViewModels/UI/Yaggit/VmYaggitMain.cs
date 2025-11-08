@@ -4,10 +4,10 @@ public partial class VmYaggitMain : VmBaseMainWindow
 {
     private readonly ILogger<VmYaggitMain> _logger; 
 
-    public VmBranches Branches { get; }
-    public VmRepoSelector RepoSelector { get; }
-    public VmConsole Console { get; }
-    public VmCommitHistory CommitHistory { get; }
+    public VmBranches Branches { get; protected set; }
+    public VmRepoSelector RepoSelector { get; protected set; }
+    public VmConsole Console { get; protected set; }
+    public VmBranchHistory BranchHistory { get; protected set; }
 
 #pragma warning disable CS9264, CS8618
     public VmYaggitMain() : base(null!) { }
@@ -19,17 +19,28 @@ public partial class VmYaggitMain : VmBaseMainWindow
         VmBranches branches,
         VmRepoSelector repoSelector,
         VmConsole console,
-        VmCommitHistory commitHistory
+        VmBranchHistory commitHistory
     ) : base(dialogService)
     {
         _logger = logger;
         Branches = branches;
         RepoSelector = repoSelector;
         Console = console;
-        CommitHistory = commitHistory;
+        BranchHistory = commitHistory;
     }
 
     #region COMMANDS
 
     #endregion COMMANDS
+}
+
+public class MockVmYaggitMain : VmYaggitMain
+{
+    public MockVmYaggitMain()
+    {
+        Branches = new MockVmBranches();
+        RepoSelector = new MockVmRepoSelector();
+        Console = new MockVmConsole();
+        BranchHistory = new MockVmBranchHistory();
+    }
 }

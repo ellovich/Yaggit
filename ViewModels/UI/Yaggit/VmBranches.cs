@@ -19,6 +19,14 @@ public partial class VmBranches : VmBase
     {
         _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         _gitBranchesService = gitBranchesService ?? throw new ArgumentNullException(nameof(gitBranchesService));
+
+        WeakReferenceMessenger.Default.Register<RepositoryChangedMessage>(this, async (r, m) =>
+        {
+            _logger.LogInformation("Получено уведомление о смене репозитория: {Repo}", m.Value);
+
+            await GetBranches();       // загружаем дерево веток
+            SelectedBranchNode = null; // сбрасываем выбор
+        });
     }
 
 
@@ -207,8 +215,7 @@ public partial class VmBranches : VmBase
         && !SelectedBranchNode.IsCurrent 
         && SelectedBranchNode.IsBranch;
 
-    protected static List<VmBranchNode> BuildBranchTree(string repositoryName,
-                                                    IEnumerable<GitBranch> branches)
+    protected static List<VmBranchNode> BuildBranchTree(string repositoryName, IEnumerable<GitBranch> branches)
     {
         var root = new VmBranchNode(repositoryName, eBranchNodeType.Repository);
 

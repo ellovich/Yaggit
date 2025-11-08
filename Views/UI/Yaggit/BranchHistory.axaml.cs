@@ -1,8 +1,8 @@
 namespace Views.UI.Yaggit;
 
-public partial class CommitHistory : AvroView
+public partial class BranchHistory : AvroView
 {
-    public CommitHistory()
+    public BranchHistory()
     {
         InitializeComponent();
     }

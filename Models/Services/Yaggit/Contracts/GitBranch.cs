@@ -7,6 +7,5 @@
 /// <param name="IsCurrent">Признак, является ли ветка активной.</param>
 public record GitBranch(string Name, bool IsCurrent)
 {
-    /// <inheritdoc />
     public override string ToString() => IsCurrent ? $"* {Name}" : Name;
 }

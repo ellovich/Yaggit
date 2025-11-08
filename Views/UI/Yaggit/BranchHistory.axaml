@@ -9,14 +9,14 @@ xmlns:i="using:Avalonia.Xaml.Interactivity"
 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 xmlns:vm="using:ViewModels.UI.Yaggit"
 mc:Ignorable="d"
-x:Class="Views.UI.Yaggit.CommitHistory"
-x:DataType="vm:VmCommitHistory"
+x:Class="Views.UI.Yaggit.BranchHistory"
+x:DataType="vm:VmBranchHistory"
 d:DesignWidth="700"
 d:DesignHeight="440"
 >
 
 	<Design.DataContext>
-		<vm:MockVmCommitHistory />
+		<vm:MockVmBranchHistory />
 	</Design.DataContext>
 
 	<Grid RowDefinitions="Auto,*"
@@ -39,11 +39,10 @@ d:DesignHeight="440"
 				  SelectedItem="{Binding SelectedCommit, Mode=TwoWay}"
 				  AutoGenerateColumns="False"
 				  HeadersVisibility="Column"
-				  
+				  CanUserResizeColumns="True"
 				  GridLinesVisibility="All"
 				  BorderBrush="{DynamicResource Border}"
-				  BorderThickness="1"
-				  FontSize="13">
+				  BorderThickness="1">
 
 			<DataGrid.Columns>
 				<DataGridTextColumn Header="Hash"

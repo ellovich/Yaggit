@@ -1,4 +1,4 @@
-﻿// File generated: 08.11.2025 20:08
+﻿// File generated: 09.11.2025 02:26
 
 namespace CoreUI.Assets;
 
@@ -181,6 +181,7 @@ public static class Icons
         public const string Infinity = @"avares://CoreUI/Assets/Icons/Vs22/Infinity.svg";
         public const string Key = @"avares://CoreUI/Assets/Icons/Vs22/Key.svg";
         public const string Keyboard = @"avares://CoreUI/Assets/Icons/Vs22/Keyboard.svg";
+        public const string LightSwitch = @"avares://CoreUI/Assets/Icons/Vs22/LightSwitch.svg";
         public const string MoveDown = @"avares://CoreUI/Assets/Icons/Vs22/MoveDown.svg";
         public const string MoveUp = @"avares://CoreUI/Assets/Icons/Vs22/MoveUp.svg";
         public const string OpenFile = @"avares://CoreUI/Assets/Icons/Vs22/OpenFile.svg";
@@ -210,9 +211,10 @@ public static class Icons
             public const string BranchGroup = @"avares://CoreUI/Assets/Icons/Vs22/Git/BranchGroup.svg";
             public const string BranchRemote = @"avares://CoreUI/Assets/Icons/Vs22/Git/BranchRemote.svg";
             public const string BranchUploaded = @"avares://CoreUI/Assets/Icons/Vs22/Git/BranchUploaded.svg";
+            public const string CheckOutItem = @"avares://CoreUI/Assets/Icons/Vs22/Git/CheckOutItem.svg";
             public const string Commit = @"avares://CoreUI/Assets/Icons/Vs22/Git/Commit.svg";
             public const string Merge = @"avares://CoreUI/Assets/Icons/Vs22/Git/Merge.svg";
-            public const string MergeChangeswithTool = @"avares://CoreUI/Assets/Icons/Vs22/Git/MergeChangeswithTool.svg";
+            public const string MergeChangesWithTool = @"avares://CoreUI/Assets/Icons/Vs22/Git/MergeChangesWithTool.svg";
             public const string NewBranch = @"avares://CoreUI/Assets/Icons/Vs22/Git/NewBranch.svg";
             public const string NewPullRequest = @"avares://CoreUI/Assets/Icons/Vs22/Git/NewPullRequest.svg";
             public const string PendingChange = @"avares://CoreUI/Assets/Icons/Vs22/Git/PendingChange.svg";
@@ -221,6 +223,9 @@ public static class Icons
             public const string Push = @"avares://CoreUI/Assets/Icons/Vs22/Git/Push.svg";
             public const string Rebase = @"avares://CoreUI/Assets/Icons/Vs22/Git/Rebase.svg";
             public const string RedoMerge = @"avares://CoreUI/Assets/Icons/Vs22/Git/RedoMerge.svg";
+            public const string Repository = @"avares://CoreUI/Assets/Icons/Vs22/Git/Repository.svg";
+            public const string RepositoryAccentColor = @"avares://CoreUI/Assets/Icons/Vs22/Git/RepositoryAccentColor.svg";
+            public const string RepositoryUploaded = @"avares://CoreUI/Assets/Icons/Vs22/Git/RepositoryUploaded.svg";
             public const string Stash = @"avares://CoreUI/Assets/Icons/Vs22/Git/Stash.svg";
         }
         public static class OnlineStatus {

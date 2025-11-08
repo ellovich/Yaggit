@@ -2,8 +2,6 @@
 
 	<PropertyGroup>
 		<OutputType>Library</OutputType>
-		<Nullable>enable</Nullable>
-		<JsonSerializerIsReflectionEnabledByDefault>false</JsonSerializerIsReflectionEnabledByDefault>
 	</PropertyGroup>
 
 	<ItemGroup Label="Nugets">

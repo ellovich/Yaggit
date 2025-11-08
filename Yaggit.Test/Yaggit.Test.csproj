@@ -23,6 +23,7 @@
 
 	<ItemGroup Label="Other Projects">
 	  <ProjectReference Include="..\Models\Models.csproj" />
+	  <ProjectReference Include="..\Views\Views.csproj" />
 	</ItemGroup>
 
 	<PropertyGroup Label="Coverage Settings">

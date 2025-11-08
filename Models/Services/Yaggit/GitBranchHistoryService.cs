@@ -2,31 +2,30 @@
 
 namespace Models.Services.Yaggit;
 
-public class GitHistoryService : IGitHistoryService
+public class GitBranchHistoryService : IGitBranchHistoryService
 {
-    private readonly ILogger<GitHistoryService> _logger;
+    private readonly ILogger<GitBranchHistoryService> _logger;
     private readonly IGitCommandService _git;
 
-    public GitHistoryService(ILogger<GitHistoryService> logger, IGitCommandService git)
+    public GitBranchHistoryService(ILogger<GitBranchHistoryService> logger, IGitCommandService git)
     {
         _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         _git = git ?? throw new ArgumentNullException(nameof(git));
     }
 
-    public async Task<IReadOnlyList<GitCommit>> GetCommitHistoryAsync(string branchName, int maxCount = 100)
+    public async Task<IReadOnlyList<GitCommit>> GetBranchHistoryAsync(string branchName, int maxCount = 100)
     {
         if (string.IsNullOrWhiteSpace(branchName))
             throw new ArgumentException("Имя ветки пустое", nameof(branchName));
 
-        var args = $"log {branchName} --max-count={maxCount} --date=iso --pretty=format:%H|%an|%ad|%s";
-
+        string args = GitCommands.BranchHistory(branchName, maxCount);
         var result = await _git.RunAsync(args);
 
         if (!result.IsSuccess)
             throw new GitException($"Не удалось получить историю коммитов: {result.Error}", result.ExitCode);
 
         if (string.IsNullOrWhiteSpace(result.Output))
-            return Array.Empty<GitCommit>();
+            return [];
 
         var commits = result.Output
             .Split('\n', StringSplitOptions.RemoveEmptyEntries)

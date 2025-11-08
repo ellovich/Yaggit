@@ -332,12 +332,6 @@
     <StyleInclude Source="avares://CoreUI/Styles/ComboBox.axaml" />
     <StyleInclude Source="avares://CoreUI/Styles/Texts.axaml" />
     <StyleInclude Source="avares://CoreUI/Styles/DataGrid.axaml" />
-    <StyleInclude Source="avares://CoreUI/Styles/EremexDataGridControl.axaml" />
     <StyleInclude Source="avares://CoreUI/Styles/ScrollBar.axaml" />
-    <StyleInclude Source="avares://CoreUI/Styles/EremexDocking.axaml" />
-
-    <Style Selector="trialwatermark|TrialWatermarkControl">
-        <Setter Property="IsVisible" Value="False" />
-    </Style>
 
 </Styles>

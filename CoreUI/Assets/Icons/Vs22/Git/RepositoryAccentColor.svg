@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+	<path class="Accent-01" d="M13.5,5.5v9H2.5v-9Z" />
+	<path class="Accent" d="M13.5,5H2.5L2,5.5v9l.5.5h11l.5-.5v-9ZM13,14H3V6H13Z" />
+	<path class="Accent-01" d="M14.5,2.5v3H1.5v-3Z" />
+	<path class="Accent" d="M14.5,2H1.5L1,2.5v3l.5.5h13l.5-.5v-3ZM14,5H2V3H14Z" />
+	<path class="Accent" d="M10,6v5.817L8,10.15,6,11.817V6H7V9.683L8,8.85l1,.833V6Z" />
+</svg>

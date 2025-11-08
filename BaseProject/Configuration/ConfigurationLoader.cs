@@ -1,19 +1,18 @@
 ﻿using System.Reflection;
 using Microsoft.Extensions.Configuration;
+using Models.Enums.Common;
 
-namespace BasaProject.Configuration;
+namespace BaseProject.Configuration;
 
-public static class ConfigurationLoader
+internal static class ConfigurationLoader
 {
     public static IConfiguration LoadConfiguration()
     {
         var assembly = Assembly.GetExecutingAssembly();
         string resourceName = GetResourceName();
 
-        using var stream = assembly.GetManifestResourceStream(resourceName);
-        if (stream == null)
-            throw new FileNotFoundException($"Не удалось найти ресурс {resourceName}");
-
+        using var stream = assembly.GetManifestResourceStream(resourceName)
+            ?? throw new FileNotFoundException($"Не удалось найти ресурс {resourceName}");
         var configuration = new ConfigurationBuilder()
             .AddJsonStream(stream)
             .Build();
@@ -28,5 +27,10 @@ public static class ConfigurationLoader
 #else
     return "BaseProject.Configuration.appsettings.json";
 #endif
+    }
+
+    public static string GetConnectionString(this IConfiguration configuration, eConnString connStr)
+    {
+        return configuration.GetConnectionString(Enum.GetName(connStr)!)!;
     }
 }

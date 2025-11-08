@@ -28,4 +28,7 @@ public static class GitCommands
     /// </summary>
     public static string RenameBranch(string oldName, string newName) =>
         $"branch -m {oldName} {newName}";
+
+    public static string BranchHistory(string branchName, int maxCount) =>
+        $"log {branchName} --max-count={maxCount} --date=iso-strict --pretty=format:\"%H|%an|%ad|%s\"";
 }

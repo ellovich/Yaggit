@@ -10,26 +10,29 @@ mc:Ignorable="d"
 x:Class="Views.UI.Yaggit.YaggitMainWindow"
 x:DataType="vm:VmYaggitMain"
 Title="YaggitMainWindow"
-Width="300"
-Height="570"
-MinWidth="1000"
-MinHeight="770"
+Width="1000"
+Height="770"
+MinWidth="500"
+MinHeight="300"
 BorderBrush="{DynamicResource Border}"
 BorderThickness="1"
 IsFullScreenButtonVisible="{OnPlatform True, macOS=False}"
 IsManagedResizerVisible="{OnPlatform False, Linux=True}"
 IsThemeButtonVisible="True"
-d:DesignWidth="300"
+d:DesignWidth="1000"
 d:DesignHeight="570"
 >
 
 	<Design.DataContext>
-		<vm:VmYaggitMain />
+		<vm:MockVmYaggitMain />
 	</Design.DataContext>
 
 	<AvroWindow.LeftContent>
+		<ContentControl Content="{Binding RepoSelector}" Margin="3 0" />
+		<!--
 		<v:YaggitMenu CornerRadius="{DynamicResource DefaultCornerRadius}" />
-	</AvroWindow.LeftContent>
+		-->
+</AvroWindow.LeftContent>
 
 	<v:YaggitMainView Margin="5 32 5 5" />
 </AvroWindow>
