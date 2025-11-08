@@ -18,7 +18,6 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 9.0.x
-          include-prerelease: true
 
       - name: Restore dependencies
         run: dotnet restore
@@ -35,6 +34,7 @@ jobs:
           -p:Platform="AnyCPU"
         continue-on-error: false
 
+
       # ------------------------------
       # ✅ Установка ReportGenerator
       # ------------------------------
@@ -44,12 +44,12 @@ jobs:
       # ------------------------------
       # ✅ Генерация HTML-отчёта покрытия
       # ------------------------------
-      - name: Generate coverage report (HTML)
+      - name: Generate coverage report
         run: |
           reportgenerator \
-            -reports:"**/coverage.cobertura.xml" \
-            -targetdir:"coverage-report" \
-            -reporttypes:HtmlInline;TextSummary
+            "-reports:**/coverage.cobertura.xml" \
+            "-targetdir:coverage-report" \
+            "-reporttypes:HtmlInline;TextSummary"
 
       # ------------------------------
       # ✅ Проверка порога покрытия
