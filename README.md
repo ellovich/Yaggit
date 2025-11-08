@@ -1,4 +1,5 @@
 ![.NET Tests](https://github.com/ellovich/Yaggit/actions/workflows/tests.yml/badge.svg)
+[![Coverage](https://codecov.io/gh/ellovich/Yaggit/branch/master/graph/badge.svg)](https://codecov.io/gh/ellovich/Yaggit)
 
 # Yaggit
 
